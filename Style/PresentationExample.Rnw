@@ -1,4 +1,4 @@
-\input{ReportStyle}
+\input{PresentationStyle}
 
 %Where you need to start filling stuff in!
 \newcommand*{\mytitle}{Optimum style} % Title
