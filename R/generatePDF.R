@@ -46,4 +46,5 @@ generatePDF<-function(srcpath = getwd() , srcname ,
   )
   if (CLEANUP) file.remove(dir( path=destpath,pattern="*aux|*out|*toc",full.names=TRUE))
 
+  
 }
