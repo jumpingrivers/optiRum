@@ -1,0 +1,7 @@
+\select@language {english}
+\contentsline {section}{\numberline {1}Styles}{1}{section.1}
+\contentsline {subsection}{\numberline {1.1}Paragraphs}{1}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Lists}{1}{subsection.1.2}
+\contentsline {subsubsection}{\numberline {1.2.1}Unordered}{1}{subsubsection.1.2.1}
+\contentsline {subsubsection}{\numberline {1.2.2}Numbered}{1}{subsubsection.1.2.2}
+\contentsline {subsubsection}{\numberline {1.2.3}Descriptive}{1}{subsubsection.1.2.3}
