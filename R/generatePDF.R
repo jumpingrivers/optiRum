@@ -1,0 +1,49 @@
+#'Convert an .Rnw file to a PDF
+#'
+#' This function is designed to handle the production task of a 'standard' 
+#' PDF process.  It is designed to build using pdflatex an adequate number of 
+#' times to enable full typesetting to occur after taking into account items
+#' like contents pages, glossaries, and figures.
+#'
+#' @param srcpath Location of .Rnw file, default is current directory
+#' @param srcname Rnw file name without extension e.g. "Style"
+#' @param destpath Location of PDF file to be sent to, default is current directory
+#' @param destname PDF file name without extension e.g. "Style_output"
+#' @param DATED Boolean indicating whether PDF filename should include yyyymmdd added to it
+#' @param CLEANUP Boolean indicating whether ancilliary files should be removed after production
+#' @param ... Allows additional parameters to be passed to the knit2pdf function
+#' 
+#' @keywords knitr pdflatex generate PDF Rnw
+#' 
+#' @export
+#' 
+#' @examples{generatePDF(srcname="blah",destname="meh")}
+#' 
+
+generatePDF<-function(srcpath = getwd() , srcname , 
+                      destpath = getwd() , destname , 
+                      DATED = FALSE , CLEANUP = TRUE ,
+                      ...){
+  stopifnot(
+    is.character(srcpath),
+    is.character(srcname),
+    is.character(destpath),
+    is.character(destname),
+    is.logical(DATED),
+    is.logical(CLEANUP),
+    file.exists(file.path(srcpath , paste0(srcname ,
+                                           ".Rnw")))
+    )
+  
+  require("knitr")
+  
+  knit2pdf( input  = file.path(srcpath , paste0(srcname ,
+                                             ".Rnw")),
+            output = file.path(destpath , paste0(destname , 
+                                              ifelse(DATED, format(Sys.Date(),"%Y%m%d"),"") ,
+                                              ".tex") ) ,
+            compiler='pdflatex'
+  )
+  if (CLEANUP) file.remove(dir( path=destpath,pattern="*aux|*out|*toc",full.names=TRUE))
+
+}
