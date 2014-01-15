@@ -1,2 +1,3 @@
 export(generatePDF)
+export(optiplum)
 export(theme_optimum)
