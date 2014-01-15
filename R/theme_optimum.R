@@ -11,12 +11,12 @@
 #' 
 #' @export
 #' 
-#' @examples{ggplot(data.frame(x=1:10,y=1:10),aes(x,y))+theme_optimum()+geom_line()}
+#' @examples
+#' ggplot(data.frame(x=1:10,y=1:10),aes(x,y))+theme_optimum()+geom_line()
 #' 
 
-theme_optimum <- function (base_size = 14, base_family = "Lato Light", ...){
-  require(ggplot2)
-  require(ggthemes)
+theme_optimum <- function (base_size = 14, base_family = "", ...){
+
   modifyList (theme_few (base_size = base_size, base_family = base_family),
               list (panel.border = element_rect(fill = NA, colour = "grey50"),
                     legend.position="bottom",axis.ticks = element_line(colour = "grey90"),

@@ -2,7 +2,7 @@
 \alias{theme_optimum}
 \title{Produce an Optimum-standard base chart}
 \usage{
-theme_optimum(base_size = 14, base_family = "Lato Light", ...)
+theme_optimum(base_size = 14, base_family = "", ...)
 }
 \arguments{
   \item{base_size}{Anchor font size}
@@ -18,7 +18,7 @@ produce a good baseline for charting in R. Gets called as
 would any typical theme.
 }
 \examples{
-
+ggplot(data.frame(x=1:10,y=1:10),aes(x,y))+theme_optimum()+geom_line()
 }
 \keyword{Few}
 \keyword{ggplot2}

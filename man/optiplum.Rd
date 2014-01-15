@@ -9,7 +9,7 @@ Produces a hex colour code for use in charts etc.  Use
 scale_colour_identity() with ggplots
 }
 \examples{
-
+optiplum()
 }
 \keyword{colour}
 

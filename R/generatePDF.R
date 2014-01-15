@@ -1,4 +1,4 @@
-#'Convert an .Rnw file to a PDF
+#' Convert an .Rnw file to a PDF
 #'
 #' This function is designed to handle the production task of a 'standard' 
 #' PDF process.  It is designed to build using pdflatex an adequate number of 
@@ -15,10 +15,10 @@
 #' 
 #' @keywords knitr pdflatex generate PDF Rnw
 #' 
+#' @seealso knit2pdf which this function wraps
+#'
+#' 
 #' @export
-#' 
-#' @examples{generatePDF(srcname="blah",destname="meh")}
-#' 
 
 generatePDF<-function(srcpath = getwd() , srcname , 
                       destpath = getwd() , destname , 
@@ -35,7 +35,6 @@ generatePDF<-function(srcpath = getwd() , srcname ,
                                            ".Rnw")))
     )
   
-  require("knitr")
   
   knit2pdf( input  = file.path(srcpath , paste0(srcname ,
                                              ".Rnw")),

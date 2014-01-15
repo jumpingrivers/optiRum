@@ -7,7 +7,8 @@
 #' 
 #' @export
 #' 
-#' @examples{optiplum()}
+#' @examples
+#' optiplum()
 #' 
 
 optiplum<-function(){

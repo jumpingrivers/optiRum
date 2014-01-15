@@ -34,8 +34,8 @@ pdflatex an adequate number of times to enable full
 typesetting to occur after taking into account items like
 contents pages, glossaries, and figures.
 }
-\examples{
-
+\seealso{
+knit2pdf which this function wraps
 }
 \keyword{PDF}
 \keyword{Rnw}
