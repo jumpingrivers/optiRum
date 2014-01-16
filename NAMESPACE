@@ -1,3 +1,4 @@
 export(generatePDF)
 export(optiplum)
+export(sanitise)
 export(theme_optimum)
