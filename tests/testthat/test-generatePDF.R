@@ -56,8 +56,7 @@ test_that("generatePDF - correct behaviour, DATED=FALSE,CLEANUP=FALSE",{
   expect_true(file.exists(file.path(testpath,"basic.tex")))
   expect_true(file.exists(file.path(testpath,"basic.log")))
   expect_true(file.exists(file.path(testpath,"basic.aux")))
-  expect_false(file.exists(file.path(testpath,"basic.out")))
-  expect_false(file.exists(file.path(testpath,"basic.toc")))
+  expect_true(file.exists(file.path(testpath,"basic.toc")))
 })
 
 
@@ -75,8 +74,7 @@ test_that("generatePDF - correct behaviour, DATED=TRUE,CLEANUP=FALSE",{
   expect_true(file.exists(file.path(testpath,paste0("basic",format(Sys.Date(),"%Y%m%d"),".tex"))))
   expect_true(file.exists(file.path(testpath,paste0("basic",format(Sys.Date(),"%Y%m%d"),".log"))))
   expect_true(file.exists(file.path(testpath,paste0("basic",format(Sys.Date(),"%Y%m%d"),".aux"))))
-  expect_false(file.exists(file.path(testpath,paste0("basic",format(Sys.Date(),"%Y%m%d"),".out"))))
-  expect_false(file.exists(file.path(testpath,paste0("basic",format(Sys.Date(),"%Y%m%d"),".toc"))))
+  expect_true(file.exists(file.path(testpath,paste0("basic",format(Sys.Date(),"%Y%m%d"),".toc"))))
 })
 
 
@@ -100,14 +98,12 @@ test_that("generatePDF - multiple calls still performs as expected correct behav
   expect_true(file.exists(file.path(testpath,"basic.tex")))
   expect_true(file.exists(file.path(testpath,"basic.log")))
   expect_false(file.exists(file.path(testpath,"basic.aux")))
-  expect_false(file.exists(file.path(testpath,"basic.out")))
   expect_false(file.exists(file.path(testpath,"basic.toc")))
   
   expect_true(file.exists(file.path(testpath,paste0("basic",format(Sys.Date(),"%Y%m%d"),".pdf"))))
   expect_true(file.exists(file.path(testpath,paste0("basic",format(Sys.Date(),"%Y%m%d"),".tex"))))
   expect_true(file.exists(file.path(testpath,paste0("basic",format(Sys.Date(),"%Y%m%d"),".log"))))
   expect_false(file.exists(file.path(testpath,paste0("basic",format(Sys.Date(),"%Y%m%d"),".aux"))))
-  expect_false(file.exists(file.path(testpath,paste0("basic",format(Sys.Date(),"%Y%m%d"),".out"))))
   expect_false(file.exists(file.path(testpath,paste0("basic",format(Sys.Date(),"%Y%m%d"),".toc"))))
 })
 
@@ -133,15 +129,13 @@ test_that("generatePDF - multiple calls still performs as expected correct behav
   expect_true(file.exists(file.path(testpath,"basic.tex")))
   expect_true(file.exists(file.path(testpath,"basic.log")))
   expect_true(file.exists(file.path(testpath,"basic.aux")))
-  expect_true(file.exists(file.path(testpath,"basic.out")))
   expect_true(file.exists(file.path(testpath,"basic.toc")))
   
   expect_true(file.exists(file.path(testpath,paste0("basic",format(Sys.Date(),"%Y%m%d"),".pdf"))))
   expect_true(file.exists(file.path(testpath,paste0("basic",format(Sys.Date(),"%Y%m%d"),".tex"))))
   expect_true(file.exists(file.path(testpath,paste0("basic",format(Sys.Date(),"%Y%m%d"),".log"))))
   expect_true(file.exists(file.path(testpath,paste0("basic",format(Sys.Date(),"%Y%m%d"),".aux"))))
-  expect_false(file.exists(file.path(testpath,paste0("basic",format(Sys.Date(),"%Y%m%d"),".out"))))
-  expect_false(file.exists(file.path(testpath,paste0("basic",format(Sys.Date(),"%Y%m%d"),".toc"))))
+  expect_true(file.exists(file.path(testpath,paste0("basic",format(Sys.Date(),"%Y%m%d"),".toc"))))
 })
 
 
@@ -158,7 +152,6 @@ test_that("generatePDF - errors - DATED=FALSE, source file does not exist",{
   expect_false(file.exists(file.path(testpath,"basic1.tex")))
   expect_false(file.exists(file.path(testpath,"basic1.log")))
   expect_false(file.exists(file.path(testpath,"basic1.aux")))
-  expect_false(file.exists(file.path(testpath,"basic.out")))
   expect_false(file.exists(file.path(testpath,"basic.toc")))
 })
 
@@ -176,7 +169,6 @@ test_that("generatePDF - errors - DATED=TRUE, source file does not exist",{
   expect_false(file.exists(file.path(testpath,paste0("basic",format(Sys.Date(),"%Y%m%d"),".tex"))))
   expect_false(file.exists(file.path(testpath,paste0("basic",format(Sys.Date(),"%Y%m%d"),".log"))))
   expect_false(file.exists(file.path(testpath,paste0("basic",format(Sys.Date(),"%Y%m%d"),".aux"))))
-  expect_false(file.exists(file.path(testpath,paste0("basic",format(Sys.Date(),"%Y%m%d"),".out"))))
   expect_false(file.exists(file.path(testpath,paste0("basic",format(Sys.Date(),"%Y%m%d"),".toc"))))
 })
 
@@ -192,7 +184,6 @@ test_that("generatePDF - errors - missing inputs",{
   expect_false(file.exists(file.path(testpath,"basic1.tex")))
   expect_false(file.exists(file.path(testpath,"basic1.log")))
   expect_false(file.exists(file.path(testpath,"basic1.aux")))
-  expect_false(file.exists(file.path(testpath,"basic.out")))
   expect_false(file.exists(file.path(testpath,"basic.toc")))
 })
 
@@ -205,6 +196,5 @@ test_that("generatePDF - errors - missing inputs",{
   expect_false(file.exists(file.path(testpath,"basic1.tex")))
   expect_false(file.exists(file.path(testpath,"basic1.log")))
   expect_false(file.exists(file.path(testpath,"basic1.aux")))
-  expect_false(file.exists(file.path(testpath,"basic.out")))
   expect_false(file.exists(file.path(testpath,"basic.toc")))
 })

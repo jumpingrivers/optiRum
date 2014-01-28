@@ -1,7 +1,7 @@
 \documentclass{article}
 
 \begin{document}
-
+\tableofcontents
 <<>>=
 1+1
 @

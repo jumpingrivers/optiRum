@@ -1,4 +1,5 @@
 export(generatePDF)
 export(optiplum)
 export(sanitise)
+export(scaledScore)
 export(theme_optimum)
