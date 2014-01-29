@@ -7,8 +7,9 @@ Authors@R: c(
     email = "stephanie.locke@optimumcredit.co.uk", role = c("aut", "cre")))
 Depends:
     R (>= 3.0.2),
-    ggplot2,
     ggthemes,
-    knitr
+    knitr,
+    AUC,
+    scales
 License: For Optimum employees only
 LazyData: true

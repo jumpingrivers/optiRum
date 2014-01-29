@@ -1,4 +1,5 @@
 export(generatePDF)
+export(giniChart)
 export(optiplum)
 export(sanitise)
 export(scaledScore)
