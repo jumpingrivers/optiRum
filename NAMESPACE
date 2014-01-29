@@ -1,5 +1,8 @@
 export(generatePDF)
 export(giniChart)
+export(logit.odds)
+export(logit.probs)
+export(odds.prob)
 export(optiplum)
 export(sanitise)
 export(scaledScore)

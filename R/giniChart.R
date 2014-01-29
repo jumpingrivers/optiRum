@@ -27,9 +27,9 @@ giniChart<-function(pred,act,gini=""){
   coef<-2*(auc(data)-.5)
   if (gini!="") {assign(gini,2*(auc(data)-.5),.GlobalEnv)}
   
-  data<-data.frame(fpr=data$fpr,tpr=data$tpr)
+  ginidata<-data.frame(fpr=data$fpr,tpr=data$tpr)
     
-  ggplot(data,aes(x=fpr,y=tpr,colour=optiplum))+
+  ggplot(ginidata,aes(x=fpr,y=tpr,colour=optiplum))+
     theme_optimum()+geom_line()+
     scale_colour_identity()+
     geom_line(aes(x=fpr,y=fpr,colour="grey"))+
