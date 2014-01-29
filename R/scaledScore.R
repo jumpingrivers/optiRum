@@ -12,5 +12,5 @@
 #' @export
 
 scaledScore<-function(logit,offset=300,scale=50){
-  offset+logit*scale/log(2)
+  round(offset+logit*scale/log(2))
 }
