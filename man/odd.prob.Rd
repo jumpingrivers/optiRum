@@ -1,8 +1,8 @@
-\name{odds.prob}
-\alias{odds.prob}
+\name{odd.prob}
+\alias{odd.prob}
 \title{Convert an odds to probability}
 \usage{
-odds.prob(odds)
+odd.prob(odds)
 }
 \arguments{
   \item{odds}{Odds}

@@ -10,6 +10,6 @@
 #'
 #' @export
 
-odds.prob<-function(odds){
+odd.prob<-function(odds){
   odds/(1+odds)
 }

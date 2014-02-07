@@ -1,6 +1,6 @@
-context("odds.prob")
+context("odd.prob")
 
-test_that("odds.prob outputs correctly",{
+test_that("odd.prob outputs correctly",{
   odds<-1
-  expect_true(odds.prob(odds)==.5)
+  expect_true(odd.prob(odds)==.5)
 })

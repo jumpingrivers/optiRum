@@ -11,6 +11,6 @@
 #'
 #' @export
 
-logit.odds<-function(logit){
+logit.odd<-function(logit){
   exp(logit)
 }

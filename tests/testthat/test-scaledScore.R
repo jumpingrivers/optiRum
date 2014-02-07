@@ -24,5 +24,5 @@ test_that("scaledscore tranforms logits correctly",{
 test_that("scaledscore tranforms logits correctly",{
   odds<-c(1,.5,.25,2,4)
   logit<-log(odds)
-  expect_true(scaledScore(logit)==c(300,250,200,350,400))
+  expect_true(identical(scaledScore(logit),c(300,250,200,350,400)))
 })

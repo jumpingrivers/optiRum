@@ -11,6 +11,6 @@
 #'
 #' @export
 
-logit.probs<-function(logit){
-  odds.prob(logit.odds(logit))
+logit.prob<-function(logit){
+  odd.prob(logit.odd(logit))
 }

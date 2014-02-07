@@ -1,8 +1,8 @@
-\name{logit.odds}
-\alias{logit.odds}
+\name{logit.odd}
+\alias{logit.odd}
 \title{Convert a logit to odds}
 \usage{
-logit.odds(logit)
+logit.odd(logit)
 }
 \arguments{
   \item{logit}{The log(odds)}

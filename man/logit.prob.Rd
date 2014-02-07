@@ -1,8 +1,8 @@
-\name{logit.probs}
-\alias{logit.probs}
+\name{logit.prob}
+\alias{logit.prob}
 \title{Convert a logit to probability}
 \usage{
-logit.probs(logit)
+logit.prob(logit)
 }
 \arguments{
   \item{logit}{The log(odds)}

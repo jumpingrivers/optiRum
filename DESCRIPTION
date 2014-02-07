@@ -11,5 +11,7 @@ Depends:
     knitr,
     AUC,
     scales
-License: For Optimum employees only
+Suggests:
+    testthat
+License: GPL-3
 LazyData: true

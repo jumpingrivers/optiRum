@@ -19,7 +19,7 @@ giniChart<-function(pred,act,gini=""){
     is.numeric(act)|is.factor(act),
     is.character(gini)
   )
-  optiplum()
+  optiplum<-rgb(red=129,green=61,blue=114, maxColorValue = 255)
   
   act<-factor(act)
   data<-roc(pred,act)
@@ -29,7 +29,7 @@ giniChart<-function(pred,act,gini=""){
   
   ginidata<-data.frame(fpr=data$fpr,tpr=data$tpr)
     
-  ggplot(ginidata,aes(x=fpr,y=tpr,colour=optiplum))+
+  ggplot(ginidata,aes(x=fpr,y=tpr,colour=rgb(red=129,green=61,blue=114, maxColorValue = 255)))+
     theme_optimum()+geom_line()+
     scale_colour_identity()+
     geom_line(aes(x=fpr,y=fpr,colour="grey"))+
