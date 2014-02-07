@@ -1,6 +1,6 @@
 Package: optiRum
 Title: The Optimum R package
-Description: A library of helper functions for Optimum analysts
+Description: A library of helper functions for (primarily) credit analysts
 Version: 0.1
 Authors@R: c(
     person("Stephanie", "Locke",
