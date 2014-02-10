@@ -1,3 +1,7 @@
+export(APR)
+export(PMT)
+export(PV)
+export(RATE)
 export(generatePDF)
 export(giniChart)
 export(logit.odd)
