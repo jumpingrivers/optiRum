@@ -24,6 +24,18 @@ Excel function PV. It calculates based on a fixed interest
 rate, FV=0 and charging is at the end of the period.
 Response is rounded to 2dp
 }
+\examples{
+PV(0.1,12,-10) # 68.14 Taken from excel
+
+df<-data.frame(rate=c(.1,.1),nper=c(12,24),pmt=c(-10,-15))
+PV(df$rate,df$nper,df$pmt)  # c(68.14,134.77) Taken from excel
+}
+\seealso{
+\code{\link{PMT}} \code{\link{RATE}}
+
+Other finance: \code{\link{APR}}; \code{\link{PMT}};
+\code{\link{RATE}}
+}
 \keyword{financial}
 \keyword{pmt}
 \keyword{pv}

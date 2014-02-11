@@ -8,11 +8,14 @@
 #' @return gini The coefficient
 #' 
 #' @keywords gini roc AUROC 
-#' 
-#' @seealso AUC roc giniChart
-#'
+#' @seealso \code{AUC} \code{roc} \code{\link{giniChart}}
+#' @family creditrisk
 #' @export
 #' 
+#' @examples 
+#'   sampledata<- data.frame(val= rnorm(100) , outcome=rbinom(100,1,.8))
+#'   giniCoef(sampledata$val,sampledata$outcome)
+#'   
 
 giniCoef<-function(pred,act){
 stopifnot(

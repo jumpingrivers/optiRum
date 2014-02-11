@@ -12,9 +12,15 @@
 #' @return pmt Instalment per period (should be negative)
 #'
 #' @keywords financial pv pmt
-#'
+#' @seealso \code{\link{PV}}  \code{\link{RATE}} 
+#' @family finance
 #' @export
-
+#' 
+#' @examples
+#' PMT(0.1,12,3000) # =-440.29 taken from excel
+#' 
+#' df<-data.frame(rate=c(.1,.2),nper=c(12,24),pv=c(3000,1000))
+#' PMT(df$rate,df$nper,df$pv) # =-440.29,-202.55 taken from excel
 
 PMT <- function(rate, nper, pv) {
   stopifnot(rate>0,rate<1,nper>=1,pv>0)

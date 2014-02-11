@@ -13,8 +13,17 @@ odds Odds
 \description{
 Transform a logit response from a glm into odds
 }
+\examples{
+logit.odd(0) # equals 1
+}
 \seealso{
-glm
+\code{\link{logit.prob}}
+
+Other creditrisk: \code{\link{giniChart}};
+\code{\link{giniCoef}}; \code{\link{logit.prob}};
+\code{\link{odd.logit}}; \code{\link{odd.prob}};
+\code{\link{prob.logit}}; \code{\link{prob.odd}};
+\code{\link{scaledScore}}
 }
 \keyword{glm}
 \keyword{logit}

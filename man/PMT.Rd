@@ -25,6 +25,18 @@ Excel function PMT. It calculates based on a fixed interest
 rate, FV=0, and charging is at the end of the period.
 Response is rounded to 2dp
 }
+\examples{
+PMT(0.1,12,3000) # =-440.29 taken from excel
+
+df<-data.frame(rate=c(.1,.2),nper=c(12,24),pv=c(3000,1000))
+PMT(df$rate,df$nper,df$pv) # =-440.29,-202.55 taken from excel
+}
+\seealso{
+\code{\link{PV}} \code{\link{RATE}}
+
+Other finance: \code{\link{APR}}; \code{\link{PV}};
+\code{\link{RATE}}
+}
 \keyword{financial}
 \keyword{pmt}
 \keyword{pv}

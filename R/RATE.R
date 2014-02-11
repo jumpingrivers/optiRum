@@ -10,11 +10,16 @@
 #' @return rate The corresponding compound interest rate required to arrive at an FV of 0
 #'
 #' 
-#' @keywords financial pv pmt
-#' 
-#'
+#' @keywords financial pv pmt rate
+#' @seealso \code{\link{PMT}}  \code{\link{PV}} 
+#' @family finance
 #' @export
 #' 
+#' @examples
+#' RATE(12,-500,3000) # 0.126947 Taken from excel
+#' 
+#' df<-data.frame(nper=c(12,12),pmt=c(-500,-400),pv=c(3000,3000))
+#' RATE(df$nper,df$pmt,df$pv)  # c(0.126947,0.080927) Taken from excel
 
 RATE <- function(nper, pmt, pv) {
   stopifnot(nper>=1,pmt<0,pv>0)

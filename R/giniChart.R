@@ -7,10 +7,14 @@
 #' @param act This should be a column containing outcomes in a boolean form either as a factor or number
 #' 
 #' @keywords gini roc AUROC 
-#' 
-#' @seealso AUC roc
-#'
+#' @seealso \code{AUC} \code{roc} \code{\link{giniCoef}}
+#' @family creditrisk
 #' @export
+#' 
+#' @examples 
+#'   sampledata<- data.frame(val= rnorm(100) , outcome=rbinom(100,1,.8))
+#'   giniChart(sampledata$val,sampledata$outcome)
+#'   
 
 giniChart<-function(pred,act){
   stopifnot(

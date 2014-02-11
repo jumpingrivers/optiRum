@@ -18,8 +18,18 @@ gini The coefficient
 This function calculates a Gini coefficient based on a
 Receiver Operator Curve.
 }
+\examples{
+sampledata<- data.frame(val= rnorm(100) , outcome=rbinom(100,1,.8))
+  giniCoef(sampledata$val,sampledata$outcome)
+}
 \seealso{
-AUC roc giniChart
+\code{AUC} \code{roc} \code{\link{giniChart}}
+
+Other creditrisk: \code{\link{giniChart}};
+\code{\link{logit.odd}}; \code{\link{logit.prob}};
+\code{\link{odd.logit}}; \code{\link{odd.prob}};
+\code{\link{prob.logit}}; \code{\link{prob.odd}};
+\code{\link{scaledScore}}
 }
 \keyword{AUROC}
 \keyword{gini}

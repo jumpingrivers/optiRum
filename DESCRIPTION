@@ -1,6 +1,11 @@
 Package: optiRum
-Title: The Optimum R package
-Description: A library of helper functions for (primarily) credit analysts
+Title: Miscellaneous functions for finance / credit risk analysts
+Description: This packages fills the gaps credit analysts and loan modellers at
+    Optimum Credit identify in the existing R code body.
+    It allows for the production of documentation with less coding,
+    replicates a number of Microsoft Excel functions useful for
+    modelling loans (without rounding), and other helpful functions
+    for producing scorecards and outputting the results.
 Version: 0.2
 Authors@R: c(
     person("Stephanie", "Locke",

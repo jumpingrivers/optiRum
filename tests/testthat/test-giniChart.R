@@ -1,5 +1,5 @@
 context("giniChart")
-
+library("ggplot2")
 test_that("giniChart correctly produce a chart, numeric outcome",{
   rm(list=ls())
   sampledata<- data.frame(val= rnorm(100) , outcome=rbinom(100,1,.8))

@@ -16,8 +16,18 @@ This function uses ggplot to produce a themed Receiver
 Operator Curve and calculates a Gini coefficient based on
 it.
 }
+\examples{
+sampledata<- data.frame(val= rnorm(100) , outcome=rbinom(100,1,.8))
+  giniChart(sampledata$val,sampledata$outcome)
+}
 \seealso{
-AUC roc
+\code{AUC} \code{roc} \code{\link{giniCoef}}
+
+Other creditrisk: \code{\link{giniCoef}};
+\code{\link{logit.odd}}; \code{\link{logit.prob}};
+\code{\link{odd.logit}}; \code{\link{odd.prob}};
+\code{\link{prob.logit}}; \code{\link{prob.odd}};
+\code{\link{scaledScore}}
 }
 \keyword{AUROC}
 \keyword{gini}

@@ -14,6 +14,9 @@ preperation for PDF production
 \examples{
 sanitise("[&\%#<>\\\\")
 }
+\seealso{
+Other helper: \code{\link{generatePDF}}
+}
 \keyword{PDF}
 \keyword{Rnw}
 \keyword{generate}

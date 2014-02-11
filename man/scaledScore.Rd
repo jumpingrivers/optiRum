@@ -12,12 +12,22 @@ scaledScore(logit, offset = 300, scale = 50)
   \item{scale}{Value in which odds are double, default is
   50}
 }
-\value{
-score scaled score
-}
 \description{
 This function takes a logit and scales based on an
 intercept and doubling of odds ratio
+}
+\examples{
+scaledScore(0) # 300
+scaledScore(0,offset=600) # 600
+}
+\seealso{
+\code{\link{glm}}
+
+Other creditrisk: \code{\link{giniChart}};
+\code{\link{giniCoef}}; \code{\link{logit.odd}};
+\code{\link{logit.prob}}; \code{\link{odd.logit}};
+\code{\link{odd.prob}}; \code{\link{prob.logit}};
+\code{\link{prob.odd}}
 }
 \keyword{glm}
 \keyword{logit}

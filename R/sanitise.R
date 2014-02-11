@@ -6,7 +6,7 @@
 #' 
 #' 
 #' @keywords knitr pdflatex generate PDF Rnw
-#'  
+#' @family helper  
 #' 
 #' @examples
 #' sanitise("[&%#<>\\")

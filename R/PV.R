@@ -12,8 +12,15 @@
 #' @return pv Present value i.e. loan advance (should be positive)
 #'
 #' @keywords financial pv pmt
-#'
+#' @seealso \code{\link{PMT}}  \code{\link{RATE}} 
+#' @family finance
 #' @export
+#' 
+#' @examples
+#' PV(0.1,12,-10) # 68.14 Taken from excel
+#' 
+#' df<-data.frame(rate=c(.1,.1),nper=c(12,24),pmt=c(-10,-15))
+#' PV(df$rate,df$nper,df$pmt)  # c(68.14,134.77) Taken from excel
 
 
 PV<-function(rate, nper, pmt){

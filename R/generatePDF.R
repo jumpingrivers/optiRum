@@ -5,20 +5,33 @@
 #' times to enable full typesetting to occur after taking into account items
 #' like contents pages, glossaries, and figures.
 #'
-#' @param srcpath Location of .Rnw file, default is current directory
-#' @param srcname Rnw file name without extension e.g. "Style"
-#' @param destpath Location of PDF file to be sent to, default is current directory
-#' @param destname PDF file name without extension e.g. "Style_output"
-#' @param DATED Boolean indicating whether PDF filename should include yyyymmdd added to it
-#' @param CLEANUP Boolean indicating whether ancilliary files should be removed after production
-#' @param ... Allows additional parameters to be passed to the knit2pdf function
+#' @param srcpath     Location of .Rnw file, default is current directory
+#' @param srcname     Rnw file name without extension e.g. "Style"
+#' @param destpath    Location of PDF file to be sent to, default is current directory
+#' @param destname    PDF file name without extension e.g. "Style_output"
+#' @param DATED       Boolean indicating whether PDF filename should include yyyymmdd added to it
+#' @param CLEANUP     Boolean indicating whether ancilliary files should be removed after production
+#' @param ...         Allows additional parameters to be passed to the knit2pdf function
 #' 
 #' @keywords knitr pdflatex generate PDF Rnw
-#' 
-#' @seealso knit2pdf which this function wraps
-#'
+#' @seealso \code{knit2pdf}
+#' @family helper
 #' 
 #' @export
+#' 
+#' @examples
+#' \dontrun{
+#' # simple call
+#' generatePDF(srcname="basic", destname="basic")
+#' 
+#' # complex call
+#' generatePDF(srcpath=getwd(),
+#' srcname="basic",
+#' destpath=getwd(),
+#' destname="basic",
+#' DATED=TRUE,
+#' CLEANUP=FALSE)
+#' }
 
 generatePDF<-function(srcpath = getwd() , srcname , 
                       destpath = getwd() , destname , 

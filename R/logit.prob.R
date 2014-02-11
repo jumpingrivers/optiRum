@@ -5,11 +5,13 @@
 #' @param logit The log(odds)
 #' @return prob Probability
 #' 
-#' @keywords logit probability glm 
-#' 
-#' @seealso glm
-#'
+#' @keywords logit odds glm probability
+#' @seealso \code{\link{logit.odd}}  \code{\link{odd.prob}} 
+#' @family creditrisk
 #' @export
+#' 
+#' @examples
+#' logit.prob(0) # equals 0.5
 
 logit.prob<-function(logit){
   odd.prob(logit.odd(logit))

@@ -34,8 +34,24 @@ pdflatex an adequate number of times to enable full
 typesetting to occur after taking into account items like
 contents pages, glossaries, and figures.
 }
+\examples{
+\dontrun{
+# simple call
+generatePDF(srcname="basic", destname="basic")
+
+# complex call
+generatePDF(srcpath=getwd(),
+srcname="basic",
+destpath=getwd(),
+destname="basic",
+DATED=TRUE,
+CLEANUP=FALSE)
+}
+}
 \seealso{
-knit2pdf which this function wraps
+\code{knit2pdf}
+
+Other helper: \code{\link{sanitise}}
 }
 \keyword{PDF}
 \keyword{Rnw}
