@@ -1,8 +1,8 @@
-\name{giniChart}
-\alias{giniChart}
-\title{Produce a ROC curve with gini coefficient title}
+\name{giniCoef}
+\alias{giniCoef}
+\title{Produce a gini coefficient}
 \usage{
-giniChart(pred, act)
+giniCoef(pred, act)
 }
 \arguments{
   \item{pred}{Logit/scores/probabilities to be compared
@@ -11,13 +11,15 @@ giniChart(pred, act)
   \item{act}{This should be a column containing outcomes in
   a boolean form either as a factor or number}
 }
+\value{
+gini The coefficient
+}
 \description{
-This function uses ggplot to produce a themed Receiver
-Operator Curve and calculates a Gini coefficient based on
-it.
+This function calculates a Gini coefficient based on a
+Receiver Operator Curve.
 }
 \seealso{
-AUC roc
+AUC roc giniChart
 }
 \keyword{AUROC}
 \keyword{gini}

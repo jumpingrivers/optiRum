@@ -24,6 +24,7 @@ generatePDF<-function(srcpath = getwd() , srcname ,
                       destpath = getwd() , destname , 
                       DATED = FALSE , CLEANUP = TRUE ,
                       ...){
+  require("knitr")
   stopifnot(
     is.character(srcpath),
     is.character(srcname),

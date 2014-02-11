@@ -1,17 +1,18 @@
 Package: optiRum
 Title: The Optimum R package
 Description: A library of helper functions for (primarily) credit analysts
-Version: 0.1
+Version: 0.2
 Authors@R: c(
     person("Stephanie", "Locke",
     email = "stephanie.locke@optimumcredit.co.uk", role = c("aut", "cre")))
 Depends:
-    R (>= 3.0.2),
+    R (>= 3.0.2)
+Suggests:
+    testthat,
+    ggplot2,
     ggthemes,
     knitr,
     AUC,
     scales
-Suggests:
-    testthat
 License: GPL-3
 LazyData: true

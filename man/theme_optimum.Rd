@@ -18,6 +18,7 @@ produce a good baseline for charting in R. Gets called as
 would any typical theme.
 }
 \examples{
+library("ggplot2")
 ggplot(data.frame(x=1:10,y=1:10),aes(x,y))+theme_optimum()+geom_line()
 }
 \keyword{Few}
