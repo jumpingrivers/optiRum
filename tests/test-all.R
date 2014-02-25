@@ -1,2 +1,2 @@
 library("testthat")
-test_package("optiRum")
+test_check("optiRum")

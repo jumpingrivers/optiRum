@@ -1,9 +1,9 @@
 context("generatePDF")
 
   # initial values
-basepath<-"/home/OPTIMUMCREDIT/R/projects/optiRum/tests"
+wd<-getwd()
+basepath<-wd
 testpath<-file.path(basepath,"temp")
-
 
 
 test_that("generatePDF - correct behaviour, DATED=FALSE,CLEANUP=TRUE",{

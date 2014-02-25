@@ -2,13 +2,21 @@
 \alias{multiplot}
 \title{Multiple plot function}
 \usage{
-multiplot(..., plotlist = NULL, file, cols = 1, layout = NULL)
+multiplot(..., plotlist = NULL, cols = 1, layout = NULL)
+}
+\arguments{
+  \item{plotlist}{a list of ggplot objects}
+
+  \item{cols}{Number of columns in layout}
+
+  \item{layout}{A matrix specifying the layout. If present,
+  'cols' is ignored}
+
+  \item{...}{ggplot objects can be passed in ...}
 }
 \description{
-ggplot objects can be passed in ..., or to plotlist (as a
-list of ggplot objects) - cols: Number of columns in layout
-- layout: A matrix specifying the layout. If present,
-'cols' is ignored.
+Multiplot allows the laying out of multiple charts in a
+custom layout
 }
 \details{
 If the layout is something like matrix(c(1,2,3,3), nrow=2,

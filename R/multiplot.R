@@ -1,9 +1,13 @@
 #' Multiple plot function
+#' 
+#' Multiplot allows the laying out of multiple charts in a custom layout
 #'
-#' ggplot objects can be passed in ..., or to plotlist (as a list of ggplot objects)
-#' - cols:   Number of columns in layout
-#' - layout: A matrix specifying the layout. If present, 'cols' is ignored.
+#' @param plotlist  a list of ggplot objects
+#' @param cols   Number of columns in layout
+#' @param layout A matrix specifying the layout. If present, 'cols' is ignored
+#' @param ...  ggplot objects can be passed in ...
 #'
+#' @details
 #' If the layout is something like matrix(c(1,2,3,3), nrow=2, byrow=TRUE),
 #' then plot 1 will go in the upper left, 2 will go in the upper right, and
 #' 3 will go all the way across the bottom.
@@ -13,7 +17,7 @@
 #' 
 #' @export
 #' 
-multiplot <- function(..., plotlist=NULL, file, cols=1, layout=NULL) {
+multiplot <- function(..., plotlist=NULL, cols=1, layout=NULL) {
   require(grid)
   
   # Make a list from the ... arguments and plotlist
