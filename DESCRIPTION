@@ -6,7 +6,7 @@ Description: This packages fills the gaps credit analysts and loan modellers at
     replicates a number of Microsoft Excel functions useful for
     modelling loans (without rounding), and other helpful functions
     for producing scorecards and outputting the results.
-Version: 0.21
+Version: 0.30
 Authors@R: c(
     person("Stephanie", "Locke",
     email = "stephanie.locke@optimumcredit.co.uk", role = c("aut", "cre")))

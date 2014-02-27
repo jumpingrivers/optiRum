@@ -1,0 +1,10 @@
+optiRum - 27/02/2014
+---------------------------
+
+Bug fixes:
+
+- Use of the data.table package was resulting in errors in generatePDF.  
+Code has been amended to work under a new environment within the global package
+- The generatePDF function did not correctly pass ... to internal functions.  
+This has now been changed, primarily for the benefit of being able to compile with 
+xelatex etc

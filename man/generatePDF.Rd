@@ -2,8 +2,9 @@
 \alias{generatePDF}
 \title{Convert an .Rnw file to a PDF}
 \usage{
-generatePDF(srcpath = getwd(), srcname, destpath = getwd(), destname,
-  DATED = FALSE, CLEANUP = TRUE, ...)
+generatePDF(srcpath = getwd(), srcname, destpath = getwd(),
+  destname = srcname, DATED = FALSE, CLEANUP = TRUE, QUIET = FALSE,
+  envir = new.env(parent = .GlobalEnv), ...)
 }
 \arguments{
   \item{srcpath}{Location of .Rnw file, default is current
@@ -24,6 +25,12 @@ generatePDF(srcpath = getwd(), srcname, destpath = getwd(), destname,
   \item{CLEANUP}{Boolean indicating whether ancilliary
   files should be removed after production}
 
+  \item{QUIET}{Boolean indicating whether console output
+  should be limited}
+
+  \item{envir}{Set default environment for knitr to run in
+  - prevents a data.table issue}
+
   \item{...}{Allows additional parameters to be passed to
   the knit2pdf function}
 }
@@ -37,15 +44,17 @@ contents pages, glossaries, and figures.
 \examples{
 \dontrun{
 # simple call
-generatePDF(srcname="basic", destname="basic")
+generatePDF(srcname="basic")
 
 # complex call
-generatePDF(srcpath=getwd(),
+generatePDF(
 srcname="basic",
 destpath=getwd(),
 destname="basic",
 DATED=TRUE,
-CLEANUP=FALSE)
+CLEANUP=FALSE,
+QUIET=TRUE,
+compiler="xelatex")
 }
 }
 \seealso{

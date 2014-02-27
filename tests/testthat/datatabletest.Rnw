@@ -1,0 +1,20 @@
+\documentclass{article}
+
+\begin{document}
+\tableofcontents
+<<>>=
+library("data.table")
+library("ggplot2")
+df<-data.table(expand.grid(seq(10000,200000,1000),seq(10000,200000,2000),seq(100000,400000,5000)))
+setnames(df,c("Var1","Var2","Var3"),c("ad","fm","value"))
+df<-df[ad+fm<value*.9&ad+fm>=value*.6]
+df<-df[,`P Value`:=paste0(round(value/1000,2),"k")]
+df<-df[,`ad Amount`:=paste0(round(ad/1000,2),"k")]
+df<-df[,ratio:=(ad+fm)/value]
+@
+
+<<, fig.path="~/">>=
+ggplot(df[value %in% seq(100000,400000,50000)&fm==50000],aes(x=ratio,y=ad,group=value,colour=`P Value`))+
+  geom_line()
+@
+\end{document}

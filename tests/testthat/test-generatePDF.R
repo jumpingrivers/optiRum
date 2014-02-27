@@ -17,12 +17,89 @@ test_that("generatePDF - correct behaviour, DATED=FALSE,CLEANUP=TRUE",{
     
 expect_true(file.exists(file.path(testpath,"basic.pdf")))
 expect_true(file.exists(file.path(testpath,"basic.tex")))
-expect_true(file.exists(file.path(testpath,"basic.log")))
+expect_false(file.exists(file.path(testpath,"basic.log")))
 expect_false(file.exists(file.path(testpath,"basic.aux")))
 expect_false(file.exists(file.path(testpath,"basic.out")))
 expect_false(file.exists(file.path(testpath,"basic.toc")))
             })
 
+test_that("generatePDF - correct behaviour, DATED=FALSE,CLEANUP=TRUE, compiler=xelatex",{
+  
+  file.remove(dir(testpath,full.names=TRUE))
+  generatePDF(srcpath=basepath,
+              srcname="basic",
+              destpath=testpath,
+              destname="basic",
+              DATED=FALSE#,
+             # compiler="xelatex"
+             )
+  
+  expect_true(file.exists(file.path(testpath,"basic.pdf")))
+  expect_true(file.exists(file.path(testpath,"basic.tex")))
+  expect_false(file.exists(file.path(testpath,"basic.log")))
+  expect_false(file.exists(file.path(testpath,"basic.aux")))
+  expect_false(file.exists(file.path(testpath,"basic.out")))
+  expect_false(file.exists(file.path(testpath,"basic.toc")))
+})
+
+test_that("generatePDF - correct behaviour, quick generate",{
+  
+  file.remove(dir(testpath,full.names=TRUE))
+  generatePDF(srcpath=basepath,
+              srcname="datatabletest"
+              )
+  
+  expect_true(file.exists(file.path(basepath,"datatabletest.pdf")))
+  expect_true(file.exists(file.path(basepath,"datatabletest.tex")))
+  expect_false(file.exists(file.path(basepath,"datatabletest.log")))
+  expect_false(file.exists(file.path(basepath,"datatabletest.aux")))
+  expect_false(file.exists(file.path(basepath,"datatabletest.out")))
+  expect_false(file.exists(file.path(basepath,"datatabletest.toc")))
+  
+  dtfiles<-dir( path=basepath,pattern="datatabletest*",full.names=TRUE)
+  dtfiles<-dtfiles[!dtfiles %in% file.path(basepath,c("datatabletest.Rnw","datatabletest.pdf"))]
+  file.remove(dtfiles)
+  
+})
+
+test_that("generatePDF - correct behaviour, quick & quiet generate",{
+  
+  file.remove(dir(testpath,full.names=TRUE))
+  generatePDF(srcpath=basepath,
+              srcname="datatabletest", QUIET=TRUE
+  )
+  
+  expect_true(file.exists(file.path(basepath,"datatabletest.pdf")))
+  expect_true(file.exists(file.path(basepath,"datatabletest.tex")))
+  expect_false(file.exists(file.path(basepath,"datatabletest.log")))
+  expect_false(file.exists(file.path(basepath,"datatabletest.aux")))
+  expect_false(file.exists(file.path(basepath,"datatabletest.out")))
+  expect_false(file.exists(file.path(basepath,"datatabletest.toc")))
+  
+  dtfiles<-dir( path=basepath,pattern="datatabletest*",full.names=TRUE)
+  dtfiles<-dtfiles[!dtfiles %in% file.path(basepath,c("datatabletest.Rnw","datatabletest.pdf"))]
+  file.remove(dtfiles)
+  
+})
+
+test_that("generatePDF - correct behaviour, DATED=FALSE,CLEANUP=TRUE, compiler=xelatex",{
+  
+  file.remove(dir(testpath,full.names=TRUE))
+  generatePDF(srcpath=basepath,
+              srcname="datatabletest",
+              destpath=testpath,
+              destname="datatabletest", 
+              DATED=FALSE,
+              compiler='xelatex'
+             )
+  
+  expect_true(file.exists(file.path(testpath,"datatabletest.pdf")))
+  expect_true(file.exists(file.path(testpath,"datatabletest.tex")))
+  expect_false(file.exists(file.path(testpath,"datatabletest.log")))
+  expect_false(file.exists(file.path(testpath,"datatabletest.aux")))
+  expect_false(file.exists(file.path(testpath,"datatabletest.out")))
+  expect_false(file.exists(file.path(testpath,"datatabletest.toc")))
+})
 
 test_that("generatePDF - correct behaviour, DATED=TRUE,CLEANUP=TRUE",{
   
@@ -35,7 +112,7 @@ test_that("generatePDF - correct behaviour, DATED=TRUE,CLEANUP=TRUE",{
   
   expect_true(file.exists(file.path(testpath,paste0("basic",format(Sys.Date(),"%Y%m%d"),".pdf"))))
   expect_true(file.exists(file.path(testpath,paste0("basic",format(Sys.Date(),"%Y%m%d"),".tex"))))
-  expect_true(file.exists(file.path(testpath,paste0("basic",format(Sys.Date(),"%Y%m%d"),".log"))))
+  expect_false(file.exists(file.path(testpath,paste0("basic",format(Sys.Date(),"%Y%m%d"),".log"))))
   expect_false(file.exists(file.path(testpath,paste0("basic",format(Sys.Date(),"%Y%m%d"),".aux"))))
   expect_false(file.exists(file.path(testpath,paste0("basic",format(Sys.Date(),"%Y%m%d"),".out"))))
   expect_false(file.exists(file.path(testpath,paste0("basic",format(Sys.Date(),"%Y%m%d"),".toc"))))
@@ -96,13 +173,13 @@ test_that("generatePDF - multiple calls still performs as expected correct behav
   
   expect_true(file.exists(file.path(testpath,"basic.pdf")))
   expect_true(file.exists(file.path(testpath,"basic.tex")))
-  expect_true(file.exists(file.path(testpath,"basic.log")))
+  expect_false(file.exists(file.path(testpath,"basic.log")))
   expect_false(file.exists(file.path(testpath,"basic.aux")))
   expect_false(file.exists(file.path(testpath,"basic.toc")))
   
   expect_true(file.exists(file.path(testpath,paste0("basic",format(Sys.Date(),"%Y%m%d"),".pdf"))))
   expect_true(file.exists(file.path(testpath,paste0("basic",format(Sys.Date(),"%Y%m%d"),".tex"))))
-  expect_true(file.exists(file.path(testpath,paste0("basic",format(Sys.Date(),"%Y%m%d"),".log"))))
+  expect_false(file.exists(file.path(testpath,paste0("basic",format(Sys.Date(),"%Y%m%d"),".log"))))
   expect_false(file.exists(file.path(testpath,paste0("basic",format(Sys.Date(),"%Y%m%d"),".aux"))))
   expect_false(file.exists(file.path(testpath,paste0("basic",format(Sys.Date(),"%Y%m%d"),".toc"))))
 })
