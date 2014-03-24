@@ -3,7 +3,9 @@ context("generatePDF")
   # initial values
 wd<-getwd()
 basepath<-wd
+
 testpath<-file.path(basepath,"temp")
+dir.create(testpath)
 
 
 test_that("generatePDF - correct behaviour, DATED=FALSE,CLEANUP=TRUE",{
@@ -275,3 +277,5 @@ test_that("generatePDF - errors - missing inputs",{
   expect_false(file.exists(file.path(testpath,"basic1.aux")))
   expect_false(file.exists(file.path(testpath,"basic.toc")))
 })
+
+#file.remove(testpath)

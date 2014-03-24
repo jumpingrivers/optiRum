@@ -29,6 +29,7 @@ sanitise <- function(str) {
   result <- gsub("&", "\\&", result, fixed = TRUE)
   result <- gsub("_", "\\_", result, fixed = TRUE)
   result <- gsub("#", "\\#", result, fixed = TRUE)
+  result <- gsub("\u00A3", "\\pounds", result, fixed = TRUE)
   result <- gsub("^", "\\verb|^|", result, fixed = TRUE)
   result <- gsub("~", "\\~{}", result, fixed = TRUE)
   result <- gsub("SANITIZE.BACKSLASH", "$\\backslash$", 

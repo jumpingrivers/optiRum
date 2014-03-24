@@ -5,8 +5,9 @@ Description: This packages fills the gaps credit analysts and loan modellers at
     It allows for the production of documentation with less coding,
     replicates a number of Microsoft Excel functions useful for
     modelling loans (without rounding), and other helpful functions
-    for producing scorecards and outputting the results.
-Version: 0.30
+    for producing charts and tables.  It also has some additional scales for
+    use, including a GBP scale
+Version: 0.31
 Authors@R: c(
     person("Stephanie", "Locke",
     email = "stephanie.locke@optimumcredit.co.uk", role = c("aut", "cre")))
@@ -19,6 +20,8 @@ Suggests:
     ggthemes,
     knitr,
     AUC,
-    scales
+    scales,
+    stringr,
+    plyr
 License: GPL-3
 LazyData: true

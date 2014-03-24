@@ -1,5 +1,12 @@
-optiRum - 27/02/2014
----------------------------
+optiRum 0.31
+----------------------------------------------------------------
+
+Bug fixes:
+
+- Removed use of tempdir() in generatePDF tests that was causing CRAN Windows compilation issues
+
+optiRum 0.30
+----------------------------------------------------------------
 
 Bug fixes:
 
@@ -8,3 +15,7 @@ Code has been amended to work under a new environment within the global package
 - The generatePDF function did not correctly pass ... to internal functions.  
 This has now been changed, primarily for the benefit of being able to compile with 
 xelatex etc
+
+New:
+- thousands has been created to provide a neater format for scales and presentations
+- pounds has been created to provide a neater format for scales and presentations

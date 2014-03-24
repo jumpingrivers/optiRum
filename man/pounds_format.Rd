@@ -1,0 +1,38 @@
+\name{pounds_format}
+\alias{pounds}
+\alias{pounds_format}
+\title{Currency formatter: round to nearest penny and display pounds sign.}
+\usage{
+pounds_format(x, largest_with_penny = 1e+05)
+
+pounds(x)
+}
+\arguments{
+  \item{largest_with_penny}{the value that all values of
+  \code{x} must be less than in order for the cents to be
+  displayed}
+
+  \item{x}{a numeric vector to format}
+}
+\value{
+a function with single paramater x, a numeric vector, that
+returns a character vector
+}
+\description{
+The returned function will format a vector of values as
+currency. Values are rounded to the nearest penny, and
+pennies are displayed if any of the values has a non-zero
+pennies and the largest value is less than
+\code{largest_with_penny} which by default is 100000.
+}
+\details{
+Based heavily on the scales work by Hadley
+}
+\examples{
+pounds_format()(c(100, 0.23, 1.456565, 2e3))
+pounds_format()(c(1:10 * 10))
+pounds(c(100, 0.23, 1.456565, 2e3))
+pounds(c(1:10 * 10))
+pounds(10^(1:8))
+}
+
