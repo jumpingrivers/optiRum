@@ -3,6 +3,8 @@
 \begin{document}
 \tableofcontents
 <<>>=
+
+print(opts_chunk$get())
 library("data.table")
 library("ggplot2")
 df<-data.table(expand.grid(seq(10000,200000,1000),seq(10000,200000,2000),seq(100000,400000,5000)))
@@ -13,8 +15,8 @@ df<-df[,`ad Amount`:=paste0(round(ad/1000,2),"k")]
 df<-df[,ratio:=(ad+fm)/value]
 @
 
-<<, fig.path="~/">>=
-ggplot(df[value %in% seq(100000,400000,50000)&fm==50000],aes(x=ratio,y=ad,group=value,colour=`P Value`))+
-  geom_line()
+<<>>=
+#ggplot(df[value %in% seq(100000,400000,50000)&fm==50000],aes(x=ratio,y=ad,group=value,colour=`P Value`))+
+#  geom_line()
 @
 \end{document}

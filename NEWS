@@ -1,3 +1,11 @@
+optiRum 0.32
+----------------------------------------------------------------
+
+Bug fixes:
+
+- Removed use of ~\ in generatePDF tests that was violating CRAN policies
+- Removed reference to AUC package in theme_optimum as it is not required
+
 optiRum 0.31
 ----------------------------------------------------------------
 
