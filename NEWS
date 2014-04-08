@@ -1,29 +1,32 @@
+optiRum 0.33
+-------------
+New:
+* Added function convertToXML for putting a data table into XML
+
+
 optiRum 0.32
-----------------------------------------------------------------
-
+------------
 Bug fixes:
+* Removed use of ~\ in generatePDF tests that was violating CRAN policies
+* Removed reference to AUC package in theme_optimum as it is not required
 
-- Removed use of ~\ in generatePDF tests that was violating CRAN policies
-- Removed reference to AUC package in theme_optimum as it is not required
 
 optiRum 0.31
-----------------------------------------------------------------
-
+------------
 Bug fixes:
+* Removed use of tempdir() in generatePDF tests that was causing CRAN Windows
+  compilation issues
 
-- Removed use of tempdir() in generatePDF tests that was causing CRAN Windows compilation issues
 
 optiRum 0.30
-----------------------------------------------------------------
-
+------------
 Bug fixes:
-
-- Use of the data.table package was resulting in errors in generatePDF.  
-Code has been amended to work under a new environment within the global package
-- The generatePDF function did not correctly pass ... to internal functions.  
-This has now been changed, primarily for the benefit of being able to compile with 
-xelatex etc
+* Use of the data.table package was resulting in errors in generatePDF.  
+  Code has been amended to work under a new environment within the global package
+* The generatePDF function did not correctly pass ... to internal functions.  
+  This has now been changed, primarily for the benefit of being able to compile with 
+  xelatex etc
 
 New:
-- thousands has been created to provide a neater format for scales and presentations
-- pounds has been created to provide a neater format for scales and presentations
+* thousands has been created to provide a neater format for scales and presentations
+* pounds has been created to provide a neater format for scales and presentations

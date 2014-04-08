@@ -1,0 +1,36 @@
+\name{convertToXML}
+\alias{convertToXML}
+\title{Produce an XML document of a table}
+\usage{
+convertToXML(data, name = "doc")
+}
+\arguments{
+  \item{data}{The data to be converted}
+
+  \item{name}{The toplevel node name}
+}
+\value{
+xml An XML object
+}
+\description{
+Produce a document containing all data.table or data.frame
+rows
+}
+\details{
+Code was taken from
+\url{https://stat.ethz.ch/pipermail/r-help/2010-February/228025.html}
+and amended, basic tests applied
+}
+\examples{
+df<-data.frame(nper=c(12,24),pmt=c(-10,-10),pv=c(110,220))
+xml<-convertToXML(df,name="examples")
+}
+\seealso{
+Other helper: \code{\link{generatePDF}};
+\code{\link{sanitise}}
+}
+\keyword{XML}
+\keyword{data.frame}
+\keyword{data.table}
+\keyword{xml}
+

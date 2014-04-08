@@ -28,4 +28,7 @@ Code is taken as-is from
 \url{http://www.cookbook-r.com/Graphs/Multiple_graphs_on_one_page_(ggplot2)/}
 and no tests are maintained for it at present
 }
+\keyword{charts}
+\keyword{ggplot2}
+\keyword{multiple}
 

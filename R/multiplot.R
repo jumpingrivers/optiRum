@@ -15,6 +15,9 @@
 #' Code is taken as-is from \url{http://www.cookbook-r.com/Graphs/Multiple_graphs_on_one_page_(ggplot2)/} 
 #' and no tests are maintained for it at present
 #' 
+#' @keywords ggplot2 multiple charts
+#' @family visualisation
+#' 
 #' @export
 #' 
 multiplot <- function(..., plotlist=NULL, cols=1, layout=NULL) {
