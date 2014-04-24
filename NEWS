@@ -2,6 +2,7 @@ optiRum 0.33
 -------------
 New:
 * Added function convertToXML for putting a data table into XML
+* Added function CJ.dt to cross-join two data.tables
 
 
 optiRum 0.32

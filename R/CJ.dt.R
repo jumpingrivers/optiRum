@@ -1,0 +1,24 @@
+#' Cross join two data.tables
+#'
+#' The package data.table has a CJ() function which produces a data.table out of two vectors.
+#' This function does the Cartesian product of two data.tables instead.
+#'
+#' @param X A data.table
+#' @param Y A data.table
+#' @return dt A data.table
+#'
+#' @keywords data.table CJ
+#' @family helper
+#' 
+#' @examples
+#' a  <- data.table(a=1:2, b=letters[1:2])
+#' b  <- data.table(c=3:4, d=letters[3:4])
+#' ab <- CJ.dt(a,b)
+#' 
+#' @export
+#' 
+
+CJ.dt<-function(X,Y) {
+  stopifnot(is.data.table(X),is.data.table(Y))
+  setkey(X[,c(k=1,.SD)],k)[Y[,c(k=1,.SD)],allow.cartesian=TRUE][,k:=NULL]
+}

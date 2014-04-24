@@ -60,8 +60,8 @@ compiler="xelatex")
 \seealso{
 \code{knit2pdf}
 
-Other helper: \code{\link{convertToXML}};
-\code{\link{sanitise}}
+Other helper: \code{\link{CJ.dt}};
+\code{\link{convertToXML}}; \code{\link{sanitise}}
 }
 \keyword{PDF}
 \keyword{Rnw}

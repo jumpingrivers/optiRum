@@ -1,4 +1,5 @@
 export(APR)
+export(CJ.dt)
 export(PMT)
 export(PV)
 export(RATE)

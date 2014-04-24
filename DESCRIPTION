@@ -12,7 +12,8 @@ Authors@R: c(
     person("Stephanie", "Locke",
     email = "stephanie.locke@optimumcredit.co.uk", role = c("aut", "cre")))
 Depends:
-    R (>= 3.0.2)
+    R (>= 3.0.2),
+    data.table
 Suggests:
     testthat,
     grid,
@@ -23,7 +24,6 @@ Suggests:
     scales,
     stringr,
     plyr,
-    data.table,
     XML
 License: GPL-3
 LazyData: true

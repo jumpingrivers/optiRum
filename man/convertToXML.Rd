@@ -26,8 +26,8 @@ df<-data.frame(nper=c(12,24),pmt=c(-10,-10),pv=c(110,220))
 xml<-convertToXML(df,name="examples")
 }
 \seealso{
-Other helper: \code{\link{generatePDF}};
-\code{\link{sanitise}}
+Other helper: \code{\link{CJ.dt}};
+\code{\link{generatePDF}}; \code{\link{sanitise}}
 }
 \keyword{XML}
 \keyword{data.frame}
