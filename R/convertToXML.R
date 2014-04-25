@@ -26,9 +26,10 @@
 convertToXML <- function(data,name="doc")
 {
   require("XML")
-  if (inherits(data, "data.table")){
-    require("data.table")
-  }
+ # removed as no longer required due to change in dependency  
+ # if (inherits(data, "data.table")){
+ #   require("data.table")
+ # }
   
   suppressWarnings(
   xml <- xmlTree(name)

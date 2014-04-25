@@ -7,7 +7,7 @@ test_that("data.frame works", {
 })
 
 test_that("data.table works", {
-  library(data.table)
+  #library(data.table)
   dt<-data.table(a=1:10,b=letters[1:10])
   expect_true(inherits(convertToXML(dt),"XMLInternalDOM"))
 })
@@ -23,7 +23,7 @@ test_that("0 rows data.frame works", {
 })
 
 test_that("0 rows data.table works", {
-  library(data.table)
+ # library(data.table)
   dt<-data.table(a=1:10,b=letters[1:10])
   expect_true(inherits(convertToXML(dt[0,]),"XMLInternalDOM"))
 })

@@ -7,4 +7,5 @@
 #'
 #' @docType package
 #' @name optiRum
+#' @import data.table
 NULL
