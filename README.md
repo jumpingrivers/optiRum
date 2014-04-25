@@ -26,3 +26,4 @@ There are functions for credit analysts and people dealing with logistic regress
 
 There are other functions that have been required but don't necessarily fit into the main categories:
 * convertToXML -- a lot of people are concerned about getting data out of XML, but it's difficult to find functions that put output data in XML, so this function takes XML functionality and wraps it neatly for such cases
+* CJ.dt -- a cross-join function for two data.tables
