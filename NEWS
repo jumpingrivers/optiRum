@@ -1,3 +1,8 @@
+optiRum 0.34
+-------------
+Enhancements:
+* Added fv argument to PV, RATE, and APR
+
 optiRum 0.33
 -------------
 New:

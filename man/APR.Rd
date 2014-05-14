@@ -2,7 +2,7 @@
 \alias{APR}
 \title{Calculates the compound interest rate for a loan}
 \usage{
-APR(nper, pmt, pv)
+APR(nper, pmt, pv, fv = 0)
 }
 \arguments{
   \item{nper}{Number of periods - monthly}
@@ -11,6 +11,8 @@ APR(nper, pmt, pv)
 
   \item{pv}{Present value i.e. loan advance (should be
   positive)}
+
+  \item{fv}{Future value i.e. redemption amount}
 }
 \value{
 rate The effective interest rate per year

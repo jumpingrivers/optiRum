@@ -2,7 +2,7 @@
 \alias{RATE}
 \title{Calculates compounded interest rate}
 \usage{
-RATE(nper, pmt, pv)
+RATE(nper, pmt, pv, fv = 0)
 }
 \arguments{
   \item{nper}{Number of periods}
@@ -11,6 +11,8 @@ RATE(nper, pmt, pv)
 
   \item{pv}{Present value i.e. loan advance (should be
   positive)}
+
+  \item{fv}{Future value i.e. redemption amount}
 }
 \value{
 rate The corresponding compound interest rate required to

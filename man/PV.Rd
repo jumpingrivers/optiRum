@@ -2,7 +2,7 @@
 \alias{PV}
 \title{Calculates the present value}
 \usage{
-PV(rate, nper, pmt)
+PV(rate, nper, pmt, fv = 0)
 }
 \arguments{
   \item{rate}{The nominal interest rate per period (should
@@ -11,6 +11,8 @@ PV(rate, nper, pmt)
   \item{nper}{Number of periods}
 
   \item{pmt}{Instalment per period (should be negative)}
+
+  \item{fv}{Future value i.e. redemption amount}
 }
 \value{
 pv Present value i.e. loan advance (should be positive)
