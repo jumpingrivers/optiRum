@@ -3,6 +3,9 @@ optiRum 0.34
 Enhancements:
 * Added fv argument to PV, RATE, and APR
 
+Bug fixes:
+* Added space after \pounds in sanitise to allow for people putting £m etc
+
 optiRum 0.33
 -------------
 New:
