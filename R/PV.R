@@ -24,10 +24,11 @@
 #' PV(df$rate,df$nper,df$pmt)  # c(68.14,134.77) Taken from excel
 
 
-PV<-function(rate, nper, pmt, fv=0){
-  stopifnot(is.numeric(rate), is.numeric(nper), is.numeric(pmt), is.numeric(fv),
-            rate>0,rate<1,nper>=1,pmt<0)
-  pvofregcash<-  -pmt / rate * (1 - 1 / (1 + rate) ^ nper)
-  pvoffv<- fv/((1+rate)^nper)
-  return(round(pvofregcash - pvoffv ,2))
-}
+PV <- function(rate, nper, pmt, fv = 0) {
+    stopifnot(is.numeric(rate), is.numeric(nper), is.numeric(pmt), is.numeric(fv), rate > 0, rate < 1, nper >= 1, pmt < 0)
+    
+    pvofregcash <- -pmt/rate * (1 - 1/(1 + rate)^nper)
+    pvoffv <- fv/((1 + rate)^nper)
+    
+    return(round(pvofregcash - pvoffv, 2))
+} 

@@ -7,5 +7,5 @@
 #'
 #' @docType package
 #' @name optiRum
-#' @import data.table
-NULL
+#' @import data.table ggplot2 AUC grid knitr plyr scales stringr XML
+NULL 

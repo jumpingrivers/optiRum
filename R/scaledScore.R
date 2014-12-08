@@ -15,6 +15,6 @@
 #' scaledScore(0) # 300
 #' scaledScore(0,offset=600) # 600
 
-scaledScore<-function(logit,offset=300,scale=50){
-  round(offset+logit*scale/log(2))
-}
+scaledScore <- function(logit, offset = 300, scale = 50) {
+    round(offset + logit * scale/log(2))
+} 

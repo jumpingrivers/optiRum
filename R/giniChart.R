@@ -16,29 +16,21 @@
 #'   giniChart(sampledata$val,sampledata$outcome)
 #'   
 
-giniChart<-function(pred,act){
-  stopifnot(
-    is.numeric(pred),
-    nlevels(factor(act))<=2
-  )
-  
-  require("AUC")
-  require("ggplot2")
-  fpr.df <- tpr.df <- NULL # Setting the variables to NULL first for CRAN check NOTE
-  optiplum<-rgb(red=129,green=61,blue=114, maxColorValue = 255)
-  
-  act<-factor(act)
-  data<-roc(pred,act)
-  
-  coef<-2*(auc(data)-.5)
-  
-  ginidata<-data.frame(fpr.df=data$fpr,tpr.df=data$tpr)
+giniChart <- function(pred, act) {
+    stopifnot(is.numeric(pred), nlevels(factor(act)) <= 2)
     
-  ggplot(ginidata,aes(x=fpr.df,y=tpr.df,colour=rgb(red=129,green=61,blue=114, maxColorValue = 255)))+
-    theme_optimum()+geom_line()+
-    scale_colour_identity()+
-    geom_line(aes(x=fpr.df,y=fpr.df,colour="grey"))+
-    scale_x_continuous(labels= percent)+scale_y_continuous(labels= percent)+
-    labs(x="1-Specificity",y="Sensitivity",title=paste0("Gini = ",percent(coef)))
-  
-}
+    fpr.df <- tpr.df <- NULL  # Setting the variables to NULL first for CRAN check NOTE
+    optiplum <- rgb(red = 129, green = 61, blue = 114, maxColorValue = 255)
+    
+    act <- factor(act)
+    data <- AUC::roc(pred, act)
+    
+    coef <- 2 * (AUC::auc(data) - 0.5)
+    
+    ginidata <- data.frame(fpr.df = data$fpr, tpr.df = data$tpr)
+    
+    ggplot2::ggplot(ginidata, aes(x = fpr.df, y = tpr.df, colour = rgb(red = 129, green = 61, blue = 114, maxColorValue = 255))) + theme_optimum() + geom_line() + 
+        scale_colour_identity() + geom_line(aes(x = fpr.df, y = fpr.df, colour = "grey")) + scale_x_continuous(labels = scales::percent) + scale_y_continuous(labels = scales::percent) + 
+        labs(x = "1-Specificity", y = "Sensitivity", title = paste0("Gini = ", percent(coef)))
+    
+} 

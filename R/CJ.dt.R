@@ -19,8 +19,11 @@
 #' @export
 #' 
 
-CJ.dt<-function(X,Y) {
-  stopifnot(is.data.table(X),is.data.table(Y))
-    k <- NULL # Setting the variables to NULL first for CRAN check NOTE
-  setkey(X[,c(k=1,.SD)],k)[Y[,c(k=1,.SD)],allow.cartesian=TRUE][,k:=NULL]
-}
+CJ.dt <- function(X, Y) {
+    k <- NULL
+    X <- X[, c(k = 1, .SD)]
+    setkey(X, k)
+    Y <- Y[, c(k = 1, .SD)]
+    setkey(Y, NULL)
+    X[Y, allow.cartesian = TRUE][, `:=`(k, NULL)]
+} 

@@ -26,8 +26,8 @@
 #' APR(df$nper,df$pmt,df$pv)
 #' 
 
-APR <- function(nper,pmt,pv,fv=0) {
-  stopifnot(nper>=1,pmt<0,pv>0)
-  rate<-((1+ RATE(nper,pmt,pv,fv))^12)-1
-  return(rate)
-}
+APR <- function(nper, pmt, pv, fv = 0) {
+    stopifnot(nper >= 1, pmt < 0, pv > 0)
+    rate <- ((1 + RATE(nper, pmt, pv, fv))^12) - 1
+    return(rate)
+} 

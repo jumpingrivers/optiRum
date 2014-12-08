@@ -1,3 +1,14 @@
+optiRum 0.35
+-------------
+New:
+* Added `wordwrap` formatter for splitting a string over multiple lines for chart axis
+
+Enhancements:
+* Improved/overhauled theme_optimum()
+
+Maintenance:
+* Improved package metadata and function's use of other packages
+
 optiRum 0.34
 -------------
 Enhancements:

@@ -13,6 +13,6 @@
 #' @examples
 #' odd.prob(1) # equals 0.5
 
-odd.prob<-function(odds){
-  odds/(1+odds)
-}
+odd.prob <- function(odds) {
+    odds/(1 + odds)
+} 

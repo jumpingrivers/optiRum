@@ -17,14 +17,10 @@
 #'   giniCoef(sampledata$val,sampledata$outcome)
 #'   
 
-giniCoef<-function(pred,act){
-stopifnot(
-  is.numeric(pred),
-  nlevels(factor(act))<=2
-)
-require("AUC")
-act<-factor(act)
-data<-roc(pred,act)
-
-return(2*(auc(data)-.5))
-}
+giniCoef <- function(pred, act) {
+    stopifnot(is.numeric(pred), nlevels(factor(act)) <= 2)
+    act <- factor(act)
+    data <- roc(pred, act)
+    
+    return(2 * (auc(data) - 0.5))
+} 

@@ -23,6 +23,6 @@
 #' PMT(df$rate,df$nper,df$pv) # =-440.29,-202.55 taken from excel
 
 PMT <- function(rate, nper, pv) {
-  stopifnot(rate>0,rate<1,nper>=1,pv>0)
-  return(round(-pv * rate / (1 - 1 / (1 + rate) ^ nper),2))  
-}
+    stopifnot(rate > 0, rate < 1, nper >= 1, pv > 0)
+    return(round(-pv * rate/(1 - 1/(1 + rate)^nper), 2))
+} 

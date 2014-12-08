@@ -13,6 +13,6 @@
 #' @examples
 #' logit.prob(0) # equals 0.5
 
-logit.prob<-function(logit){
-  odd.prob(logit.odd(logit))
-}
+logit.prob <- function(logit) {
+    odd.prob(logit.odd(logit))
+} 

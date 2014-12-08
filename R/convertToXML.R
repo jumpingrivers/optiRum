@@ -13,7 +13,7 @@
 #' 
 #' @examples
 #' df<-data.frame(nper=c(12,24),pmt=c(-10,-10),pv=c(110,220))
-#' xml<-convertToXML(df,name="examples")
+#' xml<-convertToXML(df,name='examples')
 #'
 #' @details
 #' Code was taken from \url{https://stat.ethz.ch/pipermail/r-help/2010-February/228025.html} 
@@ -23,34 +23,27 @@
 #'
 #'
 
-convertToXML <- function(data,name="doc")
-{
-  require("XML")
- # removed as no longer required due to change in dependency  
- # if (inherits(data, "data.table")){
- #   require("data.table")
- # }
-  
-  suppressWarnings(
-  xml <- xmlTree(name)
-  )
-  xml$addTag( as.character(substitute(data)), close=FALSE)
-  
-  if(nrow(data)>0){
-  for (i in 1:nrow(data)) {
-    xml$addTag("row", close=FALSE)
-    for (j in names(data)) {
-      if (inherits(data, "data.table")){
-      xml$addTag(j, data[i, j,with=FALSE])
-      }
-      
-      if (!inherits(data, "data.table")){
-        xml$addTag(j, data[i, j])
-      }
+convertToXML <- function(data, name = "doc") {
+    
+    suppressWarnings(xml <- XML::xmlTree(name))
+    
+    xml$addTag(as.character(substitute(data)), close = FALSE)
+    
+    if (nrow(data) > 0) {
+        for (i in 1:nrow(data)) {
+            xml$addTag("row", close = FALSE)
+            for (j in names(data)) {
+                if (inherits(data, "data.table")) {
+                  xml$addTag(j, data[i, j, with = FALSE])
+                }
+                
+                if (!inherits(data, "data.table")) {
+                  xml$addTag(j, data[i, j])
+                }
+            }
+            xml$closeTag()
+        }
     }
     xml$closeTag()
-  }
-  }
-  xml$closeTag()
-  return(xml)
-}
+    return(xml)
+} 

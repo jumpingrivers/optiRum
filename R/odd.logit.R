@@ -13,6 +13,6 @@
 #' @examples
 #' odd.logit(1) # equals 0
 
-odd.logit<-function(odds){
-  log(odds)
-}
+odd.logit <- function(odds) {
+    log(odds)
+} 

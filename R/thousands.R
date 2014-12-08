@@ -8,15 +8,14 @@
 #' thousands_format()(c(1, 1e3, 2000, 1e6))
 #' thousands_format()(c(1, 1e3, 2000, 1e6))
 #' thousands(c(1, 1e3, 2000, 1e6))
-thousands_format<-function() 
-{
-
-  function(x) {
-  x <- round(x/1000, 0)
-  stringr::str_c(scales::comma(x), "k")
-}
+thousands_format <- function() {
+    
+    function(x) {
+        x <- round(x/1000, 0)
+        stringr::str_c(scales::comma(x), "k")
+    }
 }
 
 #' @export
 #' @rdname thousands_format
-thousands <- thousands_format()
+thousands <- thousands_format() 
