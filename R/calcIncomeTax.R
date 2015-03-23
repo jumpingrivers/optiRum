@@ -1,3 +1,22 @@
+TaxOwed <- function(incomeCol, taxTable) {
+  # Purpose : Based on someone's annual income, calculate how much they would
+  # contribute to a form of taxation
+  #
+  # Must : Allow for different reference tax tables, handle vectorised income
+  #
+  # Known : an income column (NI or Tax determined), which rate table to
+  # consider, the standard methodology for calcualting tax
+  stopifnot(
+    is.data.table(taxTable),
+    all(c("LB","UB","Rate") %in% names(taxTable))
+  )
+  toPay <- 0
+  for (i in seq_len(nrow(taxTable))) {
+    toPay <- taxTable[i, toPay + (incomeCol>=LB) * pmin(incomeCol - LB, UB - LB) * Rate]
+  }
+  toPay
+}
+
 #' @title Calculate income after tax and benefits
 #' @param borrowers data.table with following columns \emph{borrowerId, loanId, employedIncome, investmentIncome, nonTaxableIncome, selfEmployedProfits, taxCode, numberOfChildren, salarySacrificePercentage, studentLoan}.
 #' @param stress logical
