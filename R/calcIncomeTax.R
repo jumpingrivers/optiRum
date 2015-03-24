@@ -10,6 +10,7 @@ TaxOwed <- function(incomeCol, taxTable) {
     is.data.table(taxTable),
     all(c("LB","UB","Rate") %in% names(taxTable))
   )
+  LB <- UB <- Rate <- NULL
   toPay <- 0
   for (i in seq_len(nrow(taxTable))) {
     toPay <- taxTable[i, toPay + (incomeCol>=LB) * pmin(incomeCol - LB, UB - LB) * Rate]
@@ -46,13 +47,14 @@ calcIncomeTax <- function(borrowers,
                           class1NIBrackets = fread(system.file("extdata","NationalInsuranceThresholds.csv", package = "optiRum")),
                           class4NIBrackets = fread(system.file("extdata","NationalInsurance4Thresholds.csv", package = "optiRum"))){
   # input check
-  borrowers_cols <- c("borrowerId", "loanId", "employedIncome", "investmentIncome", "nonTaxableIncome", "selfEmployedProfits", "taxCode", "numberOfChildren", "salarySacrificePercentage", "studentLoan")
+  borrowers_cols <- c("loanId", "borrowerId", "employedIncome", "investmentIncome", "nonTaxableIncome", "selfEmployedProfits", "taxCode", "numberOfChildren", "salarySacrificePercentage", "studentLoan")
   stopifnot(
     is.data.table(borrowers),
     nrow(borrowers) > 0L,
     all(borrowers_cols %in% names(borrowers)),
     nrow(borrowers[,.N,loanId][N>2]) == 0L # only two borrowers allowed per loan
     )
+  loanId <- N <- employedIncome <- investmentIncome <- nonTaxableIncome <- selfEmployedProfits <- salarySacrifice <- salarySacrificePercentage <- personalAllowance <- taxCode <- totalTaxableIncome <- incomeTax <- incomeTaxable <- class1NI <- class1NITaxable <- class4NI <- class4NITaxable <- studentLoan <- generalTaxable <- studentLoanRepayment <- numberOfChildren <- childBenefits <- childBenefitTax <- generalTaxableRank <- householdChildBenefits <- householdChildBenefitTax <- totalIncome <- netIncome <- householdIncome <- borrowerId <- NULL
   income <- borrowers[, .SD, .SDcols = borrowers_cols]
   
   # apply stress
@@ -141,16 +143,16 @@ calcIncomeTax <- function(borrowers,
   income[, totalIncome := totalIncome + childBenefits]
   
   # calculate the final net income
-  income[, netincome := employedIncome + investmentIncome + nonTaxableIncome + (selfEmployedProfits - class4NI) + (childBenefits - childBenefitTax) - (incomeTax + class1NI) - studentLoanRepayment]
+  income[, netIncome := employedIncome + investmentIncome + nonTaxableIncome + (selfEmployedProfits - class4NI) + (childBenefits - childBenefitTax) - (incomeTax + class1NI) - studentLoanRepayment]
   
   # and household income
-  income[, householdIncome := sum(netincome), by = loanId]
+  income[, householdIncome := sum(netIncome), by = loanId]
   
   # return as monthly
-  income[,.(borrowerId,
-            loanId,
+  income[,.(loanId,
+            borrowerId,
             totalIncome = totalIncome / 12,
-            netincome = netincome / 12,
+            netIncome = netIncome / 12,
             householdIncome = householdIncome / 12,
             incomeTax = incomeTax / 12,
             class1NI = class1NI / 12,
