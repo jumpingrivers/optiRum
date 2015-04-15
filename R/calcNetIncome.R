@@ -109,7 +109,7 @@ calcIncomeTax <- function(
                  nonTaxableIncome    = nonTaxableIncome    * inflation_over_years,
                  selfEmployedProfits = selfEmployedProfits * inflation_over_years,
                  taxCode             = "")]
-    personalAllowanceValue <- personalAllowanceValue + modelArgs$personalAllowanceChange
+    personalAllowanceValue <- personalAllowanceValue + modelArgs$personalAllowanceChange*modelArgs$years
   }
   
   # sum incomes
