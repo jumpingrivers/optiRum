@@ -46,7 +46,7 @@
 #' 
 #' 
 #' @export
-calcIncomeTax <- function(
+calcNetIncome <- function(
   persons = data.table(
     personID                  = 1:2, 
     householdID               = 1, 
@@ -190,11 +190,11 @@ calcIncomeTax <- function(
            (incomeTax + class1NI) - studentLoanRepayment]
   
   # and household income
-  income[, householdIncome := sum(netIncome), by = householdID]
+  income[, householdNetIncome := sum(netIncome), by = householdID]
   
   # adjust for grain
   inputcols<-c("householdID","personID","personalAllowance")
-  outputcols<-c("totalIncome","netIncome","householdIncome","incomeTax",
+  outputcols<-c("totalIncome","netIncome","householdNetIncome","incomeTax",
                 "class1NI","class4NI","childBenefits","childBenefitTax",
                 "studentLoanRepayment")
   allcols<-c(inputcols,outputcols)
@@ -202,7 +202,9 @@ calcIncomeTax <- function(
   income[,(outputcols):=lapply(.SD,grainAdjustment,grain=incomeGrain)
          ,.SDcols=outputcols]
   
-  return(income[,allcols,with=FALSE])
+  # setting the keys for Jan :-)
+  income<-setkey(income[,allcols,with=FALSE], householdID, personID)
+  return(income)
   
 }
 
