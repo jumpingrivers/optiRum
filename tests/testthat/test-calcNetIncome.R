@@ -1,8 +1,11 @@
 context("calcNetIncome")
 
+taxyear<-2014
+
 test_that("TaxOwed correct results", {
   incomeTaxable <- c(0,500,30000,32000,1e5,2e5)
-  taxBrackets <- fread(system.file("extdata","taxrates.csv", package = "optiRum"))
+  taxBrackets <- fread(system.file("extdata", "annualtaxthresholds.csv", 
+                                   package = "optiRum"))[TaxYear==2014&Type=="Income Tax"]
   expect_identical(TaxOwed(incomeTaxable,taxBrackets), c(0, 100, 6000, 6427, 33627, 76127), "tax rates calc")
 }) 
 
@@ -29,7 +32,7 @@ test_that("calcNetIncome on a single household", {
                            childBenefits = c(88.8333333333333, 0), 
                            childBenefitTax = c(88.8333333333333, 0), 
                            studentLoanRepayment = c(0, 0), key=c("householdID","personID"))
-  expect_equal(calcNetIncome(persons),expected_r)
+  expect_equal(calcNetIncome(persons,financialYear=taxyear),expected_r)
 })
 
 test_that("calcNetIncome on multiple households", {
@@ -55,5 +58,5 @@ test_that("calcNetIncome on multiple households", {
                            childBenefits = c(88.8333333333333, 0, 206.266666666667, 0, 147.55), 
                            childBenefitTax = c(0, 0, 206.266666666667, 0, 147.55), 
                            studentLoanRepayment = c(0, 0, 1440.675, 0, 945.675), key=c("householdID","personID"))
-  expect_equal(calcNetIncome(persons),expected_r)
+  expect_equal(calcNetIncome(persons,financialYear=taxyear),expected_r)
 })

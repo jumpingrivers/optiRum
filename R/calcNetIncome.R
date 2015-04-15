@@ -6,44 +6,30 @@
 #' 
 #' Current, in the context of default values, is Tax Year 2014
 #' 
-#' @param persons                    Provide the information required for calculating income#' 
+#' @param persons                    Provide the information required for calculating income
+#'  
 #' @param incomeGrain                Define the time period in which the income return  
 #'                                   should be expressed i.e. "Annual", "Month", "Week"
 #'                                   
-#' @param model                      Indicate whether a forward prediction with some 
-#'                                   changing values should be performed
-#' @param modelArgs                  List of arguments used to model income in a number of years
+#' @param financialYear              What financial year the calculation should be performed for.
+#'                                   Can't go back further than 2014, if you need to go back please
+#'                                   submit a pull request on the CSVs in inst/extdata with them filled in.
+#'                                   
+#' @param modelArgs                  Indicate whether a forward prediction with some 
+#'                                   changing values should be performed, and what scenario values should be
+#'                                   used
 #' 
-#' @param personalAllowanceValue     The standard personal allowance, which will 
-#'                                   be used if taxcode is blank, currently 10,000
-#' @param personalAllowanceThreshold The income threshold at which the personal 
-#'                                   allowance starts being reduced, currently 100,000
-#'                                   
-#' @param studentLoanThreshold       The income threshold at which student loan 
-#'                                   repayments kick in, currently 16,910
-#' @param studentLoanPercentage      The percentage of income above the threshold that
-#'                                   goes towards paying a student loan, currently 9pct
-#'                                   
-#' @param childBenefitThreshold      The income threshold at which child benefits start 
-#'                                   decreasing, currently 50,000
-#' @param childBenefitChild1         The benefit received for the first child in the 
-#'                                   household, currently 1,066 = 20.50 * 52
-#' @param childBenefitChildS         The benefit received for any subsequent children in the 
-#'                                   household, currently 704.60 = 20.50 * 52
-#'                                   
-#' @param taxBrackets                A rate table containing lower bound (LB), upper bound (UB) 
+#' @param thresholdsTable            The values needed for calculating various components
+#' 
+#' @param taxRateTable               The values needed for calculating Income Tax and NI (Class 1 and 4).
+#'                                   Rate tables contain lower bound (LB), upper bound (UB) 
 #'                                   and the prevailing tax rates (Rate) at which portions of 
 #'                                   income are taxed at. LB >= Income < UB
-#' @param class1NIBrackets           A rate table containing lower bound (LB), upper bound (UB) 
-#'                                   and the prevailing national insurance rates (Rate) at which 
-#'                                   portions of employed income are taxed at. LB >= Income < UB
-#' @param class4NIBrackets           A rate table containing lower bound (LB), upper bound (UB) 
-#'                                   and the prevailing national insurance rates (Rate) at which 
-#'                                   portions of self-employed profits are taxed at. LB >= Profits < UB
-#' 
 #' 
 #' @return income                    Income components for each person at the relevant grain
 #' 
+#' @keywords financial tax income
+#' @family tax
 #' 
 #' @export
 calcNetIncome <- function(
@@ -59,25 +45,18 @@ calcNetIncome <- function(
     salarySacrificePercentage = c(0,0.05), 
     studentLoan               = 0:1  
   ),
-  incomeGrain = "Month" ,# c("Annual", "Month", "Week")
-  model      = FALSE,
-  modelArgs  = list(inflation               = 1.00, 
-                    years                   = 3, 
-                    childBenefitChange      = 1.00, 
-                    personalAllowanceChange = 500),
-  personalAllowanceValue     = 10000,
-  personalAllowanceThreshold = 100000,
-  studentLoanThreshold       = 16910,
-  studentLoanPercentage      = 0.09,
-  childBenefitThreshold      = 50000,
-  childBenefitChild1         = 1066,
-  childBenefitChildS         = 704.6,
-  taxBrackets                = fread(system.file("extdata",
-                                                 "taxrates.csv", package = "optiRum")),
-  class1NIBrackets           = fread(system.file("extdata",
-                                                 "NationalInsuranceThresholds.csv", package = "optiRum")),
-  class4NIBrackets           = fread(system.file("extdata",
-                                                 "NationalInsurance4Thresholds.csv", package = "optiRum"))
+  incomeGrain           = "Month" ,# c("Annual", "Month", "Week")
+  financialYear         = taxYear(Sys.Date()),
+  modelArgs             = list(model                  = FALSE,
+                              inflation               = 1.00, 
+                              years                   = 3, 
+                              childBenefitChange      = 1.00, 
+                              personalAllowanceChange = 500),
+  
+  thresholdsTable        = fread(system.file("extdata",
+                                                 "annualthresholds.csv", package = "optiRum")),
+  taxRateTable           = fread(system.file("extdata",
+                                                 "annualtaxthresholds.csv", package = "optiRum"))
   ){
   
   # input checks
@@ -101,15 +80,21 @@ calcNetIncome <- function(
   # persons table could have more info, reduce it for the purposes of ongoing calcs 
   income <- persons[, .SD, .SDcols = persons_cols]
   
+  # get tax year tables
+  thresholds       <- thresholdsTable[TaxYear==financialYear]
+  taxBrackets      <- taxRateTable[TaxYear==financialYear&Type=="Income Tax"]
+  class1NIBrackets <- taxRateTable[TaxYear==financialYear&Type=="NI Class1"]
+  class4NIBrackets <- taxRateTable[TaxYear==financialYear&Type=="NI Class4"]
+  
   # apply model
-  if(model){
+  if(modelArgs$model){
     inflation_over_years <- modelArgs$inflation^modelArgs$years
     income[,`:=`(employedIncome      = employedIncome      * inflation_over_years,
                  investmentIncome    = investmentIncome    * inflation_over_years,
                  nonTaxableIncome    = nonTaxableIncome    * inflation_over_years,
                  selfEmployedProfits = selfEmployedProfits * inflation_over_years,
                  taxCode             = "")]
-    personalAllowanceValue <- personalAllowanceValue + modelArgs$personalAllowanceChange*modelArgs$years
+    personalAllowanceValue <- thresholds$personalAllowanceValue + modelArgs$personalAllowanceChange*modelArgs$years
   }
   
   # sum incomes
@@ -129,8 +114,8 @@ calcNetIncome <- function(
   income[,personalAllowance := taxCode_to_personalAllowance(taxCode)
          ][is.na(personalAllowance),
            personalAllowance := pmin(
-             personalAllowanceValue,
-             pmax(0, personalAllowanceValue - (totalTaxableIncome - salarySacrifice - personalAllowanceThreshold)/2)
+             thresholds$personalAllowanceValue,
+             pmax(0, thresholds$personalAllowanceValue - (totalTaxableIncome - salarySacrifice - thresholds$personalAllowanceThreshold)/2)
            )]
   
   # calc taxable amount
@@ -145,18 +130,18 @@ calcNetIncome <- function(
   income[, class4NI  := TaxOwed(class4NITaxable, class4NIBrackets)]
   
   # calc student loan repayment
-  income[studentLoan == TRUE & generalTaxable >= studentLoanThreshold,
-         studentLoanRepayment := (generalTaxable - studentLoanThreshold) * studentLoanPercentage]
+  income[studentLoan == TRUE & generalTaxable >= thresholds$studentLoanThreshold,
+         studentLoanRepayment := (generalTaxable - thresholds$studentLoanThreshold) * thresholds$studentLoanPercentage]
   
   # calc child benefits
   income[numberOfChildren > 0,
-         childBenefits := (childBenefitChild1 + (numberOfChildren - 1) * childBenefitChildS)]
+         childBenefits := (thresholds$childBenefitChild1 + (numberOfChildren - 1) * thresholds$childBenefitChildS)]
   # 1% less for every 100 over 50,000/year
   # Divide by 100 for every 100 over, then divide by 100 to get as a percent
-  income[numberOfChildren > 0 & generalTaxable >= childBenefitThreshold,
+  income[numberOfChildren > 0 & generalTaxable >= thresholds$childBenefitThreshold,
          childBenefitTax := pmin(
            childBenefits,
-           pmax(0, childBenefits * (floor((generalTaxable - childBenefitThreshold)/100)/100))
+           pmax(0, childBenefits * (floor((generalTaxable - thresholds$childBenefitThreshold)/100)/100))
          )]
   
   
@@ -175,7 +160,7 @@ calcNetIncome <- function(
            ][, generalTaxableRank := NULL]
   
   # apply model
-  if(model){
+  if(modelArgs$model){
     benefit_over_years <- modelArgs$childBenefitChange^modelArgs$years
     income[,`:=`(childBenefits   = childBenefits   * benefit_over_years,
                  childBenefitTax = childBenefitTax * benefit_over_years)]

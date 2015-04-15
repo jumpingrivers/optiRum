@@ -8,61 +8,33 @@ calcNetIncome(persons = data.table(personID = 1:2, householdID = 1,
   employedIncome = c(15000, 40000), investmentIncome = c(0, 5000),
   nonTaxableIncome = 0, selfEmployedProfits = 0, taxCode = "1000L",
   numberOfChildren = 1, salarySacrificePercentage = c(0, 0.05), studentLoan =
-  0:1), incomeGrain = "Month", model = FALSE, modelArgs = list(inflation =
-  1, years = 3, childBenefitChange = 1, personalAllowanceChange = 500),
-  personalAllowanceValue = 10000, personalAllowanceThreshold = 1e+05,
-  studentLoanThreshold = 16910, studentLoanPercentage = 0.09,
-  childBenefitThreshold = 50000, childBenefitChild1 = 1066,
-  childBenefitChildS = 704.6, taxBrackets = fread(system.file("extdata",
-  "taxrates.csv", package = "optiRum")),
-  class1NIBrackets = fread(system.file("extdata",
-  "NationalInsuranceThresholds.csv", package = "optiRum")),
-  class4NIBrackets = fread(system.file("extdata",
-  "NationalInsurance4Thresholds.csv", package = "optiRum")))
+  0:1), incomeGrain = "Month", financialYear = taxYear(Sys.Date()),
+  modelArgs = list(model = FALSE, inflation = 1, years = 3, childBenefitChange
+  = 1, personalAllowanceChange = 500),
+  thresholdsTable = fread(system.file("extdata", "annualthresholds.csv",
+  package = "optiRum")), taxRateTable = fread(system.file("extdata",
+  "annualtaxthresholds.csv", package = "optiRum")))
 }
 \arguments{
-\item{persons}{Provide the information required for calculating income#'}
+\item{persons}{Provide the information required for calculating income}
 
 \item{incomeGrain}{Define the time period in which the income return
                                   should be expressed i.e. "Annual", "Month", "Week"}
 
-\item{model}{Indicate whether a forward prediction with some
-changing values should be performed}
+\item{financialYear}{What financial year the calculation should be performed for.
+                                  Can't go back further than 2014, if you need to go back please
+                                  submit a pull request on the CSVs in inst/extdata with them filled in.}
 
-\item{modelArgs}{List of arguments used to model income in a number of years}
+\item{modelArgs}{Indicate whether a forward prediction with some
+                                  changing values should be performed, and what scenario values should be
+                                  used}
 
-\item{personalAllowanceValue}{The standard personal allowance, which will
-be used if taxcode is blank, currently 10,000}
+\item{thresholdsTable}{The values needed for calculating various components}
 
-\item{personalAllowanceThreshold}{The income threshold at which the personal
-                                  allowance starts being reduced, currently 100,000}
-
-\item{studentLoanThreshold}{The income threshold at which student loan
-repayments kick in, currently 16,910}
-
-\item{studentLoanPercentage}{The percentage of income above the threshold that
-                                  goes towards paying a student loan, currently 9pct}
-
-\item{childBenefitThreshold}{The income threshold at which child benefits start
-decreasing, currently 50,000}
-
-\item{childBenefitChild1}{The benefit received for the first child in the
-household, currently 1,066 = 20.50 * 52}
-
-\item{childBenefitChildS}{The benefit received for any subsequent children in the
-                                  household, currently 704.60 = 20.50 * 52}
-
-\item{taxBrackets}{A rate table containing lower bound (LB), upper bound (UB)
-and the prevailing tax rates (Rate) at which portions of
-income are taxed at. LB >= Income < UB}
-
-\item{class1NIBrackets}{A rate table containing lower bound (LB), upper bound (UB)
-and the prevailing national insurance rates (Rate) at which
-portions of employed income are taxed at. LB >= Income < UB}
-
-\item{class4NIBrackets}{A rate table containing lower bound (LB), upper bound (UB)
-                                  and the prevailing national insurance rates (Rate) at which
-                                  portions of self-employed profits are taxed at. LB >= Profits < UB}
+\item{taxRateTable}{The values needed for calculating Income Tax and NI (Class 1 and 4).
+                                  Rate tables contain lower bound (LB), upper bound (UB)
+                                  and the prevailing tax rates (Rate) at which portions of
+                                  income are taxed at. LB >= Income < UB}
 }
 \value{
 income                    Income components for each person at the relevant grain
@@ -75,4 +47,10 @@ and provides net income.
 \details{
 Current, in the context of default values, is Tax Year 2014
 }
+\seealso{
+Other tax: \code{\link{taxYear}}
+}
+\keyword{financial}
+\keyword{income}
+\keyword{tax}
 
