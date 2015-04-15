@@ -75,7 +75,7 @@ calcNetIncome <- function(
     salarySacrifice <- salarySacrificePercentage <- personalAllowance <- taxCode <- totalTaxableIncome <- 
     incomeTax <- incomeTaxable <- class1NI <- class1NITaxable <- class4NI <- class4NITaxable <- studentLoan <- 
     generalTaxable <- studentLoanRepayment <- numberOfChildren <- childBenefits <- childBenefitTax <- generalTaxableRank <- 
-    householdChildBenefits <- householdChildBenefitTax <- totalIncome <- netIncome <- householdIncome <- personID <- NULL
+    householdChildBenefits <- householdChildBenefitTax <- totalIncome <- netIncome <- householdNetIncome <- personID <- NULL
   
   # persons table could have more info, reduce it for the purposes of ongoing calcs 
   income <- persons[, .SD, .SDcols = persons_cols]
