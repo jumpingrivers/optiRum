@@ -1,3 +1,3 @@
-Primarily a release improving package development standards in terms of dependencies etc, whilst also adding a new function and revising an existing one.
+Adds extra (significant) function calcIncomeTax(), validates latest R version and packages optiRum is dependant on, and upgrades to adhere to latest CRAN policies.
 
-There is a NOTE re: possible spelling mistake. GBP is a short hand for the british pound without having to refer to the unicode symbol.
+There may be a NOTE re: possible spelling mistake. GBP is a short hand for the british pound without having to refer to the unicode symbol.

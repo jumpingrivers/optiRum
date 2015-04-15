@@ -1,4 +1,4 @@
-context("calcIncomeTax")
+context("calcNetIncome")
 
 test_that("TaxOwed correct results", {
   incomeTaxable <- c(0,500,30000,32000,1e5,2e5)
@@ -6,9 +6,9 @@ test_that("TaxOwed correct results", {
   expect_identical(TaxOwed(incomeTaxable,taxBrackets), c(0, 100, 6000, 6427, 33627, 76127), "tax rates calc")
 }) 
 
-test_that("calcIncomeTax on single loan", {
-  borrowers <- data.table(loanId                    = c(1L,1L),
-                          borrowerId                = c(1L,2L),
+test_that("calcNetIncome on a single household", {
+  persons <- data.table(householdID                    = c(1L,1L),
+                          personID                = c(1L,2L),
                           employedIncome            = c(100000,50000),
                           investmentIncome          = c(2000,500),
                           nonTaxableIncome          = c(0,0),
@@ -17,8 +17,9 @@ test_that("calcIncomeTax on single loan", {
                           taxCode                   = c("",""),
                           studentLoan               = c(FALSE,FALSE),
                           numberOfChildren          = c(1,1))
-  expected_r <- data.table(loanId = c(1L, 1L), # valid for reference data as of 24/03/2015
-                           borrowerId = 1:2,
+  expected_r <- data.table(householdID = c(1L, 1L), # valid for reference data as of 24/03/2015
+                           personID = 1:2, 
+                           personalAllowance = c(10000, 10000),
                            totalIncome = c(8588.83333333333, 4208.33333333333),
                            netIncome = c(5703.47666666667, 3124.31), 
                            householdIncome = c(8827.78666666667, 8827.78666666667), 
@@ -27,14 +28,13 @@ test_that("calcIncomeTax on single loan", {
                            class4NI = c(0, 0), 
                            childBenefits = c(88.8333333333333, 0), 
                            childBenefitTax = c(88.8333333333333, 0), 
-                           studentLoanRepayment = c(0, 0), 
-                           personalAllowance = c(10000, 10000))
-  expect_equal(calcIncomeTax(borrowers),expected_r)
+                           studentLoanRepayment = c(0, 0))
+  expect_equal(calcIncomeTax(persons),expected_r)
 })
 
-test_that("calcIncomeTax on multiple loans", {
-  borrowers <- data.table(loanId                    = c(1L,1L,2L,2L,3L),
-                          borrowerId                = c(1L,2L,1L,2L,1L),
+test_that("calcNetIncome on multiple households", {
+  persons <- data.table(householdID                    = c(1L,1L,2L,2L,3L),
+                          personID                = c(1L,2L,1L,2L,1L),
                           employedIncome            = c(45000,14000,220000,190000,140000),
                           investmentIncome          = c(500,0,0,1500,10000),
                           nonTaxableIncome          = c(0,0,3000,0,1500),
@@ -43,8 +43,9 @@ test_that("calcIncomeTax on multiple loans", {
                           taxCode                   = c("","","","",""),
                           studentLoan               = c(FALSE,FALSE,TRUE,FALSE,TRUE),
                           numberOfChildren          = c(1,1,3,3,2))
-  expected_r <- data.table(loanId = c(1L, 1L, 2L, 2L, 3L), # valid for reference data as of 24/03/2015
-                           borrowerId = c(1L, 2L, 1L, 2L, 1L), 
+  expected_r <- data.table(householdID = c(1L, 1L, 2L, 2L, 3L), # valid for reference data as of 24/03/2015
+                           personID = c(1L, 2L, 1L, 2L, 1L),
+                           personalAllowance = c(10000, 10000, 0, 0, 0), 
                            totalIncome = c(3880.5, 1166.66666666667, 18789.6, 16375, 12939.2166666667), 
                            netIncome = c(2962.72666666667, 1058.22666666667, 9843.635, 10135.9766666667, 7119.46833333333), 
                            householdIncome = c(4020.95333333333, 4020.95333333333, 19979.6116666667, 19979.6116666667, 7119.46833333333), 
@@ -53,7 +54,6 @@ test_that("calcIncomeTax on multiple loans", {
                            class4NI = c(0, 0, 0, 0, 0), 
                            childBenefits = c(88.8333333333333, 0, 206.266666666667, 0, 147.55), 
                            childBenefitTax = c(0, 0, 206.266666666667, 0, 147.55), 
-                           studentLoanRepayment = c(0, 0, 1440.675, 0, 945.675),
-                           personalAllowance = c(10000, 10000, 0, 0, 0))
-  expect_equal(calcIncomeTax(borrowers),expected_r)
+                           studentLoanRepayment = c(0, 0, 1440.675, 0, 945.675))
+  expect_equal(calcIncomeTax(persons),expected_r)
 })

@@ -3,6 +3,9 @@ optiRum 0.36
 New:
 * new function to calcIncomeTax for borrowers
 
+Maintenance:
+* Changes for latest CRAN policies
+
 
 optiRum 0.35
 -------------
