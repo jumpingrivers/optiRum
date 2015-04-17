@@ -9,7 +9,7 @@ apt_packages:
 
 r_github_packages:
  - Rdatatable/data.table
- 
+  - jimhester/covr
+
 after_success:
-# run test coverage only for the travis build
-- "[ $TARGET = travis ] && Rscript -e 'devtools::install_github(\"jimhester/covr\"); covr::coveralls()'"
+  - Rscript -e 'library(covr);coveralls()'
