@@ -1,5 +1,5 @@
 Package: optiRum
-Title: Financial functions and more
+Title: Financial Functions & More
 Description: This fills the gaps credit analysts and loan modellers at
     Optimum Credit identify in the existing R code body.
     It allows for the production of documentation with less coding,
