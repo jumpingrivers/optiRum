@@ -1,5 +1,9 @@
 language: r
 
+env:
+  matrix:
+    - TARGET=travis
+    
 apt_packages:
  - libxml2-dev
 
