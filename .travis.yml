@@ -9,7 +9,7 @@ apt_packages:
 
 r_github_packages:
  - Rdatatable/data.table
-  - jimhester/covr
+ - jimhester/covr
 
 after_success:
   - Rscript -e 'library(covr);coveralls()'
