@@ -28,7 +28,7 @@ taxYear<-function(date=Sys.Date(),start="04-06"){
   
   afterstart<-date>=currenttaxboundary
   
-  year<-calendaryear-1+afterstart
+  year<-calendaryear-1L+afterstart
     
   return(year)
 }
