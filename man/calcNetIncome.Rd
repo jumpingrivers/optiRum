@@ -16,7 +16,8 @@ calcNetIncome(persons = data.table(personID = 1:2, householdID = 1,
   "annualtaxthresholds.csv", package = "optiRum")))
 }
 \arguments{
-\item{persons}{Provide the information required for calculating income}
+\item{persons}{Provide the information required for calculating income,
+                                  values should be provided as annual incomes}
 
 \item{incomeGrain}{Define the time period in which the income return
                                   should be expressed i.e. "Annual", "Month", "Week"}
