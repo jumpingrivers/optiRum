@@ -6,7 +6,8 @@
 #' 
 #' Current, in the context of default values, is Tax Year 2014
 #' 
-#' @param persons                    Provide the information required for calculating income
+#' @param persons                    Provide the information required for calculating income,  
+#'                                   values should be provided as annual incomes
 #'  
 #' @param incomeGrain                Define the time period in which the income return  
 #'                                   should be expressed i.e. "Annual", "Month", "Week"
@@ -37,12 +38,12 @@ calcNetIncome <- function(
     personID                  = 1:2, 
     householdID               = 1, 
     employedIncome            = c(15000, 40000), 
-    investmentIncome          = c(0 , 5000), 
+    investmentIncome          = c(0, 5000), 
     nonTaxableIncome          = 0, 
     selfEmployedProfits       = 0, 
     taxCode                   = "1000L", 
     numberOfChildren          = 1, 
-    salarySacrificePercentage = c(0,0.05), 
+    salarySacrificePercentage = c(0, 0.05), 
     studentLoan               = 0:1  
   ),
   incomeGrain           = "Month" ,# c("Annual", "Month", "Week")
