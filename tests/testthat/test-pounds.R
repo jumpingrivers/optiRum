@@ -1,11 +1,5 @@
-context("Formatters")
+context("pounds")
 library(plyr)
-test_that("thousands format always adds k", {
-    expect_equal(thousands(1000), "1k")
-    expect_equal(thousands(1e+06), "1,000k")
-    expect_equal(thousands(1e+09), "1,000,000k")
-})
-
 
 test_that("pounds format", {
     expect_equal(pounds(c(100, 0.23, 1.456565, 2000)), c("\u00a3100.00", "\u00a30.23", "\u00a31.46", "\u00a32,000.00"))
