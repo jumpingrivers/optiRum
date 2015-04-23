@@ -7,9 +7,8 @@ basepath <- wd
 testpath <- file.path(basepath, "temp")
 dir.create(testpath)
 
-
 test_that("generatePDF - correct behaviour, DATED=FALSE,CLEANUP=TRUE", {
-    
+    skip_on_cran()
     file.remove(dir(testpath, full.names = TRUE))
     generatePDF(srcpath = basepath, srcname = "basic", destpath = testpath, destname = "basic", DATED = FALSE)
     
@@ -22,7 +21,7 @@ test_that("generatePDF - correct behaviour, DATED=FALSE,CLEANUP=TRUE", {
 })
 
 test_that("generatePDF - correct behaviour, DATED=FALSE,CLEANUP=TRUE, compiler=xelatex", {
-    
+    skip_on_cran()
     file.remove(dir(testpath, full.names = TRUE))
     generatePDF(srcpath = basepath, srcname = "basic", destpath = testpath, destname = "basic", DATED = FALSE)
     
@@ -35,7 +34,7 @@ test_that("generatePDF - correct behaviour, DATED=FALSE,CLEANUP=TRUE, compiler=x
 })
 
 test_that("generatePDF - correct behaviour, quick generate", {
-    
+    skip_on_cran()
     file.remove(dir(testpath, full.names = TRUE))
     generatePDF(srcpath = basepath, srcname = "datatabletest")
     
@@ -53,7 +52,7 @@ test_that("generatePDF - correct behaviour, quick generate", {
 })
 
 test_that("generatePDF - correct behaviour, quick & quiet generate", {
-    
+    skip_on_cran()
     file.remove(dir(testpath, full.names = TRUE))
     generatePDF(srcpath = basepath, srcname = "datatabletest", QUIET = TRUE)
     
@@ -71,7 +70,7 @@ test_that("generatePDF - correct behaviour, quick & quiet generate", {
 })
 
 test_that("generatePDF - correct behaviour, DATED=FALSE,CLEANUP=TRUE, compiler=xelatex", {
-    
+    skip_on_cran()
     file.remove(dir(testpath, full.names = TRUE))
     generatePDF(srcpath = basepath, srcname = "datatabletest", destpath = testpath, destname = "datatabletest", DATED = FALSE, compiler = "xelatex")
     
@@ -84,7 +83,7 @@ test_that("generatePDF - correct behaviour, DATED=FALSE,CLEANUP=TRUE, compiler=x
 })
 
 test_that("generatePDF - correct behaviour, DATED=TRUE,CLEANUP=TRUE", {
-    
+    skip_on_cran()
     file.remove(dir(testpath, full.names = TRUE))
     generatePDF(srcpath = basepath, srcname = "basic", destpath = testpath, destname = "basic", DATED = TRUE)
     
@@ -98,7 +97,7 @@ test_that("generatePDF - correct behaviour, DATED=TRUE,CLEANUP=TRUE", {
 
 
 test_that("generatePDF - correct behaviour, DATED=FALSE,CLEANUP=FALSE", {
-    
+    skip_on_cran()
     file.remove(dir(testpath, full.names = TRUE))
     generatePDF(srcpath = basepath, srcname = "basic", destpath = testpath, destname = "basic", DATED = FALSE, CLEANUP = FALSE)
     
@@ -111,7 +110,7 @@ test_that("generatePDF - correct behaviour, DATED=FALSE,CLEANUP=FALSE", {
 
 
 test_that("generatePDF - correct behaviour, DATED=TRUE,CLEANUP=FALSE", {
-    
+    skip_on_cran() 
     file.remove(dir(testpath, full.names = TRUE))
     generatePDF(srcpath = basepath, srcname = "basic", destpath = testpath, destname = "basic", DATED = TRUE, CLEANUP = FALSE)
     
@@ -124,7 +123,7 @@ test_that("generatePDF - correct behaviour, DATED=TRUE,CLEANUP=FALSE", {
 
 
 test_that("generatePDF - multiple calls still performs as expected correct behaviour,CLEANUP=TRUE", {
-    
+    skip_on_cran()
     file.remove(dir(testpath, full.names = TRUE))
     
     generatePDF(srcpath = basepath, srcname = "basic", destpath = testpath, destname = "basic", DATED = FALSE)
@@ -145,7 +144,7 @@ test_that("generatePDF - multiple calls still performs as expected correct behav
 })
 
 test_that("generatePDF - multiple calls still performs as expected correct behaviour,CLEANUP=FALSE", {
-    
+    skip_on_cran()
     file.remove(dir(testpath, full.names = TRUE))
     
     generatePDF(srcpath = basepath, srcname = "basic", destpath = testpath, destname = "basic", DATED = FALSE, CLEANUP = FALSE)
@@ -167,7 +166,7 @@ test_that("generatePDF - multiple calls still performs as expected correct behav
 
 
 test_that("generatePDF - errors - DATED=FALSE, source file does not exist", {
-    
+    skip_on_cran()
     file.remove(dir(testpath, full.names = TRUE))
     expect_error(generatePDF(srcpath = basepath, srcname = "basic1", destpath = testpath, destname = "basic1", DATED = FALSE))
     
@@ -180,7 +179,7 @@ test_that("generatePDF - errors - DATED=FALSE, source file does not exist", {
 
 
 test_that("generatePDF - errors - DATED=TRUE, source file does not exist", {
-    
+    skip_on_cran()
     file.remove(dir(testpath, full.names = TRUE))
     expect_error(generatePDF(srcpath = basepath, srcname = "basic1", destpath = testpath, destname = "basic1", DATED = TRUE))
     
@@ -193,7 +192,7 @@ test_that("generatePDF - errors - DATED=TRUE, source file does not exist", {
 
 
 test_that("generatePDF - errors - missing inputs", {
-    
+    skip_on_cran()
     file.remove(dir(testpath, full.names = TRUE))
     expect_error(generatePDF(srcpath = basepath, destpath = testpath, destname = "basic"))
     
@@ -205,7 +204,7 @@ test_that("generatePDF - errors - missing inputs", {
 })
 
 test_that("generatePDF - errors - missing inputs", {
-    
+    skip_on_cran()
     file.remove(dir(testpath, full.names = TRUE))
     expect_error(generatePDF())
     

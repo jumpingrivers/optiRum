@@ -5,7 +5,6 @@ env:
     - TARGET=travis
     
 apt_packages:
- - texinfo
  - libxml2-dev
 
 r_github_packages:
