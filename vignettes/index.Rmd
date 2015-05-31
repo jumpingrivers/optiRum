@@ -1,13 +1,13 @@
-=-
-title: "Index"
+---
+title: "optiRum"
 author: "Steph Locke"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Index}
+  %\VignetteIndexEntry{optiRum}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
-=-
+---
 
 [![Build Status](https://travis-ci.org/stephlocke/optiRum.png?branch=master)](https://travis-ci.org/stephlocke/optiRum)
 [![Coverage Status](https://coveralls.io/repos/stephlocke/optiRum/badge.svg)](https://coveralls.io/r/stephlocke/optiRum)

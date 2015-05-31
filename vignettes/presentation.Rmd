@@ -9,7 +9,7 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-##cut2 in LaTeX
+## cut2 in LaTeX
 
 A minor thing but one that caused significant headaches is the wonderful `cut2()` function from [Hmisc](http://cran.r-project.org/web/packages/Hmisc/index.html). `cut2()` is a more flexible boundary generating function that produces (IMO) better intervals i.e.
 
@@ -22,7 +22,7 @@ The `cut2` way ensures there are fewer allocation issues due to rounding with a 
 
 To avoid this I wrote a `sanitise()` function to replace the `sanitize()` function from [knitr](http://cran.r-project.org/web/packages/knitr/index.html) so that it will escape any `[` characters a table output from R. Whilst I was giving it a UK name (to save function masking issues), I also extended it to correctly handle the GBP symbol (```{r} \u00a310```) since that was also an issue for us.
 
-##Charts
+## Charts
 
 **Opinion: if you're using R, you should be using ggplot2 for charts**
 Life is *much* easier when using it. Get a very quick primer in <a href="http://stephlocke.github.io/Rtraining/chartintro.html" target="_blank" title="Steph Locke explains gpplot2 basics">my note</a> about building charts using it.
@@ -48,7 +48,7 @@ multiplot(basicplot+ggtitle("theme_bw()"),
           basicplot+theme_optimum()+ggtitle("theme_optimum()"), layout=matrix(1:3,nrow=3))
 ```
 
-##Generate PDFs
+## Generate PDFs
 
 Using knitr to integrate analysis and content via LaTeX is fantastic. Unfortunately, where our documents using LaTeX via the R package knitr. We can end up with some pretty complex documents that need multiple passthroughs to fully typeset.
 
