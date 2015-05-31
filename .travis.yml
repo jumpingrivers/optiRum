@@ -1,8 +1,8 @@
 language: r
+sudo: required
 
-env:
-  matrix:
-    - TARGET=travis
+before_install:
+  - chmod 755 ./.push_gh_pages.sh
     
 apt_packages:
  - libxml2-dev
@@ -13,3 +13,4 @@ r_github_packages:
 
 after_success:
   - Rscript -e 'library(covr);coveralls()'
+  - ./.push_gh_pages.sh
