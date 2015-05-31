@@ -24,8 +24,7 @@ Imports:
     stringr,
     XML
 Suggests: 
-    testthat,
-    knitr
+    testthat
 License: GPL-3
 LazyData: true
 BugReports: https://github.com/stephlocke/optiRum/issues

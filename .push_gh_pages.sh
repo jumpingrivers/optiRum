@@ -16,7 +16,7 @@ git init
 git config user.name "stephs-travis"
 git config user.email "travis"
 
-for files in '../tfsR/inst/doc/*.html'; do
+for files in '../optiRum/inst/doc/*.html'; do
         cp $files .
 done
 
