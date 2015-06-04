@@ -6,11 +6,12 @@ before_install:
     
 apt_packages:
  - libxml2-dev
+ - texlive-xetex
 
 r_github_packages:
  - Rdatatable/data.table
  - jimhester/covr
 
 after_success:
-  - Rscript -e 'library(covr);coveralls()'
+  - Rscript -e 'library(covr);coveralls(coverage = print(package_coverage(quiet = FALSE)))'
   - ./.push_gh_pages.sh
