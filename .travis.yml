@@ -6,6 +6,7 @@ before_install:
     
 apt_packages:
  - libxml2-dev
+ - texlive-xetex
 
 r_github_packages:
  - Rdatatable/data.table
