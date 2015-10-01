@@ -9,7 +9,6 @@ apt_packages:
  - texlive-xetex
 
 r_github_packages:
- - Rdatatable/data.table
  - jimhester/covr
 
 after_success:
