@@ -8,4 +8,6 @@
 #' @docType package
 #' @name optiRum
 #' @import data.table ggplot2 AUC grid knitr plyr scales stringr XML
+#' @importFrom grDevices rgb
+#' @importFrom utils modifyList
 NULL 
