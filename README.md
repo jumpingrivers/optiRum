@@ -3,13 +3,13 @@ README
 
 [![Build Status](https://travis-ci.org/stephlocke/optiRum.png?branch=master)](https://travis-ci.org/stephlocke/optiRum)
 [![Coverage Status](https://coveralls.io/repos/stephlocke/optiRum/badge.svg)](https://coveralls.io/r/stephlocke/optiRum)
-[![CRAN downloads](http://cranlogs.r-pkg.org/badges/optiRum)](http://cran.rstudio.com/web/packages/optiRum/index.html)
+[![CRAN downloads](http://cranlogs.r-pkg.org/badges/optiRum)](http://cran.rstudio.com/package=optiRum)
 
 ## About
 optiRum is a growing package of utilities created by Optimum Credit Ltd's analysts.  It is designed to provide convenience functions, standards, and useful snippets.  Optimum Credit derives significant value from the R platform and associated community, so non-commercially sensitive functionality is made available in the spirit of reciprocity.
 
 ## Installation
-The lastest stable version (0.35) of the package is available on CRAN, and you can get the latest development version by running:
+The lastest stable version (0.37.1) of the package is available on CRAN, and you can get the latest development version by running:
 ```{r}
 devtools::install_github("stephlocke/optiRum")
 ```
