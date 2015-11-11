@@ -4,14 +4,12 @@
 \alias{theme_optimum}
 \title{Produce an Optimum-standard base chart}
 \usage{
-theme_optimum(base_size = 14, base_family = "", ...)
+theme_optimum(base_size = 14, base_family = "")
 }
 \arguments{
 \item{base_size}{Anchor font size}
 
 \item{base_family}{Font family to use}
-
-\item{...}{Allows additional parameters to be passed to further themes}
 }
 \description{
 This theme no longer builds on the Stephen Few theme from ggthemes, but now produces a chart
