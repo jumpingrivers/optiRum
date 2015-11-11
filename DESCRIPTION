@@ -7,7 +7,7 @@ Description: This fills the gaps credit analysts and loan modellers at
     modelling loans (without rounding), and other helpful functions
     for producing charts and tables.  It also has some additional scales for
     use, including a GBP scale.
-Version: 0.37.1
+Version: 0.37.2
 Authors@R: c(
     person("Stephanie", "Locke",
     email = "stephanie.g.locke@gmail.com", role = c("aut", "cre")))
@@ -15,7 +15,7 @@ Depends:
     R (>= 3.0.2)
 Imports:
     data.table (>= 1.9.6),
-    ggplot2,
+    ggplot2 (>=2.0.0),
     AUC,
     grid,
     knitr,
