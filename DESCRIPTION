@@ -30,4 +30,4 @@ License: GPL-3
 LazyData: true
 BugReports: https://github.com/stephlocke/optiRum/issues
 VignetteBuilder: knitr
-RoxygenNote: 5.0.0.9000
+RoxygenNote: 5.0.1
