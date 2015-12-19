@@ -3,7 +3,7 @@
 \begin{document}
 \tableofcontents
 <<>>=
-
+library(knitr)
 print(opts_chunk$get())
 library("data.table")
 library("ggplot2")
