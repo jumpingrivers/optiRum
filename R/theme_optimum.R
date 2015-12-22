@@ -17,14 +17,31 @@
 #' 
 
 theme_optimum <- function(base_size=14, base_family=""){
-                          theme_minimal() +
-  theme(panel.border = element_rect(fill = NA, colour = "grey50"), 
-        legend.position = "bottom", 
-        axis.ticks = element_line(colour = "grey90"), 
-        panel.grid.major.x = element_blank(), 
-        panel.grid.minor.x = element_blank(), 
-        text = element_text(face = "plain", colour = "grey30", 
-                            hjust = 0.5, vjust = 0.5, angle = 0, 
-                            lineheight = 1)
-  )
+  
+  ## the scale of geom_tile is continuous
+  if (packageVersion('ggplot2') <= '1.0.1') {
+    modifyList(ggplot2::theme_minimal(base_size = base_size, base_family = base_family)
+               , list(panel.border = element_rect(fill = NA, colour = "grey50")
+                      , legend.position = "bottom"
+                      , axis.ticks = element_line(colour = "grey90")
+                      , panel.grid.major.x = element_blank()
+                      , panel.grid.minor.x = element_blank()
+                      , text = element_text(family = base_family, face = "plain"
+                                            , colour = "grey30", size = base_size
+                                            , hjust = 0.5, vjust = 0.5
+                                            , angle = 0, lineheight = 1)))
+  } else {
+    theme_minimal() +
+      theme(panel.border = element_rect(fill = NA, colour = "grey50"), 
+            legend.position = "bottom", 
+            axis.ticks = element_line(colour = "grey90"), 
+            panel.grid.major.x = element_blank(), 
+            panel.grid.minor.x = element_blank(), 
+            text = element_text(face = "plain", colour = "grey30", 
+                                hjust = 0.5, vjust = 0.5, angle = 0, 
+                                lineheight = 1)
+      )
+  }
+  
+
 }
