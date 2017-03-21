@@ -4,14 +4,14 @@ test_that("giniChart correctly produce a chart, numeric outcome", {
     rm(list = ls())
     sampledata <- data.frame(val = rnorm(100), outcome = rbinom(100, 1, 0.8))
     check1 <- ggplot_build(giniChart(sampledata$val, sampledata$outcome))
-    expect_that(check1, is_a("ggplot_built"))
+    expect(inherits(check1,c("ggplot_built","list")),"Not of expected class")
 })
 
 test_that("giniChart correctly produce a chart, factor outcome", {
     rm(list = ls())
     sampledata <- data.frame(val = rnorm(100), outcome = factor(rbinom(100, 1, 0.8)))
     check1 <- ggplot_build(giniChart(sampledata$val, sampledata$outcome))
-    expect_that(check1, is_a("ggplot_built"))
+    expect(inherits(check1,c("ggplot_built","list")),"Not of expected class")
 })
 
 test_that("giniChart errors given incorrect input to pred", {
