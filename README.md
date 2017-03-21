@@ -9,7 +9,7 @@ README
 optiRum is a growing package of utilities created by Optimum Credit Ltd's analysts.  It is designed to provide convenience functions, standards, and useful snippets.  Optimum Credit derives significant value from the R platform and associated community, so non-commercially sensitive functionality is made available in the spirit of reciprocity.
 
 ## Installation
-The lastest stable version (0.37.1) of the package is available on CRAN, and you can get the latest development version by running:
+The lastest stable version (0.37.3) of the package is available on CRAN, and you can get the latest development version by running:
 ```{r}
 devtools::install_github("stephlocke/optiRum")
 ```
@@ -46,3 +46,4 @@ There are helper functions that reduce document development time:
 * `theme\_optimum` -- this produces a good looking frame for charts
 * `convertToXML` -- a lot of people are concerned about getting data out of XML, but it's difficult to find functions that put output data in XML, so this function takes XML functionality and wraps it neatly for such cases
 * `CJ.dt` -- a cross-join function for two data.tables
+* `wordwrap` = Change spaces to new lines in a string - great for plotting

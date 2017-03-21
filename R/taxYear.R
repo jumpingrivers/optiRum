@@ -1,6 +1,6 @@
 #' Returns the UK financial tax year for a given date
 #'
-#' Base don UK tax year April 6 - April 5, this returns the year (YYYY) 
+#' Based on UK tax year April 6 - April 5, this returns the year (YYYY) 
 #' the tax period covers. Tax Year start date can be overriden.
 #'
 #' @param date    Date to be checked
