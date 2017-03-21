@@ -20,7 +20,7 @@ A minor thing but one that caused significant headaches is the wonderful `cut2()
 
 The `cut2` way ensures there are fewer allocation issues due to rounding with a large number of decimal places. Unfortunately when you try to make a table of these in LaTeX, it thinks you're trying to go into "maths mode".
 
-To avoid this I wrote a `sanitise()` function to replace the `sanitize()` function from [knitr](https://cran.r-project.org/package=knitr) so that it will escape any `[` characters a table output from R. Whilst I was giving it a UK name (to save function masking issues), I also extended it to correctly handle the GBP symbol (`r \u00a310`) since that was also an issue for us.
+To avoid this I wrote a `sanitise()` function to replace the `sanitize()` function from [knitr](https://cran.r-project.org/package=knitr) so that it will escape any `[` characters a table output from R. Whilst I was giving it a UK name (to save function masking issues), I also extended it to correctly handle the GBP symbol (`\u00a310`) since that was also an issue for us.
 
 ## Charts
 

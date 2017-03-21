@@ -23,4 +23,3 @@ ggplot(data.frame(x=1:10,y=1:10),aes(x,y))+theme_optimum()+geom_line()
 }
 \keyword{ggplot2}
 \keyword{theme}
-

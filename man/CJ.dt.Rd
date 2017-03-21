@@ -32,4 +32,3 @@ Other helper: \code{\link{convertToXML}},
 }
 \keyword{CJ}
 \keyword{data.table}
-

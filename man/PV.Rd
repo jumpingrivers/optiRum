@@ -40,4 +40,3 @@ Other finance: \code{\link{APR}}, \code{\link{PMT}},
 \keyword{financial}
 \keyword{pmt}
 \keyword{pv}
-

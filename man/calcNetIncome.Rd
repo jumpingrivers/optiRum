@@ -54,4 +54,3 @@ Other tax: \code{\link{taxYear}}
 \keyword{financial}
 \keyword{income}
 \keyword{tax}
-

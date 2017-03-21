@@ -31,4 +31,3 @@ Other creditrisk: \code{\link{giniChart}},
 \keyword{logit}
 \keyword{odds}
 \keyword{probability}
-

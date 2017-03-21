@@ -29,4 +29,3 @@ and no tests are maintained for it at present
 \keyword{charts}
 \keyword{ggplot2}
 \keyword{multiple}
-

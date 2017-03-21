@@ -26,4 +26,3 @@ Other helper: \code{\link{CJ.dt}},
 \keyword{generate}
 \keyword{knitr}
 \keyword{pdflatex}
-

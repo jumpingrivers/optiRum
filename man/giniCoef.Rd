@@ -34,4 +34,3 @@ Other creditrisk: \code{\link{giniChart}},
 \keyword{AUROC}
 \keyword{gini}
 \keyword{roc}
-

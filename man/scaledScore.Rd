@@ -32,4 +32,3 @@ Other creditrisk: \code{\link{giniChart}},
 \keyword{glm}
 \keyword{logit}
 \keyword{score}
-

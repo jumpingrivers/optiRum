@@ -15,7 +15,7 @@ taxYear(date = Sys.Date(), start = "04-06")
 year   The financial year
 }
 \description{
-Base don UK tax year April 6 - April 5, this returns the year (YYYY) 
+Based on UK tax year April 6 - April 5, this returns the year (YYYY) 
 the tax period covers. Tax Year start date can be overriden.
 }
 \examples{
@@ -31,4 +31,3 @@ Other tax: \code{\link{calcNetIncome}}
 }
 \keyword{financial}
 \keyword{tax}
-

@@ -25,9 +25,10 @@ Imports:
     XML
 Suggests:
     testthat,
-    covr
+    covr,
+    rmarkdown
 License: GPL-3
 LazyData: true
 BugReports: https://github.com/stephlocke/optiRum/issues
 VignetteBuilder: knitr
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1

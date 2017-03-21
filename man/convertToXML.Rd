@@ -35,4 +35,3 @@ Other helper: \code{\link{CJ.dt}},
 \keyword{data.frame}
 \keyword{data.table}
 \keyword{xml}
-
