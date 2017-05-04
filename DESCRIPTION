@@ -29,6 +29,7 @@ Suggests:
     rmarkdown
 License: GPL-3
 LazyData: true
+URL: https://github.com/stephlocke/optiRum
 BugReports: https://github.com/stephlocke/optiRum/issues
 VignetteBuilder: knitr
 RoxygenNote: 6.0.1
