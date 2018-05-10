@@ -1,6 +1,7 @@
 README
 ========================================================
 
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
 [![Build Status](https://travis-ci.org/stephlocke/optiRum.png?branch=master)](https://travis-ci.org/stephlocke/optiRum)
 [![Coverage Status](https://coveralls.io/repos/stephlocke/optiRum/badge.svg)](https://coveralls.io/r/stephlocke/optiRum)
 [![CRAN downloads](http://cranlogs.r-pkg.org/badges/optiRum)](http://cran.rstudio.com/package=optiRum)
