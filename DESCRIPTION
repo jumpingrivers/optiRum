@@ -9,8 +9,9 @@ Description: This fills the gaps credit analysts and loan modellers at
     use, including a GBP scale.
 Version: 0.38.0
 Authors@R: c(
-    person("Stephanie", "Locke",
-    email = "stephanie.g.locke@gmail.com", role = c("aut", "cre")))
+    person("Steph", "Locke",
+    email = "stephanie.g.locke@gmail.com", role = c("aut", "cre")),
+    person("Locke Data", role = c("fnd")))
 Depends:
     R (>= 3.0.2)
 Imports:
