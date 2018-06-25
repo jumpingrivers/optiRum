@@ -10,6 +10,8 @@ apt_packages:
 
 r_packages:
  - covr
+ 
+r_github_packages: tidyverse/ggplot2
 
 after_success:
   - Rscript -e 'library(covr);coveralls(coverage = print(package_coverage(quiet = FALSE)))'
