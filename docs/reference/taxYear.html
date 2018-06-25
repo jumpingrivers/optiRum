@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Returns the UK financial tax year for a given date � taxYear • optiRum</title>
+<title>Returns the UK financial tax year for a given date — taxYear • optiRum</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -23,8 +23,6 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-  
-  
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -51,12 +49,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">optiRum</a>
+      <a class="navbar-brand" href="../index.html">Returns the UK financial tax year for a given date</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="..//index.html">
+  <a href="../index.html">
     <span class="fa fa-home fa-lg"></span>
      
   </a>
@@ -83,7 +81,7 @@
       
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/stephlocke/optiRum">
+  <a href="https://github.com/lockedata/optiRum">
     <span class="fa fa-github fa-lg"></span>
      
   </a>
@@ -96,20 +94,24 @@
       
       </header>
 
-      <div class="row">
+<div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Returns the UK financial tax year for a given date</h1>
+    <small class="dont-index">Source: <a href='https://github.com/lockedata/optiRum/blob/master/R/taxYear.R'><code>R/taxYear.R</code></a></small>
+    <div class="hidden name"><code>taxYear.Rd</code></div>
     </div>
 
+    <div class="ref-description">
     
     <p>Based on UK tax year April 6 - April 5, this returns the year (YYYY) 
 the tax period covers. Tax Year start date can be overriden.</p>
     
+    </div>
 
     <pre class="usage"><span class='fu'>taxYear</span>(<span class='kw'>date</span> <span class='kw'>=</span> <span class='fu'>Sys.Date</span>(), <span class='kw'>start</span> <span class='kw'>=</span> <span class='st'>"04-06"</span>)</pre>
     
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
@@ -128,47 +130,47 @@ the tax period covers. Tax Year start date can be overriden.</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <p>Other tax: <code><a href='calcNetIncome.html'>calcNetIncome</a></code></p>
+    <div class='dont-index'><p>Other tax: <code><a href='calcNetIncome.html'>calcNetIncome</a></code></p></div>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># single set of values</span>
-<span class='fu'>taxYear</span>(<span class='fu'>Sys.Date</span>())</div><div class='output co'>#&gt; [1] 2017</div><div class='input'>
+<span class='fu'>taxYear</span>(<span class='fu'>Sys.Date</span>())</div><div class='output co'>#&gt; [1] 2018</div><div class='input'>
 <span class='co'># vector of values</span>
-<span class='fu'>taxYear</span>(<span class='fu'>seq</span>(<span class='fu'>Sys.Date</span>(),<span class='kw'>by</span><span class='kw'>=</span><span class='fl'>1</span>,<span class='kw'>length</span><span class='kw'>=</span><span class='fl'>500</span>))</div><div class='output co'>#&gt;   [1] 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017
-#&gt;  [16] 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017
-#&gt;  [31] 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017
-#&gt;  [46] 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017
-#&gt;  [61] 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017
-#&gt;  [76] 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017
-#&gt;  [91] 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017
-#&gt; [106] 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017
-#&gt; [121] 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017
-#&gt; [136] 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017
-#&gt; [151] 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017
-#&gt; [166] 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017
-#&gt; [181] 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017
-#&gt; [196] 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017
-#&gt; [211] 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017
-#&gt; [226] 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017
-#&gt; [241] 2017 2017 2017 2017 2017 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018
+<span class='fu'>taxYear</span>(<span class='fu'>seq</span>(<span class='fu'>Sys.Date</span>(),<span class='kw'>by</span><span class='kw'>=</span><span class='fl'>1</span>,<span class='kw'>length</span><span class='kw'>=</span><span class='fl'>500</span>))</div><div class='output co'>#&gt;   [1] 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018
+#&gt;  [16] 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018
+#&gt;  [31] 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018
+#&gt;  [46] 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018
+#&gt;  [61] 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018
+#&gt;  [76] 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018
+#&gt;  [91] 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018
+#&gt; [106] 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018
+#&gt; [121] 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018
+#&gt; [136] 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018
+#&gt; [151] 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018
+#&gt; [166] 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018
+#&gt; [181] 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018
+#&gt; [196] 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018
+#&gt; [211] 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018
+#&gt; [226] 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018
+#&gt; [241] 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018
 #&gt; [256] 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018
 #&gt; [271] 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018
-#&gt; [286] 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018
-#&gt; [301] 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018
-#&gt; [316] 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018
-#&gt; [331] 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018
-#&gt; [346] 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018
-#&gt; [361] 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018
-#&gt; [376] 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018
-#&gt; [391] 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018
-#&gt; [406] 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018
-#&gt; [421] 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018
-#&gt; [436] 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018
-#&gt; [451] 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018
-#&gt; [466] 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018
-#&gt; [481] 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018 2018
-#&gt; [496] 2018 2018 2018 2018 2018</div><div class='input'>
+#&gt; [286] 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019
+#&gt; [301] 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019
+#&gt; [316] 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019
+#&gt; [331] 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019
+#&gt; [346] 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019
+#&gt; [361] 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019
+#&gt; [376] 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019
+#&gt; [391] 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019
+#&gt; [406] 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019
+#&gt; [421] 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019
+#&gt; [436] 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019
+#&gt; [451] 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019
+#&gt; [466] 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019
+#&gt; [481] 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019 2019
+#&gt; [496] 2019 2019 2019 2019 2019</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -188,7 +190,7 @@ the tax period covers. Tax Year start date can be overriden.</p>
 
       <footer>
       <div class="copyright">
-  <p>Developed by Stephanie Locke.</p>
+  <p>Developed by Steph Locke, Locke Data, Optimum Credit Ltd's analysts.</p>
 </div>
 
 <div class="pkgdown">
@@ -198,5 +200,8 @@ the tax period covers. Tax Year start date can be overriden.</p>
       </footer>
    </div>
 
+  
+
   </body>
 </html>
+

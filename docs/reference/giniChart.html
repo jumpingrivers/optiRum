@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Produce a ROC curve with gini coefficient title � giniChart • optiRum</title>
+<title>Produce a ROC curve with gini coefficient title — giniChart • optiRum</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -23,8 +23,6 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-  
-  
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -51,12 +49,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">optiRum</a>
+      <a class="navbar-brand" href="../index.html">Produce a ROC curve with gini coefficient title</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="..//index.html">
+  <a href="../index.html">
     <span class="fa fa-home fa-lg"></span>
      
   </a>
@@ -83,7 +81,7 @@
       
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/stephlocke/optiRum">
+  <a href="https://github.com/lockedata/optiRum">
     <span class="fa fa-github fa-lg"></span>
      
   </a>
@@ -96,20 +94,24 @@
       
       </header>
 
-      <div class="row">
+<div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Produce a ROC curve with gini coefficient title</h1>
+    <small class="dont-index">Source: <a href='https://github.com/lockedata/optiRum/blob/master/R/giniChart.R'><code>R/giniChart.R</code></a></small>
+    <div class="hidden name"><code>giniChart.Rd</code></div>
     </div>
 
+    <div class="ref-description">
     
     <p>This function uses ggplot to produce a themed Receiver Operator Curve and
 calculates a Gini coefficient based on it.</p>
     
+    </div>
 
     <pre class="usage"><span class='fu'>giniChart</span>(<span class='no'>pred</span>, <span class='no'>act</span>)</pre>
     
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
@@ -124,17 +126,17 @@ calculates a Gini coefficient based on it.</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <p><code>AUC</code> <code>roc</code> <code><a href='giniCoef.html'>giniCoef</a></code></p>
+    <div class='dont-index'><p><code>AUC</code> <code>roc</code> <code><a href='giniCoef.html'>giniCoef</a></code></p>
 <p>Other creditrisk: <code><a href='giniCoef.html'>giniCoef</a></code>,
   <code><a href='logit.odd.html'>logit.odd</a></code>, <code><a href='logit.prob.html'>logit.prob</a></code>,
   <code><a href='odd.logit.html'>odd.logit</a></code>, <code><a href='odd.prob.html'>odd.prob</a></code>,
   <code><a href='prob.logit.html'>prob.logit</a></code>, <code><a href='prob.odd.html'>prob.odd</a></code>,
-  <code><a href='scaledScore.html'>scaledScore</a></code></p>
+  <code><a href='scaledScore.html'>scaledScore</a></code></p></div>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>  <span class='no'>sampledata</span><span class='kw'>&lt;-</span> <span class='fu'>data.frame</span>(<span class='kw'>val</span><span class='kw'>=</span> <span class='fu'>rnorm</span>(<span class='fl'>100</span>) , <span class='kw'>outcome</span><span class='kw'>=</span><span class='fu'>rbinom</span>(<span class='fl'>100</span>,<span class='fl'>1</span>,<span class='fl'>.8</span>))
-  <span class='fu'>giniChart</span>(<span class='no'>sampledata</span>$<span class='no'>val</span>,<span class='no'>sampledata</span>$<span class='no'>outcome</span>)</div><div class='img'><img src='giniChart-1.png' alt='' width='700' height='432.632880098887' /></div><div class='input'>  
+  <span class='fu'>giniChart</span>(<span class='no'>sampledata</span>$<span class='no'>val</span>,<span class='no'>sampledata</span>$<span class='no'>outcome</span>)</div><div class='img'><img src='giniChart-1.png' alt='' width='700' height='433' /></div><div class='input'>  
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -152,7 +154,7 @@ calculates a Gini coefficient based on it.</p>
 
       <footer>
       <div class="copyright">
-  <p>Developed by Stephanie Locke.</p>
+  <p>Developed by Steph Locke, Locke Data, Optimum Credit Ltd's analysts.</p>
 </div>
 
 <div class="pkgdown">
@@ -162,5 +164,8 @@ calculates a Gini coefficient based on it.</p>
       </footer>
    </div>
 
+  
+
   </body>
 </html>
+

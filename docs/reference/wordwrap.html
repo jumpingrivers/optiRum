@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Produce a string with one word per line � wordwrap • optiRum</title>
+<title>Produce a string with one word per line — wordwrap • optiRum</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -23,8 +23,6 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-  
-  
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -51,12 +49,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">optiRum</a>
+      <a class="navbar-brand" href="../index.html">Produce a string with one word per line</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="..//index.html">
+  <a href="../index.html">
     <span class="fa fa-home fa-lg"></span>
      
   </a>
@@ -83,7 +81,7 @@
       
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/stephlocke/optiRum">
+  <a href="https://github.com/lockedata/optiRum">
     <span class="fa fa-github fa-lg"></span>
      
   </a>
@@ -96,19 +94,23 @@
       
       </header>
 
-      <div class="row">
+<div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Produce a string with one word per line</h1>
+    <small class="dont-index">Source: <a href='https://github.com/lockedata/optiRum/blob/master/R/wordwrap.R'><code>R/wordwrap.R</code></a></small>
+    <div class="hidden name"><code>wordwrap.Rd</code></div>
     </div>
 
+    <div class="ref-description">
     
     <p>Designed for splitting strings to fit better on axis on charts</p>
     
+    </div>
 
     <pre class="usage"><span class='fu'>wordwrap</span>(<span class='no'>x</span>, <span class='no'>...</span>)</pre>
     
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
@@ -123,15 +125,15 @@
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <p>Other helper: <code><a href='CJ.dt.html'>CJ.dt</a></code>,
+    <div class='dont-index'><p>Other helper: <code><a href='CJ.dt.html'>CJ.dt</a></code>,
   <code><a href='convertToXML.html'>convertToXML</a></code>, <code><a href='generatePDF.html'>generatePDF</a></code>,
-  <code><a href='sanitise.html'>sanitise</a></code></p>
+  <code><a href='sanitise.html'>sanitise</a></code></p></div>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>library</span>(<span class='st'>'ggplot2'</span>)
 <span class='no'>names</span> <span class='kw'>&lt;-</span> <span class='fu'>wordwrap</span>(<span class='fu'>c</span>(<span class='st'>"This is a name"</span>,<span class='st'>"Single"</span>))
-<span class='fu'><a href='http://www.rdocumentation.org/packages/ggplot2/topics/ggplot'>ggplot</a></span>(<span class='fu'>data.frame</span>(<span class='kw'>x</span><span class='kw'>=</span><span class='no'>names</span>,<span class='kw'>y</span><span class='kw'>=</span><span class='fl'>1</span>:<span class='fl'>10</span>),<span class='fu'><a href='http://www.rdocumentation.org/packages/ggplot2/topics/aes'>aes</a></span>(<span class='no'>x</span>,<span class='no'>y</span>))+<span class='fu'><a href='theme_optimum.html'>theme_optimum</a></span>()+<span class='fu'><a href='http://www.rdocumentation.org/packages/ggplot2/topics/geom_path'>geom_line</a></span>()</div><div class='img'><img src='wordwrap-1.png' alt='' width='700' height='432.632880098887' /></div><div class='input'>
+<span class='fu'><a href='http://www.rdocumentation.org/packages/ggplot2/topics/ggplot'>ggplot</a></span>(<span class='fu'>data.frame</span>(<span class='kw'>x</span><span class='kw'>=</span><span class='no'>names</span>,<span class='kw'>y</span><span class='kw'>=</span><span class='fl'>1</span>:<span class='fl'>10</span>),<span class='fu'><a href='http://www.rdocumentation.org/packages/ggplot2/topics/aes'>aes</a></span>(<span class='no'>x</span>,<span class='no'>y</span>))+<span class='fu'><a href='theme_optimum.html'>theme_optimum</a></span>()+<span class='fu'><a href='http://www.rdocumentation.org/packages/ggplot2/topics/geom_path'>geom_line</a></span>()</div><div class='img'><img src='wordwrap-1.png' alt='' width='700' height='433' /></div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -149,7 +151,7 @@
 
       <footer>
       <div class="copyright">
-  <p>Developed by Stephanie Locke.</p>
+  <p>Developed by Steph Locke, Locke Data, Optimum Credit Ltd's analysts.</p>
 </div>
 
 <div class="pkgdown">
@@ -159,5 +161,8 @@
       </footer>
    </div>
 
+  
+
   </body>
 </html>
+
