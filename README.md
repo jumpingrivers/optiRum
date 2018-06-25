@@ -2,8 +2,8 @@ README
 ========================================================
 
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
-[![Build Status](https://travis-ci.org/stephlocke/optiRum.png?branch=master)](https://travis-ci.org/stephlocke/optiRum)
-[![Coverage Status](https://coveralls.io/repos/stephlocke/optiRum/badge.svg)](https://coveralls.io/r/stephlocke/optiRum)
+[![Build Status](https://travis-ci.org/lockedata/optiRum.png?branch=master)](https://travis-ci.org/lockedata/optiRum)
+[![Coverage Status](https://coveralls.io/repos/lockedata/optiRum/badge.svg)](https://coveralls.io/r/lockedata/optiRum)
 [![CRAN downloads](http://cranlogs.r-pkg.org/badges/optiRum)](http://cran.rstudio.com/package=optiRum)
 
 ## About
@@ -12,7 +12,7 @@ optiRum is a growing package of utilities created by Optimum Credit Ltd's analys
 ## Installation
 The latest stable version (0.37.3) of the package is available on CRAN, and you can get the latest development version by running:
 ```{r}
-devtools::install_github("stephlocke/optiRum")
+devtools::install_github("lockedata/optiRum")
 ```
 
 ## Financial calcs
