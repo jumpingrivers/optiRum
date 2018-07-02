@@ -22,7 +22,7 @@ No observed conflicts or issues in revdeps
 
 Release summary
 
-optiRum 0.4.0
+optiRum 0.39.0
 -------------
 Enhancements:
 * Better website
