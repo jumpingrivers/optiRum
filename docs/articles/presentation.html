@@ -15,7 +15,7 @@
 <![endif]--><link href="../lockedata.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container template-vignette">
+    <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
@@ -24,12 +24,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">optiRum</a>
+      <a class="navbar-brand" href="../index.html"></a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
-  <a href="..//index.html">
+  <a href="../index.html">
     <span class="fa fa-home fa-lg"></span>
      
   </a>
@@ -55,7 +55,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/stephlocke/optiRum">
+  <a href="https://github.com/lockedata/optiRum">
     <span class="fa fa-github fa-lg"></span>
      
   </a>
@@ -70,17 +70,20 @@
 
       
       </header><div class="row">
-  <div class="col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1>Presentation components</h1>
                         <h4 class="author">Steph Locke</h4>
             
-            <h4 class="date">2017-08-04</h4>
-          </div>
+            <h4 class="date">2018-07-02</h4>
+      
+      <small class="dont-index">Source: <a href="https://github.com/lockedata/optiRum/blob/master/vignettes/presentation.Rmd"><code>vignettes/presentation.Rmd</code></a></small>
+      <div class="hidden name"><code>presentation.Rmd</code></div>
+
+    </div>
 
     
     
-<div class="contents">
 <div id="cut2-in-latex" class="section level2">
 <h2 class="hasAnchor">
 <a href="#cut2-in-latex" class="anchor"></a>cut2 in LaTeX</h2>
@@ -103,16 +106,16 @@
 <li>labels whilst needing to be legible should be de-emphasised to help keep focus on the chart’s message</li>
 <li>as much of the plot area should be given over to the chart as possible so space for legends should be minimised</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ggplot2)
-<span class="kw">library</span>(optiRum)
- 
-basicplot&lt;-<span class="kw">ggplot</span>(<span class="dt">data=</span>iris, 
-                  <span class="kw">aes</span>(<span class="dt">x=</span>Sepal.Width, <span class="dt">y=</span>Sepal.Length, <span class="dt">colour=</span>Species)) +<span class="st"> </span>
-<span class="st">  </span><span class="kw">geom_point</span>()
- 
-<span class="kw"><a href="../reference/multiplot.html">multiplot</a></span>(basicplot+<span class="kw">ggtitle</span>(<span class="st">"theme_bw()"</span>), 
-          basicplot+<span class="kw">theme_minimal</span>()+<span class="kw">ggtitle</span>(<span class="st">"theme_minimal()"</span>), 
-          basicplot+<span class="kw"><a href="../reference/theme_optimum.html">theme_optimum</a></span>()+<span class="kw">ggtitle</span>(<span class="st">"theme_optimum()"</span>), <span class="dt">layout=</span><span class="kw">matrix</span>(<span class="dv">1</span>:<span class="dv">3</span>,<span class="dt">nrow=</span><span class="dv">3</span>))</code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(ggplot2)</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="kw">library</span>(optiRum)</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3"> </a>
+<a class="sourceLine" id="cb1-4" data-line-number="4">basicplot&lt;-<span class="kw">ggplot</span>(<span class="dt">data=</span>iris, </a>
+<a class="sourceLine" id="cb1-5" data-line-number="5">                  <span class="kw">aes</span>(<span class="dt">x=</span>Sepal.Width, <span class="dt">y=</span>Sepal.Length, <span class="dt">colour=</span>Species)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb1-6" data-line-number="6"><span class="st">  </span><span class="kw">geom_point</span>()</a>
+<a class="sourceLine" id="cb1-7" data-line-number="7"> </a>
+<a class="sourceLine" id="cb1-8" data-line-number="8"><span class="kw"><a href="../reference/multiplot.html">multiplot</a></span>(basicplot<span class="op">+</span><span class="kw">ggtitle</span>(<span class="st">"theme_bw()"</span>), </a>
+<a class="sourceLine" id="cb1-9" data-line-number="9">          basicplot<span class="op">+</span><span class="kw">theme_minimal</span>()<span class="op">+</span><span class="kw">ggtitle</span>(<span class="st">"theme_minimal()"</span>), </a>
+<a class="sourceLine" id="cb1-10" data-line-number="10">          basicplot<span class="op">+</span><span class="kw"><a href="../reference/theme_optimum.html">theme_optimum</a></span>()<span class="op">+</span><span class="kw">ggtitle</span>(<span class="st">"theme_optimum()"</span>), <span class="dt">layout=</span><span class="kw">matrix</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>,<span class="dt">nrow=</span><span class="dv">3</span>))</a></code></pre></div>
 <p><img src="presentation_files/figure-html/unnamed-chunk-1-1.png" width="480"></p>
 </div>
 <div id="generate-pdfs" class="section level2">
@@ -142,7 +145,6 @@ basicplot&lt;-<span class="kw">ggplot</span>(<span class="dt">data=</span>iris,
 </ul>
 <p>The best place to check out examples of the <code><a href="../reference/generatePDF.html">generatePDF()</a></code> are in the unit tests.</p>
 </div>
-</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -161,7 +163,7 @@ basicplot&lt;-<span class="kw">ggplot</span>(<span class="dt">data=</span>iris,
 
 
       <footer><div class="copyright">
-  <p>Developed by Stephanie Locke.</p>
+  <p>Developed by Steph Locke, Locke Data, Optimum Credit Ltd's analysts.</p>
 </div>
 
 <div class="pkgdown">
@@ -170,6 +172,8 @@ basicplot&lt;-<span class="kw">ggplot</span>(<span class="dt">data=</span>iris,
 
       </footer>
 </div>
+
+  
 
   </body>
 </html>

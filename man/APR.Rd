@@ -39,9 +39,8 @@ APR(df$nper,df$pmt,df$pv)
 Other finance: \code{\link{PMT}}, \code{\link{PV}},
   \code{\link{RATE}}
 }
-\concept{
-finance
-}
+\concept{finance}
+
 \keyword{apr}
 \keyword{financial}
 \keyword{pmt}

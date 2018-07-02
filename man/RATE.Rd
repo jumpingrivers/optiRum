@@ -35,9 +35,7 @@ RATE(df$nper,df$pmt,df$pv)  # c(0.126947,0.080927) Taken from excel
 Other finance: \code{\link{APR}}, \code{\link{PMT}},
   \code{\link{PV}}
 }
-\concept{
-finance
-}
+\concept{finance}
 \keyword{financial}
 \keyword{pmt}
 \keyword{pv}

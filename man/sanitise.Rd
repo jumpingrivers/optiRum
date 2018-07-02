@@ -25,6 +25,7 @@ Other helper: \code{\link{CJ.dt}},
 \concept{
 helper
 }
+\concept{helper}
 \keyword{PDF}
 \keyword{Rnw}
 \keyword{generate}

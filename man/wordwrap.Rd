@@ -29,4 +29,5 @@ Other helper: \code{\link{CJ.dt}},
 \concept{
 helper
 }
+\concept{helper}
 \keyword{ggplot}

@@ -31,8 +31,6 @@ Other helper: \code{\link{convertToXML}},
   \code{\link{sanitise}}, \code{\link{thousands_format}},
   \code{\link{wordwrap}}
 }
-\concept{
-helper
-}
+\concept{helper}
 \keyword{CJ}
 \keyword{data.table}

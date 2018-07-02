@@ -36,4 +36,4 @@ LazyData: true
 URL: https://github.com/lockedata/optiRum
 BugReports: https://github.com/lockedata/optiRum/issues
 VignetteBuilder: knitr
-RoxygenNote: 6.0.1
+RoxygenNote: 6.0.1.9000
