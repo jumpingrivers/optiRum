@@ -17,7 +17,6 @@
 #' 
 #' @keywords ggplot2 multiple charts
 #' @family visualisation
-#' @concept visualisation
 #' 
 #' @export
 #' 

@@ -7,7 +7,6 @@
 #' 
 #' @keywords ggplot
 #' @family helper 
-#' @concept helper 
 #' 
 #' @export
 #' 

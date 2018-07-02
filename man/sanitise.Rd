@@ -22,9 +22,6 @@ Other helper: \code{\link{CJ.dt}},
   \code{\link{pounds_format}},
   \code{\link{thousands_format}}, \code{\link{wordwrap}}
 }
-\concept{
-helper
-}
 \concept{helper}
 \keyword{PDF}
 \keyword{Rnw}

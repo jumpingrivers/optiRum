@@ -9,7 +9,6 @@
 #'
 #' @keywords data.table CJ
 #' @family helper
-#' @concept helper
 #' 
 #' @examples
 #' library(data.table)

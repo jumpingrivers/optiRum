@@ -14,7 +14,6 @@
 #' @keywords financial pv pmt
 #' @seealso \code{\link{PV}}  \code{\link{RATE}} 
 #' @family finance
-#' @concept finance
 #' @export
 #' 
 #' @examples

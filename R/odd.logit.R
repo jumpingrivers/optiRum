@@ -8,7 +8,6 @@
 #' @keywords logit odds glm probability
 #' @seealso \code{\link{logit.odd}}  \code{\link{logit.prob}} 
 #' @family creditrisk
-#' @concept creditrisk
 #' @export
 #' 
 #' @examples

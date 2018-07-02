@@ -24,8 +24,6 @@ ggplot(data.frame(x=1:10,y=1:10),aes(x,y))+theme_optimum()+geom_line()
 \seealso{
 Other visualisation: \code{\link{multiplot}}
 }
-\concept{
-visualisation
-}
+\concept{visualisation}
 \keyword{ggplot2}
 \keyword{theme}

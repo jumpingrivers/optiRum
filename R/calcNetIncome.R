@@ -31,7 +31,6 @@
 #' 
 #' @keywords financial tax income
 #' @family tax
-#' @concept tax
 #' 
 #' @export
 calcNetIncome <- function(

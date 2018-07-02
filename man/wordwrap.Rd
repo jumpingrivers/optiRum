@@ -26,8 +26,5 @@ Other helper: \code{\link{CJ.dt}},
   \code{\link{pounds_format}}, \code{\link{sanitise}},
   \code{\link{thousands_format}}
 }
-\concept{
-helper
-}
 \concept{helper}
 \keyword{ggplot}

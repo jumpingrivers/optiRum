@@ -41,6 +41,4 @@ Other helper: \code{\link{CJ.dt}},
   \code{\link{sanitise}}, \code{\link{thousands_format}},
   \code{\link{wordwrap}}
 }
-\concept{
-helper
-}
+\concept{helper}

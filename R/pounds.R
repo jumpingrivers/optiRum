@@ -13,7 +13,6 @@
 #'   be less than in order for the cents to be displayed
 #' @param x a numeric vector to format
 #' @family helper
-#' @concept helper
 #' @export
 #' @examples
 #' pounds_format()(c(100, 0.23, 1.456565, 2e3))

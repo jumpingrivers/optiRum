@@ -9,7 +9,6 @@
 #' @keywords glm logit score
 #' @seealso \code{\link{glm}}
 #' @family creditrisk
-#' @concept creditrisk
 #' @export
 #' 
 #' @examples

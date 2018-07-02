@@ -6,7 +6,6 @@
 #' @return a function with single paramater x, a numeric vector, that
 #'   returns a character vector
 #' @family helper
-#' @concept helper
 #' @export
 #' @examples
 #' thousands_format()(c(1, 1e3, 2000, 1e6))

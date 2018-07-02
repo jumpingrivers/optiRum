@@ -9,7 +9,6 @@
 #' 
 #' @keywords ggplot2 theme
 #' @family visualisation
-#' @concept visualisation
 #' @export
 #' 
 #' @examples

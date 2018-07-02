@@ -30,6 +30,4 @@ Other helper: \code{\link{CJ.dt}},
   \code{\link{pounds_format}}, \code{\link{sanitise}},
   \code{\link{wordwrap}}
 }
-\concept{
-helper
-}
+\concept{helper}
