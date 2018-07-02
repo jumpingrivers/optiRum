@@ -51,6 +51,9 @@ Current, in the context of default values, is Tax Year 2014
 \seealso{
 Other tax: \code{\link{taxYear}}
 }
+\concept{
+tax
+}
 \keyword{financial}
 \keyword{income}
 \keyword{tax}

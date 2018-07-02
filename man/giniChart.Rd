@@ -29,6 +29,9 @@ Other creditrisk: \code{\link{giniCoef}},
   \code{\link{prob.logit}}, \code{\link{prob.odd}},
   \code{\link{scaledScore}}
 }
+\concept{
+helper
+}
 \keyword{AUROC}
 \keyword{gini}
 \keyword{roc}

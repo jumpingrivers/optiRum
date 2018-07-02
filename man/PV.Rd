@@ -37,6 +37,9 @@ PV(df$rate,df$nper,df$pmt)  # c(68.14,134.77) Taken from excel
 Other finance: \code{\link{APR}}, \code{\link{PMT}},
   \code{\link{RATE}}
 }
+\concept{
+finance
+}
 \keyword{financial}
 \keyword{pmt}
 \keyword{pv}

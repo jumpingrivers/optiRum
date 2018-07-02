@@ -6,7 +6,8 @@
 #' @param ... Allows additional parameters to be passed to gsub
 #' 
 #' @keywords ggplot
-#' @family helper  
+#' @family helper 
+#' @concept helper 
 #' 
 #' @export
 #' 

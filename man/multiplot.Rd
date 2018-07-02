@@ -26,6 +26,12 @@ then plot 1 will go in the upper left, 2 will go in the upper right, and
 Code is taken as-is from \url{http://www.cookbook-r.com/Graphs/Multiple_graphs_on_one_page_(ggplot2)/} 
 and no tests are maintained for it at present
 }
+\seealso{
+Other visualisation: \code{\link{theme_optimum}}
+}
+\concept{
+visualisation
+}
 \keyword{charts}
 \keyword{ggplot2}
 \keyword{multiple}

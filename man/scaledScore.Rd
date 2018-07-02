@@ -29,6 +29,9 @@ Other creditrisk: \code{\link{giniChart}},
   \code{\link{odd.prob}}, \code{\link{prob.logit}},
   \code{\link{prob.odd}}
 }
+\concept{
+creditrisk
+}
 \keyword{glm}
 \keyword{logit}
 \keyword{score}

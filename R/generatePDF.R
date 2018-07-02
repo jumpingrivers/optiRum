@@ -19,6 +19,7 @@
 #' @keywords knitr pdflatex generate PDF Rnw
 #' @seealso \code{knit2pdf}
 #' @family helper
+#' @concept helper
 #' 
 #' @export
 #' 

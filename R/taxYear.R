@@ -10,6 +10,7 @@
 #'
 #' @keywords financial tax
 #' @family tax
+#' @concept tax
 #' @export
 #' 
 #' @examples

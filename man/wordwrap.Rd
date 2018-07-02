@@ -23,6 +23,10 @@ ggplot(data.frame(x=names,y=1:10),aes(x,y))+theme_optimum()+geom_line()
 \seealso{
 Other helper: \code{\link{CJ.dt}},
   \code{\link{convertToXML}}, \code{\link{generatePDF}},
-  \code{\link{sanitise}}
+  \code{\link{pounds_format}}, \code{\link{sanitise}},
+  \code{\link{thousands_format}}
+}
+\concept{
+helper
 }
 \keyword{ggplot}
