@@ -21,6 +21,7 @@ Other helper: \code{\link{CJ.dt}},
   \code{\link{convertToXML}}, \code{\link{generatePDF}},
   \code{\link{wordwrap}}
 }
+\concept{helper}
 \keyword{PDF}
 \keyword{Rnw}
 \keyword{generate}

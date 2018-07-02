@@ -31,6 +31,7 @@ Other helper: \code{\link{CJ.dt}},
   \code{\link{generatePDF}}, \code{\link{sanitise}},
   \code{\link{wordwrap}}
 }
+\concept{helper}
 \keyword{XML}
 \keyword{data.frame}
 \keyword{data.table}

@@ -58,6 +58,7 @@ Other helper: \code{\link{CJ.dt}},
   \code{\link{convertToXML}}, \code{\link{sanitise}},
   \code{\link{wordwrap}}
 }
+\concept{helper}
 \keyword{PDF}
 \keyword{Rnw}
 \keyword{generate}

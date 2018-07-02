@@ -30,5 +30,6 @@ Other helper: \code{\link{convertToXML}},
   \code{\link{generatePDF}}, \code{\link{sanitise}},
   \code{\link{wordwrap}}
 }
+\concept{helper}
 \keyword{CJ}
 \keyword{data.table}

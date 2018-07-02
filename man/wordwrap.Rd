@@ -25,4 +25,5 @@ Other helper: \code{\link{CJ.dt}},
   \code{\link{convertToXML}}, \code{\link{generatePDF}},
   \code{\link{sanitise}}
 }
+\concept{helper}
 \keyword{ggplot}
