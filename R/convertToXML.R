@@ -9,6 +9,7 @@
 #' 
 #' @keywords XML xml data.frame data.table
 #' @family helper
+#' @concept helper
 #' @export
 #' 
 #' @examples

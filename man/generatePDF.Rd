@@ -55,7 +55,8 @@ compiler='xelatex')
 \code{knit2pdf}
 
 Other helper: \code{\link{CJ.dt}},
-  \code{\link{convertToXML}}, \code{\link{sanitise}},
+  \code{\link{convertToXML}}, \code{\link{pounds_format}},
+  \code{\link{sanitise}}, \code{\link{thousands_format}},
   \code{\link{wordwrap}}
 }
 \concept{helper}

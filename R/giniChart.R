@@ -9,6 +9,7 @@
 #' @keywords gini roc AUROC 
 #' @seealso \code{AUC} \code{roc} \code{\link{giniCoef}}
 #' @family creditrisk
+#' @concept helper
 #' @export
 #' 
 #' @examples 

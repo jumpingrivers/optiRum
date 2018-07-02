@@ -35,6 +35,7 @@ PMT(df$rate,df$nper,df$pv) # =-440.29,-202.55 taken from excel
 Other finance: \code{\link{APR}}, \code{\link{PV}},
   \code{\link{RATE}}
 }
+
 \concept{finance}
 \keyword{financial}
 \keyword{pmt}
