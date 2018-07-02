@@ -15,6 +15,11 @@ The latest stable version (0.37.3) of the package is available on CRAN, and you 
 devtools::install_github("lockedata/optiRum")
 ```
 
+## Website
+Browsing code and READMEs isn't for everyone! We have a lovely site made with [`pkgdown`](http://pkgdown.r-lib.org/) that you use to read up on how to use `optiRum`.
+
+Check it out at [itsalocke.com/optiRum](https://itsalocke.com/optirum/).
+
 ## Financial calcs
 We have a range of financial functions that follow the Excel conventions.  More of these will be released upon request (by emailing the package author) or as they are required by Optimum analysts
 

@@ -1,3 +1,8 @@
+optiRum 0.4.0
+-------------
+Enhancements:
+* Better website
+
 optiRum 0.38.0
 -------------
 Maintenance:

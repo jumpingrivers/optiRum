@@ -7,14 +7,15 @@ Description: This fills the gaps credit analysts and loan modellers at
     modelling loans (without rounding), and other helpful functions
     for producing charts and tables.  It also has some additional scales for
     use, including a GBP scale.
-Version: 0.38.0
+Version: 0.4.0
 Authors@R: c(
     person("Steph", "Locke",
     email = "stephanie.g.locke@gmail.com", role = c("aut", "cre")),
     person("Locke Data", comment = "https://itsalocke.com/",
     role = c("fnd")),
     person("Optimum Credit Ltd's analysts", 
-    comment = "https://www.optimumcredit.co.uk/", role = c("fnd")))
+    comment = "https://www.optimumcredit.co.uk/", role = c("fnd")),
+    person("Maëlle", "Salmon", role = "ctb"))
 Depends:
     R (>= 3.0.2)
 Imports:
@@ -33,7 +34,7 @@ Suggests:
     rmarkdown
 License: GPL-3
 LazyData: true
-URL: https://github.com/lockedata/optiRum
+URL: https://github.com/lockedata/optiRum, https://itsalocke.com/optirum/
 BugReports: https://github.com/lockedata/optiRum/issues
 VignetteBuilder: knitr
 RoxygenNote: 6.0.1.9000
