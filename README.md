@@ -4,13 +4,13 @@ README
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
 [![Build Status](https://travis-ci.org/lockedata/optiRum.png?branch=master)](https://travis-ci.org/lockedata/optiRum)
 [![Coverage Status](https://coveralls.io/repos/lockedata/optiRum/badge.svg)](https://coveralls.io/r/lockedata/optiRum)
-[![CRAN downloads](http://cranlogs.r-pkg.org/badges/optiRum)](http://cran.rstudio.com/package=optiRum)
+[![CRAN downloads](https://cranlogs.r-pkg.org/badges/optiRum)](https://cran.rstudio.com/package=optiRum)
 
 ## About
 optiRum is a growing package of utilities created by Optimum Credit Ltd's analysts.  It is designed to provide convenience functions, standards, and useful snippets.  Optimum Credit derives significant value from the R platform and associated community, so non-commercially sensitive functionality is made available in the spirit of reciprocity.
 
 ## Installation
-The latest stable version (0.37.3) of the package is available on CRAN, and you can get the latest development version by running:
+The latest stable version of the package is available on CRAN, and you can get the latest development version by running:
 ```{r}
 devtools::install_github("lockedata/optiRum")
 ```
