@@ -7,7 +7,7 @@ Description: This fills the gaps credit analysts and loan modellers at
     modelling loans (without rounding), and other helpful functions
     for producing charts and tables.  It also has some additional scales for
     use, including a GBP scale.
-Version: 0.40.0
+Version: 0.40.1
 Encoding: UTF-8
 Authors@R: c(
     person("Steph", "Locke",

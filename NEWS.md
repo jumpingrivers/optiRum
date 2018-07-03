@@ -1,13 +1,12 @@
-optiRum 0.40.0
+optiRum 0.40.1
 -------------
 Enhancements:
 * Better website
 
-optiRum 0.38.0
--------------
 Maintenance:
 * New tax year data
 * Improved vignettes
+* Compatability with latest ggplot2 version
 
 optiRum 0.37.3
 -------------

@@ -1,4 +1,4 @@
-^README\.md$
+^README.*$
 ^_pkgdown\.yml$
 ^docs$
 ^.*\.Rproj$
@@ -7,4 +7,3 @@
 ^cran-comments\.md$
 ^.*\.sh$
 ^.sqlite
-^.*\.Rmd$

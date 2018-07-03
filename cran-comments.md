@@ -1,3 +1,5 @@
+*Re-submission with vignette index NOTE fixed*
+
 Dear CRAN Maintainers,
 
 This release is triggered by the upcoming release of ggplot2 that would have made some tests fail. 
@@ -22,7 +24,7 @@ No observed conflicts or issues in revdeps
 
 Release summary
 
-optiRum 0.40.0
+optiRum 0.40.1
 -------------
 Enhancements:
 * Better website
