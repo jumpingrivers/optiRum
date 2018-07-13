@@ -8,7 +8,7 @@ using namespace Rcpp;
 //' @param pv Present value i.e. loan advance (should be positive)
 //' @export
 // [[Rcpp::export]]
-NumericVector ratecpp(const NumericVector nper, const NumericVector pmt, const NumericVector pv) 
+NumericVector ratecpp(const double nper, const NumericVector pmt, const NumericVector pv) 
 {
   // if (isnumber(nper) && isnumber(pmt))
   // {
@@ -20,8 +20,8 @@ NumericVector ratecpp(const NumericVector nper, const NumericVector pmt, const N
     pow(pmt, nper);
     double rate1 = 0.01;
     double rate2 = 0.005;
-    NumericVector x = 1 + rate1;
-    NumericVector y = 1 + rate2;
+    //NumericVector x = 1 + rate1;
+    //NumericVector y = 1 + rate2;
     NumericVector newrate = 0;
     int n = 10;
     
@@ -29,8 +29,9 @@ NumericVector ratecpp(const NumericVector nper, const NumericVector pmt, const N
     //std::transform((1+rate1), nper.begin(), nper.size(), ::pow);
     for(int i = 0; i < n; i++) {
       
-    NumericVector pv1 = -pmt/rate1 * (1 - 1/(pow(x, nper))) - pv;
-    NumericVector pv2 = -pmt/rate2 * (1 - 1/(pow(y, nper))) - pv;
+    NumericVector pv1 = -pmt/rate1 * (1 - 1/(pow(1 + rate1, nper))) - pv;
+    NumericVector pv2 = -pmt/rate2 * (1 - 1/(pow(1 + rate2, nper))) - pv;
+    
     
       // Convert the elemnt of the double vector to a double
      //  double pv1_0 = pv1[0];
@@ -50,16 +51,18 @@ NumericVector ratecpp(const NumericVector nper, const NumericVector pmt, const N
       return newrate;
       }
       
-      // if (abs(pv1) > abs(pv2)) {
-      //   NumericVector rate1 = newrate;
-      //   return rate1;
-      // } else {
-      //   NumericVector rate2 = newrate;
-      //   return rate2;
-      //}
+      // Create a Logical vector to compare abs of pv1 and pv2.
+      LogicalVector pv12_abs = abs(pv1) > abs(pv2);
+      if (pv12_abs) {
+        NumericVector rate1 = newrate;
+        return rate1;
+      } else {
+        NumericVector rate2 = newrate;
+        return rate2;
+      }
     }
-    //return rate1;
-    return newrate;
+    return rate1;
+    //return newrate;
   // }
   //return ratecpp(nper, pmt, pv);
 }
