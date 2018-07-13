@@ -10,62 +10,29 @@ using namespace Rcpp;
 // [[Rcpp::export]]
 NumericVector ratecpp(const NumericVector nper, const NumericVector pmt, const NumericVector pv) 
 {
-  // if (isnumber(nper) && isnumber(pmt))
-  // {
-  //   printf ("Error opening file");
-  // }
-  
-  // else 
-  // {
-    pow(pmt, nper);
-    double rate1 = 0.01;
-    double rate2 = 0.005;
-    NumericVector x = 1 + rate1;
-    NumericVector y = 1 + rate2;
-    NumericVector newrate = 0;
+    // max lenght of pmt and initial vector
+    int size_d = pmt.size();
+    NumericVector rate = size_d;
     int n = 10;
-    
-    std::vector<double> res(x.size());
-    NumericVector power2 = pow(y, nper);
-    std::transform(x, x.begin(), x.end(), nper.begin(), res.begin(), ::pow);
-    for(int i = 0; i < n; i++) {
+    for(int j = 0; j < size_d ; j++) {
+      double rate1 = 0.01;
+      double rate2 = 0.005;
+      for(int i = 0; i < n; i++) {
       
-    NumericVector pv1 = -pmt/rate1 * (1 - 1/(power1)) - pv;
-    NumericVector pv2 = -pmt/rate2 * (1 - 1/(power2)) - pv;
-    
-    
-      // Convert the elemnt of the double vector to a double
-     //  double pv1_0 = pv1[0];
-     //  Rcpp::Rcout << pv1_0;
-     // //Rf_PrintValue(pv1_0);
-     //  //double pv1_1 = pv1[1];
-     //  double pv2_0 = pv2[0];
-     //  Rcpp::Rcout << pv2_0;
-     //  //double pv2_1 = pv2[1];
-     
-     LogicalVector pv12 = pv1 != pv2;
-      if (pv12) {
-        //double newrate = (pv1 * rate2 - pv2 * rate1)/(pv1 - pv2);
-      //NumericVector newrate = NumericVector::create((pv1 * rate2 - pv2 * rate1)/(pv1 - pv2));
-      NumericVector newrate = (pv1 * rate2 - pv2 * rate1)/(pv1 - pv2);
-      std::cout <<  newrate << std::endl;
-      return newrate;
+        double nper_i = nper[j];
+        
+        const double pv1 = -pmt[j]/rate1 * (1 - 1/(std::pow(1 + rate1, nper_i))) - pv[j];
+        const double pv2 = -pmt[j]/rate2 * (1 - 1/(std::pow(1 + rate2, nper_i))) - pv[j];
+        
+        if (std::abs(pv1) > std::abs(pv2)) {
+          rate1 = (pv1 * rate2 - pv2 * rate1)/(pv1 - pv2);
+        } else {
+          rate2 = (pv1 * rate2 - pv2 * rate1)/(pv1 - pv2);
+          }
       }
-      
-      // Create a Logical vector to compare abs of pv1 and pv2.
-      LogicalVector pv12_abs = abs(pv1) > abs(pv2);
-      if (pv12_abs) {
-        NumericVector rate1 = newrate;
-        return rate1;
-      } else {
-        NumericVector rate2 = newrate;
-        return rate2;
-      }
+      rate[j] = rate1;
     }
-    return rate1;
-    //return newrate;
-  // }
-  //return ratecpp(nper, pmt, pv);
+    return rate;
 }
 
 
