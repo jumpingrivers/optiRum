@@ -8,7 +8,7 @@ using namespace Rcpp;
 //' @param pv Present value i.e. loan advance (should be positive)
 //' @export
 // [[Rcpp::export]]
-NumericVector ratecpp(const double nper, const NumericVector pmt, const NumericVector pv) 
+NumericVector ratecpp(const NumericVector nper, const NumericVector pmt, const NumericVector pv) 
 {
   // if (isnumber(nper) && isnumber(pmt))
   // {
@@ -20,17 +20,18 @@ NumericVector ratecpp(const double nper, const NumericVector pmt, const NumericV
     pow(pmt, nper);
     double rate1 = 0.01;
     double rate2 = 0.005;
-    //NumericVector x = 1 + rate1;
-    //NumericVector y = 1 + rate2;
+    NumericVector x = 1 + rate1;
+    NumericVector y = 1 + rate2;
     NumericVector newrate = 0;
     int n = 10;
     
-    //NumericVector power1(nper.size());
-    //std::transform((1+rate1), nper.begin(), nper.size(), ::pow);
+    std::vector<double> res(x.size());
+    NumericVector power2 = pow(y, nper);
+    std::transform(x, x.begin(), x.end(), nper.begin(), res.begin(), ::pow);
     for(int i = 0; i < n; i++) {
       
-    NumericVector pv1 = -pmt/rate1 * (1 - 1/(pow(1 + rate1, nper))) - pv;
-    NumericVector pv2 = -pmt/rate2 * (1 - 1/(pow(1 + rate2, nper))) - pv;
+    NumericVector pv1 = -pmt/rate1 * (1 - 1/(power1)) - pv;
+    NumericVector pv2 = -pmt/rate2 * (1 - 1/(power2)) - pv;
     
     
       // Convert the elemnt of the double vector to a double
