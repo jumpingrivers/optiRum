@@ -1,0 +1,36 @@
+---
+title: "Speed C++ functions"
+author: "Rita Giordano"
+date: "15 July 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(microbenchmark)
+library(optiRum)
+```
+
+# Testing speed of c++ functions: RATE, PV and PMT.
+
+## RATE
+
+```{r rate}
+df<-data.frame(nper=c(12,12),pmt=c(-500,-400),pv=c(3000,3000))
+microbenchmark(RATE(df$nper,df$pmt,df$pv), ratecpp(df$nper,df$pmt,df$pv))
+```
+
+## PV
+
+```{r pv}
+df<-data.frame(rate=c(.1,.1),nper=c(12,24),pmt=c(-10,-15))
+microbenchmark(PV(df$rate,df$nper,df$pmt), pv_cpp(df$rate,df$nper,df$pmt))
+```
+
+## PMT
+
+```{r pmt}
+df<-data.frame(rate=c(.1,.2),nper=c(12,24),pv=c(3000,1000))
+microbenchmark(PMT(df$rate,df$nper,df$pv), pmt_cpp(df$rate,df$nper,df$pv))
+```
+
