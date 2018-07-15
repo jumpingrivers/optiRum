@@ -5,14 +5,42 @@
 
 using namespace Rcpp;
 
-// timesTwo
-NumericVector timesTwo(NumericVector x);
-RcppExport SEXP _optiRum_timesTwo(SEXP xSEXP) {
+// pmt_cpp
+NumericVector pmt_cpp(NumericVector rate, NumericVector nper, NumericVector pv);
+RcppExport SEXP _optiRum_pmt_cpp(SEXP rateSEXP, SEXP nperSEXP, SEXP pvSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
-    rcpp_result_gen = Rcpp::wrap(timesTwo(x));
+    Rcpp::traits::input_parameter< NumericVector >::type rate(rateSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type nper(nperSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type pv(pvSEXP);
+    rcpp_result_gen = Rcpp::wrap(pmt_cpp(rate, nper, pv));
+    return rcpp_result_gen;
+END_RCPP
+}
+// pv_cpp
+NumericVector pv_cpp(NumericVector rate, NumericVector nper, NumericVector pmt);
+RcppExport SEXP _optiRum_pv_cpp(SEXP rateSEXP, SEXP nperSEXP, SEXP pmtSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericVector >::type rate(rateSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type nper(nperSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type pmt(pmtSEXP);
+    rcpp_result_gen = Rcpp::wrap(pv_cpp(rate, nper, pmt));
+    return rcpp_result_gen;
+END_RCPP
+}
+// ratecpp
+NumericVector ratecpp(const NumericVector nper, const NumericVector pmt, const NumericVector pv);
+RcppExport SEXP _optiRum_ratecpp(SEXP nperSEXP, SEXP pmtSEXP, SEXP pvSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const NumericVector >::type nper(nperSEXP);
+    Rcpp::traits::input_parameter< const NumericVector >::type pmt(pmtSEXP);
+    Rcpp::traits::input_parameter< const NumericVector >::type pv(pvSEXP);
+    rcpp_result_gen = Rcpp::wrap(ratecpp(nper, pmt, pv));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -29,7 +57,9 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_optiRum_timesTwo", (DL_FUNC) &_optiRum_timesTwo, 1},
+    {"_optiRum_pmt_cpp", (DL_FUNC) &_optiRum_pmt_cpp, 3},
+    {"_optiRum_pv_cpp", (DL_FUNC) &_optiRum_pv_cpp, 3},
+    {"_optiRum_ratecpp", (DL_FUNC) &_optiRum_ratecpp, 3},
     {"_optiRum_times_two", (DL_FUNC) &_optiRum_times_two, 1},
     {NULL, NULL, 0}
 };
