@@ -7,7 +7,6 @@ using namespace Rcpp;
 //' @param pmt Instalment per period (should be negative)
 //' @param fv      Future value i.e. redemption amount
 //' @export
-
 // [[Rcpp::export]]
 NumericVector pv_cpp(NumericVector rate, NumericVector nper, NumericVector pmt) {
   
@@ -19,6 +18,7 @@ NumericVector pv_cpp(NumericVector rate, NumericVector nper, NumericVector pmt) 
     double rate_i = rate[i];
     double nper_i = nper[i];
     const double pvof = -pmt[i]/rate_i * (1 - 1/std::pow(1 + rate_i, nper_i));
+    // round to the second decimal
     double pv_round = (int)(pvof * 100 + .5)/100.0;
     //std::setprecision(2);
     pv[i] = pv_round;
