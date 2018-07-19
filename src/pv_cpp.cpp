@@ -8,22 +8,27 @@ using namespace Rcpp;
 //' @param fv      Future value i.e. redemption amount
 //' @export
 // [[Rcpp::export]]
-NumericVector pv_cpp(NumericVector rate, NumericVector nper, NumericVector pmt) {
+NumericVector pv_cpp_new(NumericVector rate, NumericVector nper, NumericVector pmt) {
   
   int size_d = pmt.size();
+  NumericVector regcashfactor(size_d);
   NumericVector pv = size_d;
-  //double pvof = 0;
+  //double pvof;
   for (int i = 0; i < size_d; i++) {
     
     double rate_i = rate[i];
     double nper_i = nper[i];
-    const double pvof = -pmt[i]/rate_i * (1 - 1/std::pow(1 + rate_i, nper_i));
-    // round to the second decimal
-    double pv_round = (int)(pvof * 100 + .5)/100.0;
-    //std::setprecision(2);
+    
+    //return ifelse(rate == 0, 1 / nper, rate / (1 - 1 / std::pow(1 + rate_i, nper_i)));
+    if (rate[i] == 0) {
+      regcashfactor[i] = 1/ (1 / nper[i]);
+    } else {
+      regcashfactor[i] = 1/ (rate[i] / (1 - 1 / std::pow(1 + rate_i, nper_i)));
+    }
+    const double pvof = -pmt[i] * regcashfactor[i]; 
+    double pv_round = floor(pvof * 100 + .5)/100.0;
     pv[i] = pv_round;
   }
-  
   
   return pv;
 }
@@ -36,5 +41,5 @@ NumericVector pv_cpp(NumericVector rate, NumericVector nper, NumericVector pmt) 
 
 /*** R
 df<-data.frame(rate=c(.1,.1),nper=c(12,24),pmt=c(-10,-15))
-pv_cpp(df$rate,df$nper,df$pmt)
-*/
+pv_cpp_new(df$rate,df$nper,df$pmt)
+  */
