@@ -16,7 +16,7 @@ Authors@R: c(
     role = c("fnd")),
     person("Optimum Credit Ltd's analysts", 
     comment = "https://www.optimumcredit.co.uk/", role = c("fnd")),
-    person("Maëlle", "Salmon", role = "ctb"))
+    person("Ma<U+00EB>lle", "Salmon", role = "ctb"))
 Depends:
     R (>= 3.0.2)
 Imports:
@@ -28,7 +28,8 @@ Imports:
     plyr,
     scales,
     stringr,
-    XML
+    XML,
+    Rcpp
 Suggests:
     testthat,
     covr,
@@ -39,3 +40,4 @@ URL: https://github.com/lockedata/optiRum, https://itsalocke.com/optirum/
 BugReports: https://github.com/lockedata/optiRum/issues
 VignetteBuilder: knitr
 RoxygenNote: 6.0.1.9000
+LinkingTo: Rcpp
