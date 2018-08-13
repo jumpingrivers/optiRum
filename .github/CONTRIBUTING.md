@@ -1,3 +1,5 @@
+# Contributing guide
+
 ### Code of Conduct
 Anyone getting involved in this package agrees to our [Code of Conduct](CONDUCT.md). If someone is breaking the [Will Wheaton rule aka *Don't be a dick*](https://dontbeadickday.com/), or breaking the Code of Conduct, please let me know at steph@itsalocke.com
 
