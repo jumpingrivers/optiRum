@@ -21,7 +21,7 @@ Browsing code and READMEs isn't for everyone! We have a lovely site made with [`
 Check it out at [itsalocke.com/optiRum](https://itsalocke.com/optirum/).
 
 ## Financial calcs
-We have a range of financial functions that follow the Excel conventions.  More of these will be released upon request (by emailing the package author) or as they are required by Optimum analysts
+We have a range of financial functions that follow the Excel conventions.  More of these will be released as they are required by Optimum analysts, and you can suggests ideas in the [issue tracker](https://github.com/lockedata/optiRum/issues).
 
 * `PV` -- present value
 * `PMT` -- instalment
@@ -53,3 +53,10 @@ There are helper functions that reduce document development time:
 * `convertToXML` -- a lot of people are concerned about getting data out of XML, but it's difficult to find functions that put output data in XML, so this function takes XML functionality and wraps it neatly for such cases
 * `CJ.dt` -- a cross-join function for two data.tables
 * `wordwrap` = Change spaces to new lines in a string - great for plotting
+
+----
+
+Wanna report a bug or suggest a feature? Great stuff! For more information on how to contribute check out [our contributing guide](.github/CONTRIBUTING.md).
+
+Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
+
