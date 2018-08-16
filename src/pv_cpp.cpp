@@ -8,7 +8,7 @@ using namespace Rcpp;
 //' @param fv      Future value i.e. redemption amount
 //' @export
 // [[Rcpp::export]]
-NumericVector pv_cpp_new(NumericVector rate, NumericVector nper, NumericVector pmt) {
+NumericVector pv_cpp(NumericVector rate, NumericVector nper, NumericVector pmt) {
   
   int size_d = pmt.size();
   NumericVector regcashfactor(size_d);
