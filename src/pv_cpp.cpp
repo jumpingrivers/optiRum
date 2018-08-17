@@ -8,7 +8,7 @@ using namespace Rcpp;
 //' @param fv      Future value i.e. redemption amount
 //' @export
 // [[Rcpp::export]]
-NumericVector pv_cpp(NumericVector rate, NumericVector nper, NumericVector pmt) {
+NumericVector pv_cpp(NumericVector rate, NumericVector nper, NumericVector pmt, NumericVector fv = 0) {
   
   int size_d = pmt.size();
   NumericVector regcashfactor(size_d);
@@ -41,5 +41,5 @@ NumericVector pv_cpp(NumericVector rate, NumericVector nper, NumericVector pmt) 
 
 /*** R
 df<-data.frame(rate=c(.1,.1),nper=c(12,24),pmt=c(-10,-15))
-pv_cpp_new(df$rate,df$nper,df$pmt)
+pv_cpp(df$rate,df$nper,df$pmt)
   */
