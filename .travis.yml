@@ -1,8 +1,5 @@
 language: r
 sudo: required
-
-before_install:
-  - chmod 755 ./.push_gh_pages.sh
     
 apt_packages:
  - libxml2-dev
