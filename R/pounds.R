@@ -23,11 +23,11 @@
 pounds_format <- function(x, largest_with_penny = 1e+05) {
     
     function(x) {
-        x <- plyr::round_any(x, 0.01)
+        x <- round_any(x, 0.01)
         if (max(x, na.rm = TRUE) < largest_with_penny & !all(x == floor(x), na.rm = TRUE)) {
             nsmall <- 2L
         } else {
-            x <- plyr::round_any(x, 1)
+            x <- round_any(x, 1)
             nsmall <- 0L
         }
         stringr::str_c("\u00a3", format(x, nsmall = nsmall, trim = TRUE, big.mark = ",", scientific = FALSE, digits = 1L))
@@ -37,3 +37,9 @@ pounds_format <- function(x, largest_with_penny = 1e+05) {
 #' @export
 #' @rdname pounds_format
 pounds <- pounds_format() 
+
+# plyr reproduction
+round_any <- function(x, accuracy, f = round) {
+  if (!is.numeric(x)) stop("x must be numeric", call. = FALSE)
+  f(x/accuracy) * accuracy
+}

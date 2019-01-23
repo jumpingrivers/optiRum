@@ -25,7 +25,6 @@ Imports:
     AUC,
     grid,
     knitr,
-    plyr,
     scales,
     stringr,
     XML
@@ -38,4 +37,6 @@ LazyData: true
 URL: https://github.com/lockedata/optiRum, https://itsalocke.com/optirum/
 BugReports: https://github.com/lockedata/optiRum/issues
 VignetteBuilder: knitr
-RoxygenNote: 6.0.1.9000
+RoxygenNote: 6.1.1
+Remotes: tidyverse/ggplot2
+

@@ -7,7 +7,7 @@
 #'
 #' @docType package
 #' @name optiRum
-#' @import data.table ggplot2 AUC knitr plyr stringr XML
+#' @import data.table ggplot2 AUC knitr stringr XML
 #' @importFrom grDevices rgb
 #' @importFrom utils modifyList packageVersion
 #' @importFrom grid grid.newpage pushViewport viewport grid.layout
