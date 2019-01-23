@@ -1,8 +1,5 @@
 language: r
 sudo: required
-
-before_install:
-  - chmod 755 ./.push_gh_pages.sh
     
 apt_packages:
  - libxml2-dev
@@ -13,6 +10,22 @@ r_packages:
  
 r_github_packages: tidyverse/ggplot2
 
+before_deploy: 
+  - Rscript -e 'remotes::install_github("lockedatapublished/lockedatapkg")'
+  - Rscript -e 'install.packages("pkgdown")'
+ 
+ 
+deploy:
+  provider: script
+  script: Rscript -e 'pkgdown::deploy_site_github(verbose = TRUE)'
+  skip_cleanup: true
+
 after_success:
   - Rscript -e 'library(covr);coveralls(coverage = print(package_coverage(quiet = FALSE)))'
-  - ./.push_gh_pages.sh
+
+stages:
+  - name: deploy
+    # require the branch name to be master (note for PRs this is the base branch name)
+    if: branch = master
+notifications:
+  webhooks: https://api.netlify.com/build_hooks/5c4857187aa4a60178a036c1

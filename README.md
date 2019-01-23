@@ -4,10 +4,10 @@ README
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
 [![Build Status](https://travis-ci.org/lockedata/optiRum.png?branch=master)](https://travis-ci.org/lockedata/optiRum)
 [![Coverage Status](https://coveralls.io/repos/lockedata/optiRum/badge.svg)](https://coveralls.io/r/lockedata/optiRum)
-[![CRAN downloads](https://cranlogs.r-pkg.org/badges/optiRum)](https://cran.rstudio.com/package=optiRum)
+[![CRAN downloads](https://cranlogs.r-pkg.org/badges/optiRum)](https://cran.rstudio.com/package=optiRum) [![Locke Data Slack](https://img.shields.io/badge/Slack-discuss-blue.svg?logo=slack&longCache=true&style=flat)](https://join.slack.com/t/lockedata/shared_invite/enQtMjkwNjY3ODkwMzg2LTI1OGU1NTM3ZGIyZGFiNTdlODI3MzU2N2ZlNDczMjM4M2U2OWVmNDMzZTQ1ZGNlZDQ3MGM2MGVjMjI2MWIyMjI)
 
 ## About
-optiRum is a growing package of utilities created by Optimum Credit Ltd's analysts.  It is designed to provide convenience functions, standards, and useful snippets.  Optimum Credit derives significant value from the R platform and associated community, so non-commercially sensitive functionality is made available in the spirit of reciprocity.
+optiRum is a stable package of utilities created by Optimum Credit Ltd's analysts.  It is designed to provide convenience functions, standards, and useful snippets.  Optimum Credit derives significant value from the R platform and associated community, so non-commercially sensitive functionality is made available in the spirit of reciprocity.
 
 ## Installation
 The latest stable version of the package is available on CRAN, and you can get the latest development version by running:
@@ -21,7 +21,7 @@ Browsing code and READMEs isn't for everyone! We have a lovely site made with [`
 Check it out at [itsalocke.com/optiRum](https://itsalocke.com/optirum/).
 
 ## Financial calcs
-We have a range of financial functions that follow the Excel conventions.  More of these will be released upon request (by emailing the package author) or as they are required by Optimum analysts
+We have a range of financial functions that follow the Excel conventions.  More of these will be released as they are required by Optimum analysts, and you can suggests ideas in the [issue tracker](https://github.com/lockedata/optiRum/issues).
 
 * `PV` -- present value
 * `PMT` -- instalment
@@ -53,3 +53,10 @@ There are helper functions that reduce document development time:
 * `convertToXML` -- a lot of people are concerned about getting data out of XML, but it's difficult to find functions that put output data in XML, so this function takes XML functionality and wraps it neatly for such cases
 * `CJ.dt` -- a cross-join function for two data.tables
 * `wordwrap` = Change spaces to new lines in a string - great for plotting
+
+----
+
+Wanna report a bug or suggest a feature? Great stuff! For more information on how to contribute check out [our contributing guide](.github/CONTRIBUTING.md).
+
+Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
+
