@@ -1,5 +1,4 @@
 context("pounds")
-library(plyr)
 
 test_that("pounds format", {
     expect_equal(pounds(c(100, 0.23, 1.456565, 2000)), c("\u00a3100.00", "\u00a30.23", "\u00a31.46", "\u00a32,000.00"))
