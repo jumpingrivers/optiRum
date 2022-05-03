@@ -7,13 +7,15 @@ Description: This fills the gaps credit analysts and loan modellers at
     modelling loans (without rounding), and other helpful functions
     for producing charts and tables.  It also has some additional scales for
     use, including a GBP scale.
-Version: 0.40.1
+Version: 0.41.1
 Encoding: UTF-8
 Authors@R: c(
+    person("Rhian", "Davies",
+    email = "rhian@jumpingrivers.com", role = c("aut", "cre")),
     person("Steph", "Locke",
-    email = "stephanie.g.locke@gmail.com", role = c("aut", "cre")),
-    person("Locke Data", comment = "https://itsalocke.com/",
-    role = c("fnd")),
+    email = "stephanie.g.locke@gmail.com", role = c("aut")),
+    person("Jumping Rivers", 
+    comment = "https://www.jumpingrivers.com/", role = c("fnd")),
     person("Optimum Credit Ltd's analysts", 
     comment = "https://www.optimumcredit.co.uk/", role = c("fnd")),
     person("Maëlle", "Salmon", role = "ctb"))
@@ -32,11 +34,12 @@ Suggests:
     testthat,
     covr,
     rmarkdown
-License: GPL-3
+License: GPL (>= 3)
 LazyData: true
-URL: https://github.com/lockedata/optiRum, https://itsalocke.com/optirum/
-BugReports: https://github.com/lockedata/optiRum/issues
+URL: https://github.com/jumpingrivers/optiRum,
+    https://jumpingrivers.github.io/optirum/,
+    http://jumpingrivers.github.io/optiRum/
+BugReports: https://github.com/jumpingrivers/optiRum/issues
 VignetteBuilder: knitr
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.2
 Remotes: tidyverse/ggplot2
-

@@ -26,10 +26,13 @@ ab <- CJ.dt(a,b)
 
 }
 \seealso{
-Other helper: \code{\link{convertToXML}},
-  \code{\link{generatePDF}}, \code{\link{pounds_format}},
-  \code{\link{sanitise}}, \code{\link{thousands_format}},
-  \code{\link{wordwrap}}
+Other helper: 
+\code{\link{convertToXML}()},
+\code{\link{generatePDF}()},
+\code{\link{pounds_format}()},
+\code{\link{sanitise}()},
+\code{\link{thousands_format}()},
+\code{\link{wordwrap}()}
 }
 \concept{helper}
 \keyword{CJ}

@@ -21,11 +21,15 @@ logit.odd(0) # equals 1
 \seealso{
 \code{\link{logit.prob}}
 
-Other creditrisk: \code{\link{giniChart}},
-  \code{\link{giniCoef}}, \code{\link{logit.prob}},
-  \code{\link{odd.logit}}, \code{\link{odd.prob}},
-  \code{\link{prob.logit}}, \code{\link{prob.odd}},
-  \code{\link{scaledScore}}
+Other creditrisk: 
+\code{\link{giniChart}()},
+\code{\link{giniCoef}()},
+\code{\link{logit.prob}()},
+\code{\link{odd.logit}()},
+\code{\link{odd.prob}()},
+\code{\link{prob.logit}()},
+\code{\link{prob.odd}()},
+\code{\link{scaledScore}()}
 }
 \concept{creditrisk}
 \keyword{glm}

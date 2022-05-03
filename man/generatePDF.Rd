@@ -4,9 +4,17 @@
 \alias{generatePDF}
 \title{Convert an .Rnw file to a PDF}
 \usage{
-generatePDF(srcpath = getwd(), srcname, destpath = getwd(),
-  destname = srcname, DATED = FALSE, CLEANUP = TRUE, QUIET = FALSE,
-  envir = new.env(parent = .GlobalEnv), ...)
+generatePDF(
+  srcpath = getwd(),
+  srcname,
+  destpath = getwd(),
+  destname = srcname,
+  DATED = FALSE,
+  CLEANUP = TRUE,
+  QUIET = FALSE,
+  envir = new.env(parent = .GlobalEnv),
+  ...
+)
 }
 \arguments{
 \item{srcpath}{Location of .Rnw file, default is current directory}
@@ -54,10 +62,13 @@ compiler='xelatex')
 \seealso{
 \code{knit2pdf}
 
-Other helper: \code{\link{CJ.dt}},
-  \code{\link{convertToXML}}, \code{\link{pounds_format}},
-  \code{\link{sanitise}}, \code{\link{thousands_format}},
-  \code{\link{wordwrap}}
+Other helper: 
+\code{\link{CJ.dt}()},
+\code{\link{convertToXML}()},
+\code{\link{pounds_format}()},
+\code{\link{sanitise}()},
+\code{\link{thousands_format}()},
+\code{\link{wordwrap}()}
 }
 \concept{helper}
 \keyword{PDF}

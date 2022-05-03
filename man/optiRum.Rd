@@ -3,7 +3,6 @@
 \docType{package}
 \name{optiRum}
 \alias{optiRum}
-\alias{optiRum-package}
 \title{optiRum is a helper package}
 \description{
 optiRum is a growing package of utilities created by Optimum Credit Ltd's analysts.  
