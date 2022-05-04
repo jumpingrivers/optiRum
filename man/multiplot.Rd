@@ -27,7 +27,8 @@ Code is taken as-is from \url{http://www.cookbook-r.com/Graphs/Multiple_graphs_o
 and no tests are maintained for it at present
 }
 \seealso{
-Other visualisation: \code{\link{theme_optimum}}
+Other visualisation: 
+\code{\link{theme_optimum}()}
 }
 \concept{visualisation}
 \keyword{charts}

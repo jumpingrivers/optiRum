@@ -25,11 +25,15 @@ This function calculates a Gini coefficient based on a Receiver Operator Curve.
 \seealso{
 \code{AUC} \code{roc} \code{\link{giniChart}}
 
-Other creditrisk: \code{\link{giniChart}},
-  \code{\link{logit.odd}}, \code{\link{logit.prob}},
-  \code{\link{odd.logit}}, \code{\link{odd.prob}},
-  \code{\link{prob.logit}}, \code{\link{prob.odd}},
-  \code{\link{scaledScore}}
+Other creditrisk: 
+\code{\link{giniChart}()},
+\code{\link{logit.odd}()},
+\code{\link{logit.prob}()},
+\code{\link{odd.logit}()},
+\code{\link{odd.prob}()},
+\code{\link{prob.logit}()},
+\code{\link{prob.odd}()},
+\code{\link{scaledScore}()}
 }
 \concept{creditrisk}
 \keyword{AUROC}

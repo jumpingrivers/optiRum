@@ -1,7 +1,10 @@
 context("generatePDF")
 
+# Ensure LaTeX installed
+tinytex::install_tinytex()
+
 # initial values
-wd <- getwd()
+wd <- test_path()
 basepath <- wd
 
 testpath <- file.path(basepath, "temp")

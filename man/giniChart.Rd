@@ -23,11 +23,15 @@ calculates a Gini coefficient based on it.
 \seealso{
 \code{AUC} \code{roc} \code{\link{giniCoef}}
 
-Other creditrisk: \code{\link{giniCoef}},
-  \code{\link{logit.odd}}, \code{\link{logit.prob}},
-  \code{\link{odd.logit}}, \code{\link{odd.prob}},
-  \code{\link{prob.logit}}, \code{\link{prob.odd}},
-  \code{\link{scaledScore}}
+Other creditrisk: 
+\code{\link{giniCoef}()},
+\code{\link{logit.odd}()},
+\code{\link{logit.prob}()},
+\code{\link{odd.logit}()},
+\code{\link{odd.prob}()},
+\code{\link{prob.logit}()},
+\code{\link{prob.odd}()},
+\code{\link{scaledScore}()}
 }
 \concept{creditrisk}
 \keyword{AUROC}

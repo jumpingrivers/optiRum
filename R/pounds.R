@@ -38,7 +38,6 @@ pounds_format <- function(x, largest_with_penny = 1e+05) {
 #' @rdname pounds_format
 pounds <- pounds_format() 
 
-# plyr reproduction
 round_any <- function(x, accuracy, f = round) {
   if (!is.numeric(x)) stop("x must be numeric", call. = FALSE)
   f(x/accuracy) * accuracy

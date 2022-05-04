@@ -1,6 +1,6 @@
 #'A cleaning function for special characters
 #'
-#' This function is a helper for cleaning xtable outputs in preperation for PDF production
+#' This function is a helper for cleaning xtable outputs in preparation for PDF production
 #'
 #' @param str The text to be sanitised
 #' 

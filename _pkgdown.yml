@@ -1,21 +1,4 @@
+url: http://jumpingrivers.github.io/optiRum/
 template:
-  package: lockedatapkg
-  default_assets: false
-
-reference:
-- title: Helpers
-  contents:
-  - has_concept("helper")
-- title: Finance
-  contents:
-  - has_concept("finance")
-- title: Tax
-  contents:
-  - has_concept("tax")
-- title: Credit risk
-  contents:
-  - has_concept("creditrisk")
-- title: Visualisation
-  contents:
-  - has_concept("visualisation")
+  bootstrap: 5
 

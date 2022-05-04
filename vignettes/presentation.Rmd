@@ -24,9 +24,6 @@ To avoid this I wrote a `sanitise()` function to replace the `sanitize()` functi
 
 ## Charts
 
-**Opinion: if you're using R, you should be using ggplot2 for charts**
-Life is *much* easier when using it. Get a very quick primer in <a href="http://stephlocke.github.io/Rtraining/chartintro.html" target="_blank" title="Steph Locke explains gpplot2 basics">my note</a> about building charts using it.
-
 optiRum contains a `theme_optimum()` (after the company, not an adjective) that changes the ggplot2 default chart look. The ggplot2 themes are good to begin with, and others have extended it further e.g. [ggthemes](https://cran.r-project.org/package=ggthemes), but we wanted a standard within our company that we could use for charts.  There were some considerations:
 
 
@@ -52,7 +49,7 @@ multiplot(basicplot+ggtitle("theme_bw()"),
 
 Using knitr to integrate analysis and content via LaTeX is fantastic. Unfortunately, where our documents using LaTeX via the R package knitr. We can end up with some pretty complex documents that need multiple passthroughs to fully typeset.
 
-Unfortunately, the handy "Compile PDF" button in Rstudio, whilst great for simple documents could end up not doing enough passthroughs. At the same time it would generate lots of extra files and you'd have no control over the file name when it was generated.
+Unfortunately, the handy "Compile PDF" button in RStudio, whilst great for simple documents could end up not doing enough passthroughs. At the same time it would generate lots of extra files and you'd have no control over the file name when it was generated.
 
 To get around this I first used build scripts that did a lot of compensating work around the `knit2pdf()` function to do the various bits and pieces. This became relatively standard but there would be exceptions or different people would write date suffixes differently. `generatePDF()` is my answer to the various issues we encountered, including some pesky environment interactions with data.table.
 
@@ -61,7 +58,7 @@ To get around this I first used build scripts that did a lot of compensating wor
 
   - `srcpath` is a folder relative to the current directory so that you don't have to change working directories
   - `srcname` is the file name, less the Rnw extension, as it was easier to type plus enforced the use case
-  - `destpath` is the output folder, again relative to the current directory, to give better routing as we rarely wanted the PDF amongst the source code
+  - `destpath` is the output folder, again relative to the current directory, to give better routing as we rarely wanted the PDF among the source code
   - `destname` is the file name we want the document output as  (less `.pdf`) so that we're no reliant on the source file's name
   - `DATED` gives a date suffix to the file meaning different versions can generated over different days with unique file references (enabling the way some folks were, or provided model variants over time)
   - `CLEANUP` says whether to remove all the pesky extra files that generating a PDF can produce

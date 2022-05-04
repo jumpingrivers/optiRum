@@ -10,3 +10,6 @@
 ^.*\.sh$
 ^.sqlite
 ^\.git
+^codecov\.yml$
+^pkgdown$
+^LICENSE\.md$

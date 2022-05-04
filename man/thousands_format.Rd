@@ -25,9 +25,12 @@ thousands_format()(c(1, 1e3, 2000, 1e6))
 thousands(c(1, 1e3, 2000, 1e6))
 }
 \seealso{
-Other helper: \code{\link{CJ.dt}},
-  \code{\link{convertToXML}}, \code{\link{generatePDF}},
-  \code{\link{pounds_format}}, \code{\link{sanitise}},
-  \code{\link{wordwrap}}
+Other helper: 
+\code{\link{CJ.dt}()},
+\code{\link{convertToXML}()},
+\code{\link{generatePDF}()},
+\code{\link{pounds_format}()},
+\code{\link{sanitise}()},
+\code{\link{wordwrap}()}
 }
 \concept{helper}

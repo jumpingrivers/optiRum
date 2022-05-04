@@ -10,8 +10,8 @@
 #' @param srcname     Rnw file name without extension e.g. 'Style'
 #' @param destpath    Location of PDF file to be sent to, default is current directory
 #' @param destname    PDF file name without extension e.g. 'Style_output'
-#' @param DATED       Boolean indicating whether PDF filename should include yyyymmdd added to it
-#' @param CLEANUP     Boolean indicating whether ancilliary files should be removed after production
+#' @param DATED       Boolean indicating whether PDF file name should include yyyymmdd added to it
+#' @param CLEANUP     Boolean indicating whether ancillary files should be removed after production
 #' @param QUIET       Boolean indicating whether console output should be limited
 #' @param envir       Set default environment for knitr to run in - prevents a data.table issue
 #' @param ...         Allows additional parameters to be passed to the knit2pdf function

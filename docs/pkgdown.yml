@@ -1,7 +1,0 @@
-pandoc: 2.1.3
-pkgdown: 1.1.0.9000
-pkgdown_sha: ~
-articles:
-  index: index.html
-  presentation: presentation.html
-

@@ -27,7 +27,8 @@ taxYear(seq(Sys.Date(),by=1,length=500))
 
 }
 \seealso{
-Other tax: \code{\link{calcNetIncome}}
+Other tax: 
+\code{\link{calcNetIncome}()}
 }
 \concept{tax}
 \keyword{financial}
