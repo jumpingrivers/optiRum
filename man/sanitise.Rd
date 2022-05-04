@@ -10,7 +10,7 @@ sanitise(str)
 \item{str}{The text to be sanitised}
 }
 \description{
-This function is a helper for cleaning xtable outputs in preperation for PDF production
+This function is a helper for cleaning xtable outputs in preparation for PDF production
 }
 \examples{
 sanitise('[&\%#<>\\\\')

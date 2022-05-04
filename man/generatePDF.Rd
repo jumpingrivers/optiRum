@@ -25,9 +25,9 @@ generatePDF(
 
 \item{destname}{PDF file name without extension e.g. 'Style_output'}
 
-\item{DATED}{Boolean indicating whether PDF filename should include yyyymmdd added to it}
+\item{DATED}{Boolean indicating whether PDF file name should include yyyymmdd added to it}
 
-\item{CLEANUP}{Boolean indicating whether ancilliary files should be removed after production}
+\item{CLEANUP}{Boolean indicating whether ancillary files should be removed after production}
 
 \item{QUIET}{Boolean indicating whether console output should be limited}
 

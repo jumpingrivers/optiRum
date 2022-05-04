@@ -35,6 +35,7 @@ Suggests:
     covr,
     rmarkdown
 License: GPL (>= 3)
+Language: en-GB
 LazyData: true
 URL: https://github.com/jumpingrivers/optiRum,
     https://jumpingrivers.github.io/optirum/,

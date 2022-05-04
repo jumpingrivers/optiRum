@@ -15,7 +15,7 @@ knitr::opts_chunk$set(
 # optiRum
 
 <!-- badges: start -->
-[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
+[![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
 [![CRAN downloads](https://cranlogs.r-pkg.org/badges/optiRum)](https://cran.rstudio.com/package=optiRum) 
 [![R-CMD-check](https://github.com/jumpingrivers/optiRum/workflows/R-CMD-check/badge.svg)](https://github.com/jumpingrivers/optiRum/actions)
 [![Codecov test coverage](https://codecov.io/gh/jumpingrivers/optiRum/branch/main/graph/badge.svg)](https://app.codecov.io/gh/jumpingrivers/optiRum?branch=main)
@@ -23,7 +23,7 @@ knitr::opts_chunk$set(
 
 
 ## About
-optiRum is a stable package of utilities created by Optimum Credit Ltd's analysts.  It is designed to provide convenience functions, standards, and useful snippets.  Optimum Credit derives significant value from the R platform and associated community, so non-commercially sensitive functionality is made available in the spirit of reciprocity.
+{optiRum} is a stable package of utilities created by Optimum Credit Ltd's analysts.It is designed to provide convenience functions, standards, and useful snippets.  Optimum Credit derives significant value from the R platform and associated community, so non-commercially sensitive functionality is made available in the spirit of reciprocity.
 
 ## Installation
 
@@ -34,7 +34,7 @@ devtools::install_github("jumpingrivers/optiRum")
 
 ## Financial calcs
 
-We have a range of financial functions that follow the Excel conventions.  More of these will be released as they are required by Optimum analysts, and you can suggests ideas in the [issue tracker](https://github.com/jumpingrivers/optiRum/issues).
+We have a range of financial functions that follow the Excel conventions.  
 
 * `PV` -- present value
 * `PMT` -- instalment
@@ -65,11 +65,11 @@ There are helper functions that reduce document development time:
 * `multiplot` -- allows the plotting of multiple charts into one area, primarily of benefit when producing figures for documents
 * `pounds` -- displays values with a UK pound symbol at the front with UK decimalisation practices, this extends scales
 * `thousands` -- displays values to the nearest thousand and in a condensed format that is ideal for charts, this extends scales
-* `theme\_optimum` -- this produces a good looking frame for charts
+* `theme_optimum` -- this produces a good looking frame for charts
 * `convertToXML` -- a lot of people are concerned about getting data out of XML, but it's difficult to find functions that put output data in XML, so this function takes XML functionality and wraps it neatly for such cases
 * `CJ.dt` -- a cross-join function for two data.tables
 * `wordwrap` = Change spaces to new lines in a string - great for plotting
 
 ## Code of Conduct
-  
-Please note that the optiRum project is released with a [Contributor Code of Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.
+
+Please note that the optiRum project is released with a [Contributor Code of Conduct](http://jumpingrivers.github.io/optiRum/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.
