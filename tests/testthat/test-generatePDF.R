@@ -1,7 +1,7 @@
 context("generatePDF")
 
 # initial values
-wd <- getwd()
+wd <- test_path()
 basepath <- wd
 
 testpath <- file.path(basepath, "temp")
