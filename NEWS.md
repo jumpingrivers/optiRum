@@ -1,3 +1,7 @@
+# optiRum 0.41.2
+
+*  Fix PDF tests
+
 # optiRum 0.41.1
 
 *  Update maintainer

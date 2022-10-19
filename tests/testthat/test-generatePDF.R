@@ -1,8 +1,5 @@
 context("generatePDF")
 
-# Ensure LaTeX installed
-#tinytex::install_tinytex()
-
 # initial values
 wd <- test_path()
 basepath <- wd
@@ -217,5 +214,3 @@ test_that("generatePDF - errors - missing inputs", {
     expect_false(file.exists(file.path(testpath, "basic1.aux")))
     expect_false(file.exists(file.path(testpath, "basic.toc")))
 })
-
-# file.remove(testpath) 
