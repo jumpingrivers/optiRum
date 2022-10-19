@@ -1,7 +1,8 @@
 context("generatePDF")
 
 basepath <- test_path()
-tinytex_installed <- nchar(system.file(package = "tinytex")) > 0
+tinytex_installed <- nchar(tinytex::tinytex_root(error = FALSE)) > 0
+
 
 testpath <- file.path(basepath, "temp")
 dir.create(testpath)
