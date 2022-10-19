@@ -1,7 +1,7 @@
 context("generatePDF")
 
 # Ensure LaTeX installed
-tinytex::install_tinytex()
+#tinytex::install_tinytex()
 
 # initial values
 wd <- test_path()

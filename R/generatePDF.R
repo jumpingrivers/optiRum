@@ -38,6 +38,10 @@
 #' compiler='xelatex')
 #' }
 #' 
+x = require("tinytex")
+if(x == FALSE){
+  message("Please install TinyTex using install.packages(\"tinytex\")")
+}else{
 generatePDF <- function(srcpath = getwd(), srcname, destpath = getwd(), destname = srcname, DATED = FALSE, CLEANUP = TRUE, QUIET = FALSE, envir = new.env(parent = .GlobalEnv), 
     ...) {
     
@@ -48,5 +52,5 @@ generatePDF <- function(srcpath = getwd(), srcname, destpath = getwd(), destname
     dest <- file.path(destpath, paste0(destname, ifelse(DATED, format(Sys.Date(), "%Y%m%d"), ""), ".tex"))
     
     knitr::knit2pdf(input = src, output = dest, envir = envir, quiet = QUIET, clean = CLEANUP, ...)
-    
-} 
+    } 
+}
