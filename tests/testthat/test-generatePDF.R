@@ -1,6 +1,5 @@
 context("generatePDF")
 
-# initial values
 basepath <- test_path()
 tinytex_installed <- nchar(system.file(package = "tinytex")) > 0
 
@@ -228,4 +227,6 @@ test_that("generatePDF - errors - missing inputs", {
   expect_false(file.exists(file.path(testpath, "basic1.aux")))
   expect_false(file.exists(file.path(testpath, "basic.toc")))
 })
-file.remove(dir(testpath, full.names = TRUE))
+
+unlink(testpath, recursive = TRUE)
+
