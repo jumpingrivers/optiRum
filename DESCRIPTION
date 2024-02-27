@@ -1,8 +1,8 @@
 Package: optiRum
 Title: Financial Functions & More
-Version: 0.41.2
+Version: 0.42.0
 Authors@R: c(
-    person("Rhian", "Davies", , "rhian@jumpingrivers.com", role = c("aut", "cre")),
+    person("Colin", "Gillespie", , "colin@jumpingrivers.com", role = c("aut", "cre")),
     person("Steph", "Locke", , "stephanie.g.locke@gmail.com", role = "aut"),
     person("Jumping Rivers", role = "fnd",
            comment = "https://www.jumpingrivers.com/"),
@@ -42,4 +42,4 @@ VignetteBuilder:
 Encoding: UTF-8
 Language: en-GB
 LazyData: true
-RoxygenNote: 7.2.1
+RoxygenNote: 7.2.3
