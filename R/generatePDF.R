@@ -48,5 +48,4 @@ generatePDF <- function(srcpath = getwd(), srcname, destpath = getwd(), destname
     dest <- file.path(destpath, paste0(destname, ifelse(DATED, format(Sys.Date(), "%Y%m%d"), ""), ".tex"))
     
     knitr::knit2pdf(input = src, output = dest, envir = envir, quiet = QUIET, clean = CLEANUP, ...)
-    
-} 
+    } 

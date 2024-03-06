@@ -19,6 +19,7 @@ knitr::opts_chunk$set(
 [![CRAN downloads](https://cranlogs.r-pkg.org/badges/optiRum)](https://cran.rstudio.com/package=optiRum) 
 [![R-CMD-check](https://github.com/jumpingrivers/optiRum/workflows/R-CMD-check/badge.svg)](https://github.com/jumpingrivers/optiRum/actions)
 [![Codecov test coverage](https://codecov.io/gh/jumpingrivers/optiRum/branch/main/graph/badge.svg)](https://app.codecov.io/gh/jumpingrivers/optiRum?branch=main)
+[![R-CMD-check](https://github.com/jumpingrivers/optiRum/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/jumpingrivers/optiRum/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 
